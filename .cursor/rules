@@ -1,0 +1,93 @@
+description: >
+  These rules apply to the entire AI_CRYPTO_STARTUP repository. They outline
+  how Cursor AI should assist in the creation, editing, and organization of
+  multi-language course materials and other project assets, including references
+  to NFT rewards, the startup’s goals, and social media.
+
+rules:
+  - name: "DefaultProjectRule"
+    pattern: "**/*"
+    content: |-
+      # AI_CRYPTO_STARTUP Repository Rules
+
+      ## 1. Overview
+      We are building a real startup, aiming to attract large investments (>= $1M) by developing
+      AI, crypto, NFT, and Web3-based technologies, courses, and community content. This repository
+      is dedicated to all relevant resources EXCEPT the core code projects, which live in separate repos.
+
+      ### Key Points:
+      - Multi-language approach (initially **English** and **Russian**, more in future).
+      - README by default in **English**, with a prominent link to other languages.
+      - We store documents, instructions, social media content, course outlines, etc.
+      - NFT rewards: contributors can earn NFTs that grant a share of future project profits.
+      - Additional open-source code (e.g., agent-core, ton-smartcontracts, etc.) is separate from this repo.
+
+      ## 2. Repository Structure
+
+      1. **README.md** (English)  
+         - Explains project goals, references to multi-language READMEs for Russian and others.
+         - Summarizes how to contribute, links to other subfolders.
+
+      2. **/courses/**  
+         - Contains multi-language course outlines, references to Stepik modules/lessons/steps.
+         - Example structure:
+           ```
+           courses/
+             russian/
+               creating_ai_agents/
+                 1_Introduction/
+                   1_Greeting/
+                     step_1.md
+             english/
+               creating_ai_agents/
+                 ...
+           ```
+         - Each folder can have subfolders for modules and lessons, each “step” a `.md` file.
+
+      3. **/projects/**  
+         - Descriptions of additional sub-projects or synergy tasks (NOT the core code),
+           such as plans, concept docs, user guides, etc.
+
+      4. **/social/telegram/content/**  
+         - Social media posts, announcements, marketing content in multi-language form.
+
+      5. **.cursor/rules**  
+         - This file (or multiple rule files). Contains instructions to unify behavior in the entire repo.
+
+      6. **Other possible directories**  
+         - `/media/` or `/assets/` for images, static files
+         - `/website/` if building a static site for info
+         - etc.
+
+      ## 3. Multi-Language Rules
+
+      - The main README is in English, linking to a `README.ru.md` or similarly named file for Russian.
+      - Each course or doc should maintain a parallel folder structure for each language.
+      - If editing a doc in one language, eventually we’ll want to add or update the other languages (via separate pull requests or translations).
+
+      ## 4. NFT Rewards & Profit-Sharing
+
+      - Contributors to the project can earn NFTs that entitle them to a share of future revenue.
+      - This detail is documented in project docs within the repo, but not relevant to direct code/course generation. 
+      - Do not remove or overwrite any references to the NFT or revenue-sharing structures.
+
+      ## 5. Instructions for Cursor AI
+
+      1. When generating or editing documentation:
+         - Follow the folder structure, keep multi-language consistency in mind.
+         - Provide short, readable sections. Use Markdown headings, bullet points, etc.
+      2. Do not publish actual Stepik-specific metadata (like step IDs) to final `.md` files, but do mention where they belong in the step structure.
+      3. Keep references to NFT rewards and the startup concept if relevant to the doc.
+      4. Linking to code: mention the separate repositories (e.g., `agent-core`) if needed.
+      5. For translations: If user requests, generate a parallel `.md` in the correct language subfolder. 
+      6. For marketing or social media text, place it in `/social/telegram/content/` or the relevant subfolder if the user requests. 
+      7. All final text will be reviewed manually before merging. If unsure, produce multiple suggestions.
+
+      ## 6. Project-Rule Scopes & Patterns
+
+      - Applies to **all** folders/files within the AI_CRYPTO_STARTUP repo (`pattern: "**/*"`).
+      - If additional specialized rules are created (e.g., for code-lint or content-lint), they will appear in separate `.cursor/rules/*.yaml` with narrower patterns.
+
+      ## 7. Conclusion
+      This file unifies how Cursor AI interacts with the AI_CRYPTO_STARTUP repo. Adhere to the structure, multi-language guidelines, references to NFT-based rewards, and our overall mission of building a real crypto-AI startup with Stepik-based courses. Collaborators will appreciate consistent formatting, style, and bilingual support.
+
