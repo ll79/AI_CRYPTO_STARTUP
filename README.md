@@ -1,3 +1,6 @@
+###  [**EN**](README.md) | [**RU**](README.ru.md)
+
+
 # ⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀
 
 Welcome to our innovative Open Source crypto startup project based on TON blockchain with Decentralized AI Agent System! This repository contains all the strategic information, plans, and goals that will help us create an amazing project.
@@ -16,7 +19,7 @@ Our project combines AI, CRYPTO, NFT, and Web3 technologies to create an innovat
 - **Multi-Platform Access**: Interaction through Telegram, mobile apps, and web interfaces
 - **NFT Rewards System**: Active contributors receive NFTs that provide a share in the project's future profits
 
-#### Learn more about the project in [About](ABOUT.ru.MD)
+#### Learn more about the project in [About](ABOUT.MD)
 
 ## 📚 Educational Courses
 
@@ -93,3 +96,5 @@ We're building more than just a platform - we're creating a decentralized ecosys
 ---
 
 Together we'll build a crypto empire! Join our team and get your share in future success! 🚀💎🤖 
+
+
