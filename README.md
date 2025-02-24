@@ -19,7 +19,7 @@ Our project combines AI, CRYPTO, NFT, and Web3 technologies to create an innovat
 - **Multi-Platform Access**: Interaction through Telegram, mobile apps, and web interfaces
 - **NFT Rewards System**: Active contributors receive NFTs that provide a share in the project's future profits
 
-#### Learn more about the project in [About](ABOUT.MD)
+#### Learn more about the project in [About](ABOUT.md)
 
 ## 📚 Educational Courses
 
