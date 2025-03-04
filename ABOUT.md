@@ -45,7 +45,14 @@ We will maintain a special tracker and chats where everyone can see their accrua
 
 ## 🔥 Let's Create the Future Together!
 
-If you're ambitious and ready to invest your efforts in creating a revolutionary project where your ideas and work will be rewarded, then this section is for you! Join our chat and channels to stay updated with all news, social media links, project updates, payments, and have access to our resources.
+If you're ambitious and ready to invest your efforts in creating a revolutionary project where your ideas and work will be rewarded, then this section is for you! 
+
+**Ready to join?**
+1. Read our [Contribution Guidelines](/community/CONTRIBUTION_GUIDELINES.md) to learn how to become part of our team
+2. Check out our [NFT Rewards System](/community/rewards/NFT_REWARDS_SYSTEM.md) to understand how your contributions will be valued
+3. Join our [Telegram community](https://t.me/AI_CRYPTO_STARTUP) to stay updated with all news, project updates, and connect with other contributors
+
+Together, we'll build something extraordinary while earning fair rewards for our contributions! 🚀🤖💎
 
 ---
 
