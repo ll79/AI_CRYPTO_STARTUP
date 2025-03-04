@@ -1,7 +1,6 @@
 # 🌟 История успеха: как создатели фреймворков меняют мир разработки
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/ultrapi_success.png" alt="UltraPi Success Story" width="500"/>
   <h3>Представьте, как вы создаете будущее бэкенд-разработки с ИИ</h3>
 </div>
 

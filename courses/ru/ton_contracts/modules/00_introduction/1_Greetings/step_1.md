@@ -1,7 +1,6 @@
 # 🚀 Добро пожаловать в будущий курс по смарт-контрактам на TON!
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/ton_contracts.png" alt="TON Smart Contracts" width="300"/>
   <h2>⚙️ СМАРТ-КОНТРАКТЫ НА TON: FUNC, TVM & ИНСТРУМЕНТЫ ЭКОСИСТЕМЫ!💎</h2>
   <h3>Станьте частью команды, создающей образовательную революцию!</h3>
 </div>

@@ -1,7 +1,6 @@
 # 🚀 Добро пожаловать в будущий курс по созданию AI-TON-dApp!
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/web3_ai_ton.png" alt="Web3 AI TON dApp" width="300"/>
   <h2>🌐 СОЗДАЁМ AI-TON-DAPP И ПОКОРЯЕМ БЛОКЧЕЙН! 💎</h2>
   <h3>Станьте частью команды, создающей образовательную революцию!</h3>
 </div>

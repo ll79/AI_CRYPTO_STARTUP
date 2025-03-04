@@ -1,10 +1,7 @@
 # 🚀 Добро пожаловать в революцию AI-Crypto! 
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/logo.png" alt="AI CRYPTO STARTUP Logo" width="300"/>
-  <h2>⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀</h2>
-  <h3>Вы только что сделали первый шаг к созданию будущего!</h3>
-</div>
+## ⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀
+### Вы только что сделали первый шаг к созданию будущего!
 
 ## 👋 Приветствуем вас в нашем инновационном Open Source проекте!
 

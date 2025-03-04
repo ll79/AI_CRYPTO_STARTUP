@@ -1,7 +1,6 @@
 # 🚀 Добро пожаловать в будущий курс по Git и Open Source!
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/git_opensource.png" alt="Git и Open Source" width="300"/>
   <h2>🚀 GIT & OPENSOURCE: ДЕЛАЕМ AI-ПРОЕКТ, КОТОРЫЙ ИЗМЕНИТ МИР!</h2>
   <h3>Станьте частью команды, создающей образовательную революцию!</h3>
 </div>

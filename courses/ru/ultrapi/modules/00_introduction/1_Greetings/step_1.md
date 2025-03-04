@@ -1,7 +1,6 @@
 # 🚀 Добро пожаловать в будущий курс по UltraPi!
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/ultrapi_welcome.png" alt="UltraPi Welcome" width="500"/>
   <h3>Создаем вместе новое поколение AI-бэкендов на основе FastAPI</h3>
 </div>
 

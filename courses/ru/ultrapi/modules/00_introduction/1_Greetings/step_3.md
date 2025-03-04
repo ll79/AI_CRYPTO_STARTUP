@@ -1,7 +1,6 @@
 # 🚀 Предложение, от которого невозможно отказаться
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LNDMN/AI_CRYPTO_STARTUP/main/assets/images/ultrapi_offer.png" alt="UltraPi Offer" width="500"/>
   <h3>Станьте соавтором революционного фреймворка для бэкенд-разработки с ИИ</h3>
 </div>
 
