@@ -508,7 +508,7 @@ function initAnimations() {
     });
 }
 
-// Timeline animation
+// Timeline animation with enhanced details
 function checkTimelineInView() {
     const timeline = document.querySelector('.timeline');
     if (!timeline) return;
@@ -521,9 +521,98 @@ function checkTimelineInView() {
         timelineItems.forEach((item, index) => {
             setTimeout(() => {
                 item.classList.add('animate');
+                
+                // Add hover event listeners for timeline items
+                item.addEventListener('mouseenter', () => {
+                    // Add glitch effect to the dot
+                    const dot = item.querySelector('.timeline-dot');
+                    if (dot) {
+                        dot.classList.add('pulse');
+                    }
+                    
+                    // Add glitch effect to the content
+                    const content = item.querySelector('.timeline-content');
+                    if (content) {
+                        content.classList.add('active');
+                    }
+                    
+                    // Show the detail panel
+                    const detail = item.querySelector('.timeline-detail');
+                    if (detail) {
+                        detail.classList.add('active');
+                    }
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    // Remove glitch effect from the dot
+                    const dot = item.querySelector('.timeline-dot');
+                    if (dot) {
+                        dot.classList.remove('pulse');
+                    }
+                    
+                    // Remove glitch effect from the content
+                    const content = item.querySelector('.timeline-content');
+                    if (content) {
+                        content.classList.remove('active');
+                    }
+                    
+                    // Hide the detail panel
+                    const detail = item.querySelector('.timeline-detail');
+                    if (detail) {
+                        detail.classList.remove('active');
+                    }
+                });
             }, 300 * index);
         });
     }
+}
+
+// Smoother card animations
+function initCardAnimations() {
+    // Add smooth hover effects for ecosystem cards
+    const ecosystemCards = document.querySelectorAll('.ecosystem-card');
+    ecosystemCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            // Dim sibling cards
+            ecosystemCards.forEach(sibling => {
+                if (sibling !== card) {
+                    sibling.classList.add('dimmed');
+                }
+            });
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            // Restore sibling cards
+            ecosystemCards.forEach(sibling => {
+                sibling.classList.remove('dimmed');
+            });
+        });
+    });
+    
+    // Add smooth hover effects for timeline cards
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => {
+        const content = item.querySelector('.timeline-content');
+        const detail = item.querySelector('.timeline-detail');
+        
+        if (content && detail) {
+            // Add click event for mobile devices
+            content.addEventListener('click', (e) => {
+                // Toggle active state
+                if (window.innerWidth < 768) {
+                    e.preventDefault();
+                    item.classList.toggle('active-mobile');
+                    
+                    // Close other items
+                    timelineItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active-mobile');
+                        }
+                    });
+                }
+            });
+        }
+    });
 }
 
 // Features animation
@@ -760,4 +849,10 @@ function initVisualization() {
             }, 500 + (index * 150));
         });
     }
-} 
+}
+
+// Initialize all animations when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initAnimations();
+    initVisualization();
+}); 
