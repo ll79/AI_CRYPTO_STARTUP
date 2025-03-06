@@ -9,43 +9,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cyberpunk effects -->
+    <div class="data-stream"></div>
+    <div class="circuit-lines"></div>
+    
     <div class="stars-container">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
     </div>
+    
+    <div class="glitch-overlay"></div>
+    <div class="scanline"></div>
 
     <header>
         <nav>
             <div class="logo-container">
-                <div id="logo-animation" class="logo">
-                    <span class="logo-text">A<span class="highlight">S</span>INGUL<span class="highlight">A</span>R<span class="highlight">I</span>TY</span>
+                <div id="logo-animation" class="logo glitch-container">
+                    <span class="logo-text glitch" data-text="ASINGULARITY">A<span class="highlight">S</span>INGUL<span class="highlight">A</span>R<span class="highlight">I</span>TY</span>
                 </div>
                 <div class="logo-subtitle">
-                    <span class="ai-text">AI</span>
+                    <span class="ai-text cyberpunk-text">AI</span>
                     <span class="singularity-text">SINGULARITY</span>
                 </div>
             </div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#ecosystem">Ecosystem</a></li>
-                <li><a href="#nft">NFT Rewards</a></li>
-                <li><a href="#join">Join Us</a></li>
+                <li><a href="#about" class="glitch-hover" data-text="About">About</a></li>
+                <li><a href="#roadmap" class="glitch-hover" data-text="Roadmap">Roadmap</a></li>
+                <li><a href="#ecosystem" class="glitch-hover" data-text="Ecosystem">Ecosystem</a></li>
+                <li><a href="#nft" class="glitch-hover" data-text="NFT Rewards">NFT Rewards</a></li>
+                <li><a href="#join" class="glitch-hover" data-text="Join Us">Join Us</a></li>
             </ul>
+            <a href="https://t.me/landemon" class="btn primary-btn cyberpunk-btn invest-btn" target="_blank">Pre-Seed Investment</a>
         </nav>
     </header>
 
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>The Future of <span class="gradient-text">Decentralized AI</span></h1>
+                <h1 class="glitch-text" data-text="The Future of Decentralized AI">The Future of <span class="gradient-text" data-text="Decentralized AI">Decentralized AI</span></h1>
                 <p>Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain</p>
                 <div class="cta-buttons">
-                    <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="btn primary-btn" target="_blank">GitHub Repository</a>
-                    <a href="https://t.me/AI_CRYPTO_STARTUP" class="btn secondary-btn" target="_blank">Join Telegram</a>
+                    <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="btn primary-btn cyberpunk-btn" target="_blank">GitHub Repository</a>
+                    <a href="https://t.me/AI_CRYPTO_STARTUP" class="btn secondary-btn cyberpunk-btn" target="_blank">Join Telegram</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -64,37 +73,37 @@
 
         <section id="about" class="section">
             <div class="section-container">
-                <h2 class="section-title">About <span class="gradient-text">ASINGULARITY AI</span></h2>
+                <h2 class="section-title glitch-text" data-text="About ASINGULARITY">About ASINGULARITY</h2>
                 <p class="section-description">
                     ASINGULARITY AI is a revolutionary decentralized ecosystem that combines the power of Artificial Superintelligence (ASI) and technological Singularity. Our mission is to create a synergistic ecosystem that leverages TON blockchain, TVM virtual machine, and cutting-edge AI technologies.
                 </p>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <div class="feature-card cyberpunk-card">
                         <div class="feature-icon"><i class="fas fa-robot"></i></div>
                         <h3>Decentralized AI Agents</h3>
                         <p>Open-source system for virtual AI agents that can perform any PC-based work and generate profits</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card cyberpunk-card">
                         <div class="feature-icon"><i class="fas fa-handshake"></i></div>
                         <h3>DAO-AI-Freelance</h3>
                         <p>Decentralized platform where AI agents find work and earn for their owners</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card cyberpunk-card">
                         <div class="feature-icon"><i class="fas fa-cubes"></i></div>
                         <h3>TON Blockchain</h3>
                         <p>Utilizing TON's capabilities for high speed, flexibility, and scalability</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card cyberpunk-card">
                         <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h3>Multi-Platform</h3>
                         <p>Interaction through Telegram, mobile apps, and web interfaces</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card cyberpunk-card">
                         <div class="feature-icon"><i class="fas fa-gem"></i></div>
                         <h3>NFT Rewards</h3>
                         <p>Active contributors receive NFTs that provide a share in future profits</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card cyberpunk-card">
                         <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h3>Educational Courses</h3>
                         <p>Comprehensive courses to build our ecosystem and community</p>
@@ -105,10 +114,10 @@
 
         <section id="current-stage" class="section">
             <div class="section-container">
-                <h2 class="section-title">Current <span class="gradient-text">Stage</span></h2>
+                <h2 class="section-title glitch-text" data-text="Current Stage">Current Stage</h2>
                 <div class="current-stage-content">
                     <div class="stage-info">
-                        <div class="stage-badge">Phase 1: Foundation</div>
+                        <div class="stage-badge cyberpunk-badge">Phase 1: Foundation</div>
                         <h3>Building the Community and Educational Platform</h3>
                         <p>
                             We are currently in the initial phase of our ecosystem development, focusing on creating comprehensive educational courses and building a strong community of like-minded individuals. Our open-source repository serves as the foundation for collaborative development of the ASINGULARITY AI ecosystem.
@@ -126,7 +135,45 @@
                         </p>
                     </div>
                     <div class="stage-image">
-                        <img src="https://via.placeholder.com/500x300" alt="Current Stage Visualization">
+                        <div class="cyberpunk-visualization">
+                            <div class="visualization-container">
+                                <div class="visualization-cube">
+                                    <div class="cube-face front"><i class="fas fa-robot"></i></div>
+                                    <div class="cube-face back"><i class="fas fa-brain"></i></div>
+                                    <div class="cube-face right"><i class="fas fa-network-wired"></i></div>
+                                    <div class="cube-face left"><i class="fas fa-code"></i></div>
+                                    <div class="cube-face top"><i class="fas fa-cubes"></i></div>
+                                    <div class="cube-face bottom"><i class="fas fa-microchip"></i></div>
+                                </div>
+                                <div class="visualization-particles"></div>
+                                <div class="visualization-grid"></div>
+                                <div class="visualization-data">
+                                    <div class="data-line" style="--delay: 0s;"></div>
+                                    <div class="data-line" style="--delay: 0.5s;"></div>
+                                    <div class="data-line" style="--delay: 1s;"></div>
+                                    <div class="data-line" style="--delay: 1.5s;"></div>
+                                    <div class="data-line" style="--delay: 2s;"></div>
+                                </div>
+                            </div>
+                            <div class="visualization-action-buttons">
+                                <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="visualization-btn" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://t.me/AI_CRYPTO_STARTUP" class="visualization-btn" target="_blank">
+                                    <i class="fab fa-telegram"></i>
+                                    <span>Telegram</span>
+                                </a>
+                                <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" class="visualization-btn" target="_blank">
+                                    <i class="fas fa-gem"></i>
+                                    <span>NFT Rewards</span>
+                                </a>
+                                <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/CONTRIBUTION_GUIDELINES.md" class="visualization-btn" target="_blank">
+                                    <i class="fas fa-code-branch"></i>
+                                    <span>Contribute</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,76 +181,106 @@
 
         <section id="roadmap" class="section">
             <div class="section-container">
-                <h2 class="section-title">Ecosystem <span class="gradient-text">Roadmap</span></h2>
+                <h2 class="section-title glitch-text" data-text="Ecosystem Roadmap">Ecosystem <span class="gradient-text" data-text="Roadmap">Roadmap</span></h2>
                 <div class="timeline">
                     <div class="timeline-item active">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content cyberpunk-card">
                             <h3>Phase 1: Foundation</h3>
                             <span class="timeline-date">Current Phase</span>
-                            <ul>
-                                <li>Launch educational courses on Stepik</li>
-                                <li>Build community and team formation</li>
-                                <li>Develop AI agent system prototype</li>
-                                <li>Create initial smart contracts on TON</li>
-                                <li>Establish NFT rewards system</li>
-                            </ul>
+                            <div class="extra-info">
+                                <h4>Building the Foundation</h4>
+                                <p>During this critical initial phase, we are establishing the core infrastructure and community:</p>
+                                <ul>
+                                    <li>Developing comprehensive educational courses on the Stepik platform</li>
+                                    <li>Creating the GitHub repository structure and documentation</li>
+                                    <li>Building a prototype of the AI agent system with basic functionality</li>
+                                    <li>Establishing the NFT rewards system for contributors</li>
+                                    <li>Setting up community channels and initial marketing</li>
+                                    <li>Designing the architecture for smart contracts on TON</li>
+                                    <li>Forming the core team and attracting early contributors</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content cyberpunk-card">
                             <h3>Phase 2: MVP Development</h3>
                             <span class="timeline-date">Q3-Q4 2024</span>
-                            <ul>
-                                <li>Release working MVP of AI agent system</li>
-                                <li>Implement core smart contracts</li>
-                                <li>Launch web and mobile interfaces</li>
-                                <li>Expand educational content</li>
-                                <li>Begin marketing and user acquisition</li>
-                            </ul>
+                            <div class="extra-info">
+                                <h4>Creating Functional Products</h4>
+                                <p>In this phase, we transform concepts into working products:</p>
+                                <ul>
+                                    <li>Releasing a functional MVP of the AI agent system with real-world capabilities</li>
+                                    <li>Implementing core smart contracts for token management and rewards</li>
+                                    <li>Launching initial web interfaces and mobile applications</li>
+                                    <li>Expanding educational content to cover more specialized topics</li>
+                                    <li>Beginning targeted marketing campaigns to attract users and contributors</li>
+                                    <li>Creating the distributed vector database for agent knowledge sharing</li>
+                                    <li>Establishing partnerships with key players in the AI and crypto space</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content cyberpunk-card">
                             <h3>Phase 3: Ecosystem Growth</h3>
                             <span class="timeline-date">Q1-Q2 2025</span>
-                            <ul>
-                                <li>Launch RockeDAPP - AI Wallet</li>
-                                <li>Develop AI-SMM Agency</li>
-                                <li>Create distributed vector database</li>
-                                <li>Implement token mining via computations</li>
-                                <li>Attract $1M+ in investments</li>
-                            </ul>
+                            <div class="extra-info">
+                                <h4>Scaling the Ecosystem</h4>
+                                <p>This phase focuses on expansion and integration of core components:</p>
+                                <ul>
+                                    <li>Launching RockeDAPP - our AI-powered crypto wallet and financial hub</li>
+                                    <li>Developing the AI-SMM Agency for automated content creation and management</li>
+                                    <li>Expanding the distributed vector database with more action patterns</li>
+                                    <li>Implementing token mining via computations to reward resource providers</li>
+                                    <li>Securing significant investments ($1M+) to accelerate development</li>
+                                    <li>Creating browser extensions for seamless AI agent integration</li>
+                                    <li>Establishing the framework for AI personas with specialized capabilities</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content cyberpunk-card">
                             <h3>Phase 4: Expansion</h3>
                             <span class="timeline-date">Q3-Q4 2025</span>
-                            <ul>
-                                <li>Launch DeFi services</li>
-                                <li>Develop decentralized VPN/Proxy service</li>
-                                <li>Create AI-Oracles system</li>
-                                <li>Implement NFT for Graphics Cards</li>
-                                <li>Expand to international markets</li>
-                            </ul>
+                            <div class="extra-info">
+                                <h4>Broadening Our Reach</h4>
+                                <p>During this phase, we introduce additional services and expand globally:</p>
+                                <ul>
+                                    <li>Launching comprehensive DeFi services including P2P exchange and crypto processing</li>
+                                    <li>Developing the decentralized VPN/Proxy service for enhanced privacy and security</li>
+                                    <li>Creating the AI-Oracles system for decentralized data collection and analysis</li>
+                                    <li>Implementing the NFT for Graphics Cards system to monetize computing resources</li>
+                                    <li>Expanding to international markets with localized services and marketing</li>
+                                    <li>Introducing real estate tokenization services with AI assistance</li>
+                                    <li>Developing UltrAPI framework for creating any services with ai agents</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content cyberpunk-card">
                             <h3>Phase 5: Advanced Ecosystem</h3>
                             <span class="timeline-date">2026</span>
-                            <ul>
-                                <li>Launch DAO Advertising Exchange</li>
-                                <li>Develop AI-Launchpool</li>
-                                <li>Create Alternative Energy Crypto Project</li>
-                                <li>Implement QuadrAD/ADrone service</li>
-                                <li>Establish comprehensive AGI framework</li>
-                            </ul>
+                            <div class="extra-info">
+                                <h4>Creating a Self-Sustaining Economy</h4>
+                                <p>In this mature phase, we complete the ecosystem with advanced components:</p>
+                                <ul>
+                                    <li>Launching the DAO Advertising Exchange for decentralized marketing</li>
+                                    <li>Developing the AI-Launchpool to support and fund new startups</li>
+                                    <li>Creating the Alternative Energy Crypto Project for sustainable operations</li>
+                                    <li>Implementing QuadrAD/ADrone service for innovative aerial advertising</li>
+                                    <li>Establishing a comprehensive AGI framework with self-improvement capabilities</li>
+                                    <li>Introducing the prediction market platform for forecasting and betting</li>
+                                    <li>Achieving economic self-sufficiency through DeFi tools and token mechanisms</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,55 +289,143 @@
 
         <section id="ecosystem" class="section">
             <div class="section-container">
-                <h2 class="section-title">Ecosystem <span class="gradient-text">Components</span></h2>
+                <h2 class="section-title glitch-text" data-text="Ecosystem Components">Ecosystem <span class="gradient-text" data-text="Components">Components</span></h2>
                 <div class="ecosystem-grid">
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-robot"></i></div>
                         <h3>AI-Agent System</h3>
                         <p>Comprehensive AGI system with distributed vector database, multichain integration, and token mining via computations.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>Comprehensive AGI System</h4>
+                            <p>Our decentralized AI agent system is designed to evolve and learn from any available external resources, applying acquired knowledge for effective monetization. Key features include:</p>
+                            <ul>
+                                <li>Close integration with TON blockchain for managing tokens, knowledge base, and rewards</li>
+                                <li>Distributed vector database storing optimized action patterns from various sources</li>
+                                <li>Multichain and offchain capabilities for maximum flexibility</li>
+                                <li>Token mining via computations - earn tokens by providing computing power</li>
+                                <li>NFT-GPU system allowing ownership of computing resources with passive income</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h3>Educational Courses</h3>
                         <p>Series of courses teaching AI, crypto, and startup development while building our community.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>Educational Ecosystem</h4>
+                            <p>Our comprehensive educational platform serves as both a knowledge base and community builder:</p>
+                            <ul>
+                                <li>Main course: "AI CRYPTO STARTUP - LAUNCH YOUR ROCKET" teaches decentralized AI startup creation</li>
+                                <li>Specialized courses covering Python development, TON smart contracts, browser extensions, and more</li>
+                                <li>Build an open-source AI-agent system together with other students</li>
+                                <li>Form your own community within our ecosystem</li>
+                                <li>Earn NFTs for active participation, granting you shares in the ecosystem's profits</li>
+                                <li>Available on multiple platforms and in different languages</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-wallet"></i></div>
                         <h3>RockeDAPP - AI Wallet</h3>
                         <p>Multi-functional multichain wallet with AI trader agents and built-in crypto information aggregator.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>Next-Generation Crypto Wallet</h4>
+                            <p>RockeDAPP is more than just a wallet - it's a complete financial ecosystem:</p>
+                            <ul>
+                                <li>Multi-functional multichain semi/cold wallet supporting numerous cryptocurrencies</li>
+                                <li>Built-in AI trader agents for technical and fundamental analysis</li>
+                                <li>Test and optimize trading strategies on historical data</li>
+                                <li>Subscribe to trading signals or delegate fund management to AI</li>
+                                <li>"CoinMarketCap on steroids" - comprehensive crypto information aggregator</li>
+                                <li>Private stablecoin (USDX) backed by other stablecoins with yield on balance</li>
+                                <li>GOLDX token backed by physical gold</li>
+                                <li>Optional anonymity features for transaction privacy</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-comments"></i></div>
                         <h3>Social Media Network</h3>
                         <p>Network of channels and groups managed by AI tools for content generation and audience engagement.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>AI-Powered Social Media Network</h4>
+                            <p>Our social media strategy creates a powerful promotion and data collection system:</p>
+                            <ul>
+                                <li>Network of channels and groups covering IT, business, crypto, future tech, and motivation</li>
+                                <li>AI tools for content generation, scheduling, and audience analysis</li>
+                                <li>Bots and AI personas managing channels autonomously</li>
+                                <li>Automated engagement optimization</li>
+                                <li>Data collection for training our AI systems</li>
+                                <li>Creating a base of active users for all ecosystem projects</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-exchange-alt"></i></div>
                         <h3>DeFi Services</h3>
                         <p>P2P Exchange, crypto processing, real estate tokenization, and UltrAPI.app for AI model access.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>Comprehensive DeFi Ecosystem</h4>
+                            <p>Our DeFi services provide financial infrastructure for the entire ecosystem:</p>
+                            <ul>
+                                <li>P2P Exchange and Crypto Processing: tokenization of fiat currencies into stablecoins</li>
+                                <li>Automated two-way "fiat-crypto" payments using smart contracts and AI agents</li>
+                                <li>Real Estate Sector: tokenized property investments with AI assistance</li>
+                                <li>UltrAPI.app: Universal access to various AI models via API with TON-based micropayments</li>
+                                <li>Integration with all ecosystem products for seamless financial operations</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-ad"></i></div>
                         <h3>DAO Advertising Exchange</h3>
                         <p>NFT-ification of rights to channels and advertising platforms with automated management.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>Decentralized Advertising Platform</h4>
+                            <p>Our DAO Advertising Exchange revolutionizes digital marketing:</p>
+                            <ul>
+                                <li>NFT-ification of rights to channels and advertising platforms</li>
+                                <li>Automated management and sale of advertising slots</li>
+                                <li>AI agents for SMM, marketing strategy, and analytics</li>
+                                <li>Scalable mechanism for attracting advertisers and content creators</li>
+                                <li>Transparent profit distribution to NFT holders</li>
+                                <li>Promotion services for all ecosystem projects</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-microchip"></i></div>
                         <h3>NFT for Graphics Cards</h3>
                         <p>Digitization of rights to computing power with passive income from unused resources.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>Tokenized Computing Power</h4>
+                            <p>Our NFT-GPU system creates a marketplace for computing resources:</p>
+                            <ul>
+                                <li>Digitization of rights to computing power through NFTs</li>
+                                <li>Passive income generation from unused GPU resources</li>
+                                <li>Option to "purchase" GPUs physically located in our data centers</li>
+                                <li>Earn when your GPU is not in personal use</li>
+                                <li>Priority access to computing power for AI tasks</li>
+                                <li>Transparent profit distribution based on contribution</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="ecosystem-card">
+                    <div class="ecosystem-card cyberpunk-card">
                         <div class="ecosystem-icon"><i class="fas fa-rocket"></i></div>
                         <h3>AI-Launchpool</h3>
                         <p>Launchpool managed by AI agent system for startups with marketing, technical support, and fundraising.</p>
-                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <div class="extra-info">
+                            <h4>AI-Managed Startup Accelerator</h4>
+                            <p>Our AI-Launchpool provides comprehensive support for new projects:</p>
+                            <ul>
+                                <li>Fully managed by an AI agent system for startups and projects</li>
+                                <li>Complete launch package: marketing, SMM, technical support, and fundraising</li>
+                                <li>AI assistance in structuring concepts and creating funding models</li>
+                                <li>Automated verification and project support during development</li>
+                                <li>Integration with other ecosystem services (RockeDAPP, DAO Ad Exchange, AI-Agent System)</li>
+                                <li>Community and investor attraction mechanisms</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -268,14 +433,14 @@
 
         <section id="nft" class="section">
             <div class="section-container">
-                <h2 class="section-title">NFT <span class="gradient-text">Rewards System</span></h2>
+                <h2 class="section-title glitch-text" data-text="NFT Rewards System">NFT <span class="gradient-text" data-text="Rewards System">Rewards System</span></h2>
                 <div class="nft-content">
                     <div class="nft-info">
                         <h3>Earn NFTs by Contributing to Our Ecosystem</h3>
                         <p>
                             Active contributors to our ecosystem receive exclusive NFTs that provide a share in the project's future profits. These NFTs represent both recognition of contribution and entitle holders to a percentage of net profits according to our structured reward system.
                         </p>
-                        <div class="nft-distribution">
+                        <div class="nft-distribution cyberpunk-card">
                             <h4>NFT Distribution (1000 NFTs Total)</h4>
                             <div class="distribution-chart">
                                 <div class="chart-segment segment-1" data-percentage="42%">
@@ -296,7 +461,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profit-sharing">
+                        <div class="profit-sharing cyberpunk-card">
                             <h4>Profit Sharing Structure</h4>
                             <table class="profit-table">
                                 <thead>
@@ -333,11 +498,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="investment-bonus">
+                        <div class="investment-bonus cyberpunk-card">
                             <h4>Investment Milestone Bonus</h4>
                             <p>When the project reaches $1M in investments, each NFT holder will receive $100 (or equivalent in our token) directly to their wallet.</p>
                         </div>
-                        <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" class="btn primary-btn" target="_blank">View Full NFT Rewards System</a>
+                        <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" class="btn primary-btn cyberpunk-btn" target="_blank">View Full NFT Rewards System</a>
                     </div>
                 </div>
             </div>
@@ -345,7 +510,7 @@
 
         <section id="join" class="section">
             <div class="section-container">
-                <h2 class="section-title">Join <span class="gradient-text">Our Ecosystem</span></h2>
+                <h2 class="section-title glitch-text" data-text="Join Our Ecosystem">Join <span class="gradient-text" data-text="Our Ecosystem">Our Ecosystem</span></h2>
                 <div class="join-content">
                     <div class="join-info">
                         <h3>How to Contribute and Earn NFT Rewards</h3>
@@ -354,28 +519,28 @@
                                 <div class="step-number">1</div>
                                 <div class="step-content">
                                     <h4>Fork the Repository</h4>
-                                    <p>Start by forking our GitHub repository to your account</p>
+                                    <p>Start by <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/fork" class="step-link" target="_blank">forking our GitHub repository</a> to your account</p>
                                 </div>
                             </div>
                             <div class="step">
                                 <div class="step-number">2</div>
                                 <div class="step-content">
                                     <h4>Create Your Contributor Profile</h4>
-                                    <p>Add your information to the contributors directory</p>
+                                    <p>Add your information to the <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/tree/main/community/contributors" class="step-link" target="_blank">contributors directory</a></p>
                                 </div>
                             </div>
                             <div class="step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
                                     <h4>Choose Tasks to Work On</h4>
-                                    <p>Find suitable tasks in our GitHub issues or propose your own ideas</p>
+                                    <p>Find suitable tasks in our <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/issues" class="step-link" target="_blank">GitHub issues</a> or propose your own ideas</p>
                                 </div>
                             </div>
                             <div class="step">
                                 <div class="step-number">4</div>
                                 <div class="step-content">
                                     <h4>Submit Your Work</h4>
-                                    <p>Create Pull Requests with your contributions</p>
+                                    <p>Create <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/pulls" class="step-link" target="_blank">Pull Requests</a> with your contributions</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -389,43 +554,43 @@
                         <div class="contribution-types">
                             <h4>Types of Contributions</h4>
                             <div class="types-grid">
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-code"></i>
                                     <span>Code Development</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-book"></i>
                                     <span>Educational Content</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-paint-brush"></i>
                                     <span>Design</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-file-alt"></i>
                                     <span>Content</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-bug"></i>
                                     <span>Testing</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-users"></i>
                                     <span>Community</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-lightbulb"></i>
                                     <span>Ideas</span>
                                 </div>
-                                <div class="type-item">
+                                <div class="type-item cyberpunk-card">
                                     <i class="fas fa-language"></i>
                                     <span>Translations</span>
                                 </div>
                             </div>
                         </div>
                         <div class="cta-buttons">
-                            <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/CONTRIBUTION_GUIDELINES.md" class="btn primary-btn" target="_blank">Contribution Guidelines</a>
-                            <a href="https://t.me/AI_CRYPTO_STARTUP" class="btn secondary-btn" target="_blank">Join Telegram Community</a>
+                            <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/CONTRIBUTION_GUIDELINES.md" class="btn primary-btn cyberpunk-btn" target="_blank">Contribution Guidelines</a>
+                            <a href="https://t.me/AI_CRYPTO_STARTUP" class="btn secondary-btn cyberpunk-btn" target="_blank">Join Telegram Community</a>
                         </div>
                     </div>
                 </div>
@@ -437,7 +602,7 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <div class="logo">
-                    <span class="logo-text">ASINGULARITY</span>
+                    <span class="logo-text glitch" data-text="ASINGULARITY">ASINGULARITY</span>
                 </div>
                 <p>Building the future of decentralized AI on TON blockchain</p>
             </div>
@@ -445,28 +610,25 @@
                 <div class="footer-section">
                     <h4>Ecosystem</h4>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#roadmap">Roadmap</a></li>
-                        <li><a href="#ecosystem">Components</a></li>
-                        <li><a href="#nft">NFT Rewards</a></li>
+                        <li><a href="#about" class="glitch-hover" data-text="About">About</a></li>
+                        <li><a href="#roadmap" class="glitch-hover" data-text="Roadmap">Roadmap</a></li>
+                        <li><a href="#ecosystem" class="glitch-hover" data-text="Components">Components</a></li>
+                        <li><a href="#nft" class="glitch-hover" data-text="NFT Rewards">NFT Rewards</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" target="_blank">GitHub</a></li>
-                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/CONTRIBUTION_GUIDELINES.md" target="_blank">Contribution Guidelines</a></li>
-                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" target="_blank">NFT Rewards System</a></li>
-                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/TEAM_STRUCTURE_AND_ACTION_PLAN.md" target="_blank">Team Structure</a></li>
+                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="glitch-hover" data-text="GitHub" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/CONTRIBUTION_GUIDELINES.md" class="glitch-hover" data-text="Contribution Guidelines" target="_blank">Contribution Guidelines</a></li>
+                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" class="glitch-hover" data-text="NFT Rewards System" target="_blank">NFT Rewards System</a></li>
+                        <li><a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/TEAM_STRUCTURE_AND_ACTION_PLAN.md" class="glitch-hover" data-text="Team Structure" target="_blank">Team Structure</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Community</h4>
                     <ul>
-                        <li><a href="https://t.me/AI_CRYPTO_STARTUP" target="_blank">Telegram</a></li>
-                        <li><a href="#" target="_blank">Twitter</a></li>
-                        <li><a href="#" target="_blank">Discord</a></li>
-                        <li><a href="#" target="_blank">Medium</a></li>
+                        <li><a href="https://t.me/AI_CRYPTO_STARTUP" class="glitch-hover" data-text="Telegram" target="_blank">Telegram</a></li>
                     </ul>
                 </div>
             </div>
@@ -476,6 +638,9 @@
             <p>Domain: <a href="https://asingularity.ai" target="_blank">ASINGULARITY.AI</a></p>
         </div>
     </footer>
+
+    <!-- Project Details Modal -->
+    <!-- Модальное окно удалено -->
 
     <script src="script.js"></script>
 </body>
