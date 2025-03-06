@@ -2,7 +2,7 @@ description: >
   These rules apply to the entire AI_CRYPTO_STARTUP repository. They outline
   how Cursor AI should assist in the creation, editing, and organization of
   multi-language course materials and other project assets, including references
-  to NFT rewards, the startup’s goals, and social media.
+  to NFT rewards, the startup's goals, and social media.
 
 rules:
   - name: "DefaultProjectRule"
@@ -16,78 +16,170 @@ rules:
       is dedicated to all relevant resources EXCEPT the core code projects, which live in separate repos.
 
       ### Key Points:
+      - Our ecosystem is named **ASINGULARITY AI** (domain: ASINGULARITY.AI), combining "ASI" (Artificial Superintelligence) and "Singularity", reflecting our ultimate goal of building advanced AI systems.
       - Multi-language approach (initially **English** and **Russian**, more in future).
       - README by default in **English**, with a prominent link to other languages.
       - We store documents, instructions, social media content, course outlines, etc.
       - NFT rewards: contributors can earn NFTs that grant a share of future project profits.
       - Additional open-source code (e.g., agent-core, ton-smartcontracts, etc.) is separate from this repo.
+      - **All filenames must be in English**, even if the content is in another language.
 
       ## 2. Repository Structure
 
-      1. **README.md** (English)  
-         - Explains project goals, references to multi-language READMEs for Russian and others.
+      1. **README.md** (English) and **README.ru.md** (Russian)  
+         - Explains project goals, with cross-references between language versions.
          - Summarizes how to contribute, links to other subfolders.
+         - Uses attractive formatting with emojis, tables, and blockquotes.
 
-      2. **/courses/**  
+      2. **ABOUT.md** (English) and **ABOUT.ru.md** (Russian)
+         - Detailed project description, vision, and goals.
+         - Information about NFT rewards and profit-sharing.
+         - Links to contribution guidelines and community resources.
+
+      3. **/community/**
+         - **CONTRIBUTION_GUIDELINES.md** and **CONTRIBUTION_GUIDELINES_RU.md**
+           - Step-by-step instructions for joining the project.
+           - Code of conduct and evaluation criteria.
+         - **/contributors/**
+           - Individual contributor profiles (e.g., `username.md`).
+           - Records of contributions and NFT rewards.
+         - **/rewards/**
+           - **NFT_REWARDS_SYSTEM.md** and **NFT_REWARDS_SYSTEM_RU.md**
+             - Detailed explanation of NFT distribution and profit-sharing.
+           - **TEAM_STRUCTURE_AND_ACTION_PLAN.md** and **TEAM_STRUCTURE_AND_ACTION_PLAN_RU.md**
+             - Team roles, responsibilities, and project roadmap.
+             - NFT allocation for different project phases and tasks.
+
+      4. **/courses/**  
          - Contains multi-language course outlines, references to Stepik modules/lessons/steps.
          - Example structure:
            ```
            courses/
-             russian/
-               creating_ai_agents/
-                 1_Introduction/
-                   1_Greeting/
-                     step_1.md
-             english/
-               creating_ai_agents/
-                 ...
+             ru/
+               AI_CRYPTO_STARTUP/
+                 DESCRIPTION.md
+                 MODULE_1_INTRODUCTION/
+                   LESSON_1_OVERVIEW/
+                     STEP_1_GREETING.md
+                     STEP_2_GOALS.md
+                   LESSON_2_TOOLS/
+                     STEP_1_REQUIRED_SOFTWARE.md
+                 MODULE_2_BLOCKCHAIN_BASICS/
+                   LESSON_1_TON_OVERVIEW/
+                     STEP_1_ARCHITECTURE.md
+             en/
+               AI_CRYPTO_STARTUP/
+                 DESCRIPTION.md
+                 MODULE_1_INTRODUCTION/
+                   LESSON_1_OVERVIEW/
+                     STEP_1_GREETING.md
            ```
-         - Each folder can have subfolders for modules and lessons, each “step” a `.md` file.
+         - Each folder can have subfolders for modules and lessons, each "step" a `.md` file.
 
-      3. **/projects/**  
+      5. **/projects/**  
          - Descriptions of additional sub-projects or synergy tasks (NOT the core code),
            such as plans, concept docs, user guides, etc.
 
-      4. **/social/telegram/content/**  
+      6. **/social/telegram/content/**  
          - Social media posts, announcements, marketing content in multi-language form.
 
-      5. **.cursor/rules**  
-         - This file (or multiple rule files). Contains instructions to unify behavior in the entire repo.
+      7. **/docs/**
+         - Documentation in multiple languages.
 
-      6. **Other possible directories**  
-         - `/media/` or `/assets/` for images, static files
-         - `/website/` if building a static site for info
-         - etc.
+      8. **/website/**
+         - Project website files.
+
+      9. **/assets/**
+         - Media files and presentations.
+
+      10. **/infrastructure/**
+          - Technical documentation and tools.
+
+      11. **.cursor/rules**  
+          - This file (or multiple rule files). Contains instructions to unify behavior in the entire repo.
 
       ## 3. Multi-Language Rules
 
-      - The main README is in English, linking to a `README.ru.md` or similarly named file for Russian.
+      - The main README is in English, with a parallel `README.ru.md` for Russian.
+      - Each document should have language-specific versions with consistent naming:
+        - English: `DOCUMENT_NAME.md`
+        - Russian: `DOCUMENT_NAME_RU.md`
+      - **All filenames must be in English**, even for non-English content.
       - Each course or doc should maintain a parallel folder structure for each language.
-      - If editing a doc in one language, eventually we’ll want to add or update the other languages (via separate pull requests or translations).
+      - If editing a doc in one language, eventually we'll want to add or update the other languages (via separate pull requests or translations).
 
       ## 4. NFT Rewards & Profit-Sharing
 
       - Contributors to the project can earn NFTs that entitle them to a share of future revenue.
-      - This detail is documented in project docs within the repo, but not relevant to direct code/course generation. 
+      - NFT distribution follows the structure outlined in `/community/rewards/NFT_REWARDS_SYSTEM.md`:
+        - 42% profit share up to $1,000
+        - 23% up to $2,000
+        - 16% up to $5,000
+        - 15% up to $10,000
+        - 8% up to $50,000
+        - 4% up to $100,000
+      - When receiving major investments ($1,000,000+), each NFT holder will receive $100 (USDT or equivalent).
+      - NFTs also provide privileges and access to platform services.
       - Do not remove or overwrite any references to the NFT or revenue-sharing structures.
 
-      ## 5. Instructions for Cursor AI
+      ## 5. Contribution Guidelines
+
+      - Contributors should follow the process outlined in `/community/CONTRIBUTION_GUIDELINES.md`:
+        1. Create a contributor profile in `/community/contributors/`
+        2. Submit a Pull Request for approval
+        3. Work on tasks and earn NFT rewards
+      - Contributions are evaluated based on quality, impact, complexity, originality, and alignment with project goals.
+      - Various types of contributions are welcome: code, educational content, design, content, testing, community support, and ideas.
+
+      ## 6. Formatting and Style
+
+      - Use attractive formatting with emojis, tables, blockquotes, and clear headings.
+      - For README files and important documents, use:
+        - Emojis for section headings
+        - Blockquotes (>) for important messages
+        - Tables for structured data (like NFT reward distribution)
+        - Clear hierarchical headings (###) for better organization
+      - Keep content concise, engaging, and visually appealing.
+
+      ## 7. Branding and Ecosystem Name
+
+      - Our ecosystem is officially named **ASINGULARITY AI**.
+      - The name combines "ASI" (Artificial Superintelligence) and "Singularity", representing our vision to build advanced AI systems that approach technological singularity.
+      - The official domain is **ASINGULARITY.AI**.
+      - When referring to the project in documentation, marketing materials, or code:
+        - Use the full name "ASINGULARITY AI" in headers, titles, and first mentions
+        - You can use "ASINGULARITY" in subsequent mentions
+        - Always maintain the capitalization: "ASINGULARITY" (all caps), not "Asingularity" or "ASingularity"
+      - The ecosystem name should be prominently featured in:
+        - Website headers and footers
+        - Documentation introductions
+        - Course materials
+        - Social media profiles and content
+        - Marketing materials
+      - When creating logos or visual assets, maintain consistent branding with the ASINGULARITY AI name.
+
+      ## 8. Instructions for Cursor AI
 
       1. When generating or editing documentation:
          - Follow the folder structure, keep multi-language consistency in mind.
          - Provide short, readable sections. Use Markdown headings, bullet points, etc.
+         - Use attractive formatting with emojis, tables, and blockquotes where appropriate.
       2. Do not publish actual Stepik-specific metadata (like step IDs) to final `.md` files, but do mention where they belong in the step structure.
       3. Keep references to NFT rewards and the startup concept if relevant to the doc.
       4. Linking to code: mention the separate repositories (e.g., `agent-core`) if needed.
       5. For translations: If user requests, generate a parallel `.md` in the correct language subfolder. 
       6. For marketing or social media text, place it in `/social/telegram/content/` or the relevant subfolder if the user requests. 
       7. All final text will be reviewed manually before merging. If unsure, produce multiple suggestions.
+      8. **Always create filenames in English**, even when the content is in Russian or another language.
+      9. For Russian-language content, add "_RU" suffix to the filename (e.g., `DOCUMENT_NAME_RU.md`).
 
-      ## 6. Project-Rule Scopes & Patterns
+      ## 9. Project-Rule Scopes & Patterns
 
       - Applies to **all** folders/files within the AI_CRYPTO_STARTUP repo (`pattern: "**/*"`).
       - If additional specialized rules are created (e.g., for code-lint or content-lint), they will appear in separate `.cursor/rules/*.yaml` with narrower patterns.
 
-      ## 7. Conclusion
-      This file unifies how Cursor AI interacts with the AI_CRYPTO_STARTUP repo. Adhere to the structure, multi-language guidelines, references to NFT-based rewards, and our overall mission of building a real crypto-AI startup with Stepik-based courses. Collaborators will appreciate consistent formatting, style, and bilingual support.
+      ## 10. Conclusion
+      This file unifies how Cursor AI interacts with the AI_CRYPTO_STARTUP repo. Adhere to the structure, multi-language guidelines, references to NFT-based rewards, and our overall mission of building a real crypto-AI startup with Stepik-based courses. Collaborators will appreciate consistent formatting, style, and bilingual support. Remember that all filenames must be in English, regardless of content language.
+
+      Always refer to our ecosystem by its official name **ASINGULARITY AI**, which embodies our vision of creating Artificial Superintelligence (ASI) and working toward technological singularity. This branding should be consistently applied across all project materials to build a recognizable and unified identity for our ambitious venture.
 
