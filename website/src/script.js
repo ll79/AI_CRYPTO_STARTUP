@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing language switcher...');
+    console.log('Current language:', currentLanguage);
+    
     // Header scroll effect
     const header = document.querySelector('header');
     window.addEventListener('scroll', function() {
@@ -59,35 +62,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // Language switcher functionality
     const languageSwitcher = document.querySelector('.language-switcher');
     if (languageSwitcher) {
-        const languageButtons = languageSwitcher.querySelectorAll('button');
-        
-        // Set initial active state based on current language
-        languageButtons.forEach(button => {
-            if (button.getAttribute('data-lang') === currentLanguage) {
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
-            }
-            
-            // Add click event listener
-            button.addEventListener('click', function() {
-                const lang = this.getAttribute('data-lang');
-                changeLanguage(lang);
-                
-                // Update active state
-                languageButtons.forEach(btn => {
-                    if (btn === this) {
-                        btn.classList.add('active');
+        console.log('Language switcher found, adding click event listener');
+        languageSwitcher.addEventListener('click', function(event) {
+            if (event.target.tagName === 'BUTTON') {
+                const lang = event.target.getAttribute('data-lang');
+                console.log('Language button clicked:', lang);
+                if (lang && lang !== currentLanguage) {
+                    console.log('Changing language from', currentLanguage, 'to', lang);
+                    
+                    // Сначала обновляем текущий язык
+                    currentLanguage = lang;
+                    localStorage.setItem('language', lang);
+                    
+                    // Обновляем язык HTML документа
+                    document.documentElement.lang = currentLanguage;
+                    console.log('Updated HTML document lang attribute to:', currentLanguage);
+                    
+                    // Обновляем мета-теги и заголовок документа
+                    if (lang === 'ru') {
+                        document.title = "ASINGULARITY AI | Децентрализованная ИИ-экосистема";
+                        document.querySelector('meta[name="description"]')?.setAttribute('content', 
+                            'Революционная децентрализованная экосистема, объединяющая передовые технологии ИИ, Крипто, NFT и Web3 на блокчейне TON');
                     } else {
-                        btn.classList.remove('active');
+                        document.title = "ASINGULARITY AI | Decentralized AI Ecosystem";
+                        document.querySelector('meta[name="description"]')?.setAttribute('content', 
+                            'Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain');
                     }
-                });
-            });
+                    
+                    // Затем вызываем функцию обновления контента
+                    console.log('Calling updateContent() function');
+                    updateContent();
+                    
+                    // Добавляем улучшенный эффект переключения
+                    console.log('Applying glitch effects');
+                    updateGlitchEffects();
+                    
+                    // Обновляем активное состояние кнопок переключения языка
+                    document.querySelectorAll('.language-switcher button').forEach(btn => {
+                        if (btn.getAttribute('data-lang') === currentLanguage) {
+                            btn.classList.add('active');
+                            console.log('Set language button active:', btn.getAttribute('data-lang'));
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                }
+            }
         });
+    } else {
+        console.warn('Language switcher not found!');
     }
     
-    // Initialize language on page load
-    updateContent();
+    // Инициализация языка при загрузке страницы
+    const savedLanguage = localStorage.getItem('language');
+    console.log('Saved language from localStorage:', savedLanguage);
+    if (savedLanguage) {
+        currentLanguage = savedLanguage;
+        document.documentElement.lang = currentLanguage;
+        console.log('Initialized language to:', currentLanguage);
+        
+        // Обновляем активное состояние кнопок переключения языка
+        document.querySelectorAll('.language-switcher button').forEach(btn => {
+            if (btn.getAttribute('data-lang') === currentLanguage) {
+                btn.classList.add('active');
+                console.log('Set language button active on init:', btn.getAttribute('data-lang'));
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
+        // Обновляем контент
+        console.log('Updating content on page load');
+        updateContent();
+        
+        // Добавляем глитч-эффекты
+        updateGlitchEffects();
+    } else {
+        console.log('No saved language found, using default:', currentLanguage);
+    }
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -984,664 +1036,53 @@ function addLogoGlitchEffect() {
     }
 }
 
-// Улучшенный эффект переключения языка
+// Функция для создания эффекта глитча при смене языка
 function updateGlitchEffects() {
-    // Обновление атрибутов data-text для элементов с глитч-эффектами при наведении
-    document.querySelectorAll('.glitch-hover').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (key && translations[currentLanguage][key]) {
-            element.setAttribute('data-text', translations[currentLanguage][key]);
-        }
-    });
-    
-    // Обновление атрибутов data-text для элементов с глитч-текстом
-    document.querySelectorAll('.glitch-text').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (key && translations[currentLanguage][key]) {
-            element.setAttribute('data-text', translations[currentLanguage][key]);
-        }
+    // Добавляем временный класс для глитч-эффекта ко всем элементам с data-i18n
+    const elementsToGlitch = document.querySelectorAll('[data-i18n]');
+    elementsToGlitch.forEach(el => {
+        el.classList.add('temp-glitch');
+        setTimeout(() => {
+            el.classList.remove('temp-glitch');
+        }, 500);
     });
 
-    // Добавляем временный класс glitch к элементам для анимации смены языка
-    const glitchElements = document.querySelectorAll('.section-title, h3, .feature-card, .ecosystem-card, .btn');
-    
-    glitchElements.forEach(element => {
-        // Удаляем класс active-glitch, если он уже был
-        element.classList.remove('active-glitch');
-        
-        // Добавляем временно атрибут data-text с текущим содержимым (для глитч-эффекта)
-        if (!element.hasAttribute('data-text') && element.innerText) {
-            element.setAttribute('data-text', element.innerText);
-        }
-        
-        // Применяем glitch-эффект с задержкой для каждого элемента
-        setTimeout(() => {
-            element.classList.add('active-glitch');
-            
-            // Удаляем класс через некоторое время
-            setTimeout(() => {
-                element.classList.remove('active-glitch');
-            }, 800);
-        }, Math.random() * 300); // Случайная задержка для каждого элемента
-    });
-    
-    // Добавление сканлайна при смене языка
-    const scanline = document.createElement('div');
-    scanline.classList.add('scanline');
-    scanline.style.opacity = '0.8';
-    document.body.appendChild(scanline);
-    
-    // Удаляем дополнительную сканлайн через некоторое время
+    // Добавляем эффект сканирования на всю страницу
+    const scanlineEffect = document.createElement('div');
+    scanlineEffect.classList.add('scanline-effect');
+    document.body.appendChild(scanlineEffect);
     setTimeout(() => {
-        if (document.body.contains(scanline)) {
-            document.body.removeChild(scanline);
-        }
-    }, 1000);
-    
-    // Добавление случайных глитч-эффектов на странице
-    for (let i = 0; i < 5; i++) {
+        document.body.removeChild(scanlineEffect);
+    }, 2000);
+
+    // Создаем случайные глитч-эффекты на странице
+    const randomGlitches = document.createElement('div');
+    randomGlitches.classList.add('random-glitches');
+    document.body.appendChild(randomGlitches);
+
+    // Создаем 10 случайных глитч-элементов
+    for (let i = 0; i < 10; i++) {
         const glitch = document.createElement('div');
         glitch.classList.add('random-glitch');
-        glitch.style.top = `${Math.random() * 100}%`;
-        glitch.style.left = `${Math.random() * 100}%`;
-        glitch.style.width = `${50 + Math.random() * 150}px`;
-        glitch.style.height = `${3 + Math.random() * 15}px`;
-        document.body.appendChild(glitch);
         
-        // Удаляем случайные глитчи через некоторое время
-        setTimeout(() => {
-            if (document.body.contains(glitch)) {
-                document.body.removeChild(glitch);
-            }
-        }, 800 + Math.random() * 1000);
+        // Случайное положение и размер
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        const width = 5 + Math.random() * 50;
+        const height = 5 + Math.random() * 50;
+        
+        glitch.style.top = `${top}%`;
+        glitch.style.left = `${left}%`;
+        glitch.style.width = `${width}px`;
+        glitch.style.height = `${height}px`;
+        
+        randomGlitches.appendChild(glitch);
     }
-}
 
-// Расширяем функцию changeLanguage для обновления глитч-эффектов
-const originalChangeLanguage = changeLanguage;
-changeLanguage = function(lang) {
-    originalChangeLanguage(lang);
-    updateGlitchEffects();
-};
-
-// Обработчик переключения языка
-document.addEventListener('DOMContentLoaded', function() {
-    const languageSwitcher = document.querySelector('.language-switcher');
-    if (languageSwitcher) {
-        languageSwitcher.addEventListener('click', function(event) {
-            if (event.target.tagName === 'BUTTON') {
-                const lang = event.target.getAttribute('data-lang');
-                if (lang && lang !== currentLanguage) {
-                    changeLanguage(lang);
-                    // Добавляем улучшенный эффект переключения
-                    updateGlitchEffects();
-                }
-            }
-        });
-    }
-});
-
-// Update glitch effects on initial load
-updateGlitchEffects();
-
-// Function to update content based on selected language
-function updateContent() {
-    document.documentElement.lang = currentLanguage;
-    
-    const elements = document.querySelectorAll('[data-i18n]');
-    
-    elements.forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        
-        if (key && translations[currentLanguage] && translations[currentLanguage][key]) {
-            // Check if this is an HTML element that should preserve its inner HTML structure
-            if (element.hasAttribute('data-html-content')) {
-                element.innerHTML = translations[currentLanguage][key];
-            } else {
-                // For normal text content
-                element.textContent = translations[currentLanguage][key];
-            }
-        } else if (key && key.includes('.')) {
-            // Handle nested keys like "feature.title"
-            const keys = key.split('.');
-            let value = translations[currentLanguage];
-            
-            for (let i = 0; i < keys.length; i++) {
-                if (value && value[keys[i]]) {
-                    value = value[keys[i]];
-                } else {
-                    value = null;
-                    break;
-                }
-            }
-            
-            if (value) {
-                if (element.hasAttribute('data-html-content')) {
-                    element.innerHTML = value;
-                } else {
-                    element.textContent = value;
-                }
-            }
-        }
-    });
-    
-    // Специальная обработка для проблемных разделов
-    if (currentLanguage === 'en') {
-        // Проектные детали
-        document.querySelectorAll('[data-i18n="project_details_title"]').forEach(el => {
-            el.textContent = 'Project Details';
-        });
-        document.querySelectorAll('[data-i18n="project_structure_title"]').forEach(el => {
-            el.textContent = 'Repository Structure';
-        });
-        document.querySelectorAll('[data-i18n="project_vision_title"]').forEach(el => {
-            el.textContent = 'Future Vision';
-        });
-        document.querySelectorAll('[data-i18n="project_vision_desc"]').forEach(el => {
-            el.textContent = 'Our ambitious goal is to create a fully autonomous, self-improving AI ecosystem on TON blockchain that generates value for all participants.';
-        });
-        
-        // Финансовые перспективы
-        document.querySelectorAll('[data-i18n="financial_title"]').forEach(el => {
-            el.textContent = 'Financial Prospects';
-        });
-        document.querySelectorAll('[data-i18n="financial_subtitle"]').forEach(el => {
-            el.textContent = 'Ecosystem Monetization';
-        });
-        document.querySelectorAll('[data-i18n="financial_desc"]').forEach(el => {
-            el.textContent = 'The project implements multiple revenue streams to ensure sustainable development and value for all participants.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream1_title"]').forEach(el => {
-            el.textContent = 'AI Agents Revenue';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream1_desc"]').forEach(el => {
-            el.textContent = 'Income from AI agents providing valuable services across different sectors.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream2_title"]').forEach(el => {
-            el.textContent = 'DeFi Services';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream2_desc"]').forEach(el => {
-            el.textContent = 'Fees from decentralized exchange, liquidity provision, and trading services.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream3_title"]').forEach(el => {
-            el.textContent = 'DAO Advertising';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream3_desc"]').forEach(el => {
-            el.textContent = 'Revenue from targeted advertising within the DAO ecosystem.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream4_title"]').forEach(el => {
-            el.textContent = 'NFT for GPU Access';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream4_desc"]').forEach(el => {
-            el.textContent = 'Premium access to distributed GPU computational resources.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream5_title"]').forEach(el => {
-            el.textContent = 'Educational Courses';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream5_desc"]').forEach(el => {
-            el.textContent = 'Income from premium educational content and certification programs.';
-        });
-        
-        // Additional courses
-        document.querySelectorAll('.courses-grid .course-card:nth-child(6) h3').forEach(el => {
-            el.textContent = translations['en']['course6_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(6) p').forEach(el => {
-            el.textContent = translations['en']['course6_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(7) h3').forEach(el => {
-            el.textContent = translations['en']['course7_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(7) p').forEach(el => {
-            el.textContent = translations['en']['course7_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(8) h3').forEach(el => {
-            el.textContent = translations['en']['course8_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(8) p').forEach(el => {
-            el.textContent = translations['en']['course8_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(9) h3').forEach(el => {
-            el.textContent = translations['en']['course9_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(9) p').forEach(el => {
-            el.textContent = translations['en']['course9_desc'];
-        });
-    } else if (currentLanguage === 'ru') {
-        // Проектные детали
-        document.querySelectorAll('[data-i18n="project_details_title"]').forEach(el => {
-            el.textContent = 'Детали Проекта';
-        });
-        document.querySelectorAll('[data-i18n="project_structure_title"]').forEach(el => {
-            el.textContent = 'Структура Репозитория';
-        });
-        document.querySelectorAll('[data-i18n="project_vision_title"]').forEach(el => {
-            el.textContent = 'Видение Будущего';
-        });
-        document.querySelectorAll('[data-i18n="project_vision_desc"]').forEach(el => {
-            el.textContent = 'Наша амбициозная цель — создать полностью автономную, самосовершенствующуюся ИИ-экосистему на блокчейне TON, которая генерирует ценность для всех участников.';
-        });
-        
-        // Финансовые перспективы
-        document.querySelectorAll('[data-i18n="financial_title"]').forEach(el => {
-            el.textContent = 'Финансовые Перспективы';
-        });
-        document.querySelectorAll('[data-i18n="financial_subtitle"]').forEach(el => {
-            el.textContent = 'Монетизация Экосистемы';
-        });
-        document.querySelectorAll('[data-i18n="financial_desc"]').forEach(el => {
-            el.textContent = 'Проект реализует несколько источников дохода для обеспечения устойчивого развития и ценности для всех участников.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream1_title"]').forEach(el => {
-            el.textContent = 'Доход от ИИ-агентов';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream1_desc"]').forEach(el => {
-            el.textContent = 'Прибыль от ИИ-агентов, предоставляющих ценные услуги в различных секторах.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream2_title"]').forEach(el => {
-            el.textContent = 'DeFi-сервисы';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream2_desc"]').forEach(el => {
-            el.textContent = 'Комиссии от децентрализованной биржи, предоставления ликвидности и торговых услуг.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream3_title"]').forEach(el => {
-            el.textContent = 'DAO-реклама';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream3_desc"]').forEach(el => {
-            el.textContent = 'Доход от таргетированной рекламы внутри DAO-экосистемы.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream4_title"]').forEach(el => {
-            el.textContent = 'NFT для GPU';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream4_desc"]').forEach(el => {
-            el.textContent = 'Премиум-доступ к распределенным вычислительным ресурсам GPU.';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream5_title"]').forEach(el => {
-            el.textContent = 'Образовательные курсы';
-        });
-        document.querySelectorAll('[data-i18n="revenue_stream5_desc"]').forEach(el => {
-            el.textContent = 'Доход от премиум образовательного контента и программ сертификации.';
-        });
-    }
-    
-    // Добавляем обработку информации о первой фазе дорожной карты
-    if (currentLanguage === 'en') {
-        // Phase 1 details - English version
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-title').forEach(el => {
-            el.textContent = 'Phase 1: Foundation';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-subtitle').forEach(el => {
-            el.textContent = 'Building the Foundation';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-description').forEach(el => {
-            el.textContent = 'We are creating a solid technological foundation';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-goals-title').forEach(el => {
-            el.textContent = 'Key Goals:';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-goals li:nth-child(1)').forEach(el => {
-            el.textContent = 'Developing educational courses';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-goals li:nth-child(2)').forEach(el => {
-            el.textContent = 'Forming repository structure';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-goals li:nth-child(3)').forEach(el => {
-            el.textContent = 'Creating basic AI agent functionality';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-tasks-title').forEach(el => {
-            el.textContent = 'Current/Planned Tasks:';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-tasks li:nth-child(1)').forEach(el => {
-            el.textContent = 'NFT reward system';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-tasks li:nth-child(2)').forEach(el => {
-            el.textContent = 'Preparing TON smart contracts';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="1"] .phase-tasks li:nth-child(3)').forEach(el => {
-            el.textContent = 'Building initial community';
-        });
-    }
-    
-    // Current Stage section in English version
-    if (currentLanguage === 'en') {
-        document.querySelectorAll('.current-stage-content .stage-badge').forEach(el => {
-            el.textContent = 'Current Phase';
-        });
-        
-        document.querySelectorAll('.current-stage-content h3').forEach(el => {
-            el.textContent = 'Phase 1: Foundation';
-        });
-        
-        document.querySelectorAll('.current-stage-content .current-stage-subtitle').forEach(el => {
-            el.textContent = 'We are creating a solid technological foundation';
-        });
-        
-        document.querySelectorAll('.current-stage-content p:first-of-type').forEach(el => {
-            el.textContent = 'The current stage is focused on building key infrastructure and forming the community. Join our team and become part of a revolutionary project!';
-        });
-    }
-    
-    // Обработка секции Current Phase
-    if (currentLanguage === 'en') {
-        document.querySelectorAll('[data-i18n="current_phase_title"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_title'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_badge"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_badge'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_subtitle"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_subtitle'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_desc"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_desc'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight1"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_highlight1'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight2"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_highlight2'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight3"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_highlight3'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight4"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_highlight4'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight5"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_highlight5'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_cta_primary"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_cta_primary'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_cta_secondary"]').forEach(el => {
-            el.textContent = translations['en']['current_phase_cta_secondary'];
-        });
-    } else if (currentLanguage === 'ru') {
-        document.querySelectorAll('[data-i18n="current_phase_title"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_title'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_badge"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_badge'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_subtitle"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_subtitle'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_desc"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_desc'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight1"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_highlight1'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight2"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_highlight2'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight3"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_highlight3'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight4"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_highlight4'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_highlight5"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_highlight5'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_cta_primary"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_cta_primary'];
-        });
-        
-        document.querySelectorAll('[data-i18n="current_phase_cta_secondary"]').forEach(el => {
-            el.textContent = translations['ru']['current_phase_cta_secondary'];
-        });
-    }
-    
-    // Educational Courses in English version
-    if (currentLanguage === 'en') {
-        // First 5 courses
-        document.querySelectorAll('.courses-grid .course-card:nth-child(1) h3').forEach(el => {
-            el.textContent = translations['en']['course1_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(1) p').forEach(el => {
-            el.textContent = translations['en']['course1_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(2) h3').forEach(el => {
-            el.textContent = translations['en']['course2_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(2) p').forEach(el => {
-            el.textContent = translations['en']['course2_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(3) h3').forEach(el => {
-            el.textContent = translations['en']['course3_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(3) p').forEach(el => {
-            el.textContent = translations['en']['course3_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(4) h3').forEach(el => {
-            el.textContent = translations['en']['course4_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(4) p').forEach(el => {
-            el.textContent = translations['en']['course4_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(5) h3').forEach(el => {
-            el.textContent = translations['en']['course5_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(5) p').forEach(el => {
-            el.textContent = translations['en']['course5_desc'];
-        });
-        
-        // Additional courses
-        document.querySelectorAll('.courses-grid .course-card:nth-child(6) h3').forEach(el => {
-            el.textContent = translations['en']['course6_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(6) p').forEach(el => {
-            el.textContent = translations['en']['course6_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(7) h3').forEach(el => {
-            el.textContent = translations['en']['course7_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(7) p').forEach(el => {
-            el.textContent = translations['en']['course7_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(8) h3').forEach(el => {
-            el.textContent = translations['en']['course8_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(8) p').forEach(el => {
-            el.textContent = translations['en']['course8_desc'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(9) h3').forEach(el => {
-            el.textContent = translations['en']['course9_title'];
-        });
-        
-        document.querySelectorAll('.courses-grid .course-card:nth-child(9) p').forEach(el => {
-            el.textContent = translations['en']['course9_desc'];
-        });
-    }
-    
-    // Обработка фазы 5 в русской версии
-    if (currentLanguage === 'ru') {
-        // Фаза 5 - русская версия
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-title').forEach(el => {
-            el.textContent = 'Фаза 5: Революционная экосистема';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-subtitle').forEach(el => {
-            el.textContent = 'Создание самоподдерживающейся цифровой экономики';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-description').forEach(el => {
-            el.textContent = 'На этом зрелом этапе мы завершаем экосистему продвинутыми компонентами';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-goals-title').forEach(el => {
-            el.textContent = 'Ключевые цели:';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-goals li:nth-child(1)').forEach(el => {
-            el.textContent = 'Разработка самосовершенствующихся ИИ-систем';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-goals li:nth-child(2)').forEach(el => {
-            el.textContent = 'Создание полностью автономных сетей агентов';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-goals li:nth-child(3)').forEach(el => {
-            el.textContent = 'Внедрение кросс-чейн совместимости для всех сервисов';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-tasks-title').forEach(el => {
-            el.textContent = 'Планируемые задачи:';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-tasks li:nth-child(1)').forEach(el => {
-            el.textContent = 'Запуск DAO Рекламной Биржи';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-tasks li:nth-child(2)').forEach(el => {
-            el.textContent = 'Разработка ИИ-Launchpool';
-        });
-        
-        document.querySelectorAll('.roadmap-card[data-phase="5"] .phase-tasks li:nth-child(3)').forEach(el => {
-            el.textContent = 'Создание комплексного фреймворка AGI';
-        });
-    }
-    
-    // Обработка компонентов экосистемы в русской версии
-    if (currentLanguage === 'ru') {
-        // Обработка карточек экосистемы
-        document.querySelectorAll('.ecosystem-card').forEach((card, index) => {
-            const cardNumber = index + 1;
-            
-            // Заголовок карточки
-            card.querySelectorAll('.ecosystem-title').forEach(el => {
-                el.textContent = translations['ru'][`ecosystem_card${cardNumber}_title`];
-            });
-            
-            // Описание карточки
-            card.querySelectorAll('.ecosystem-desc').forEach(el => {
-                el.textContent = translations['ru'][`ecosystem_card${cardNumber}_desc`];
-            });
-            
-            // Дополнительная информация
-            card.querySelectorAll('.extra-info h4').forEach(el => {
-                el.textContent = translations['ru'][`ecosystem_card${cardNumber}_extra_title`];
-            });
-            
-            card.querySelectorAll('.extra-info > p').forEach(el => {
-                el.textContent = translations['ru'][`ecosystem_card${cardNumber}_extra_desc`];
-            });
-            
-            // Особенности (до 6 пунктов)
-            for (let i = 1; i <= 6; i++) {
-                card.querySelectorAll(`.extra-info ul li:nth-child(${i})`).forEach(el => {
-                    const key = `ecosystem_card${cardNumber}_feature${i}`;
-                    if (translations['ru'][key]) {
-                        el.textContent = translations['ru'][key];
-                    }
-                });
-            }
-        });
-    }
-    
-    // Обработка раздела NFT в русской версии
-    if (currentLanguage === 'ru') {
-        document.querySelectorAll('.nft-distribution h4').forEach(el => {
-            el.textContent = translations['ru']['nft_distribution_title'];
-        });
-        
-        document.querySelectorAll('.nft-distribution p:nth-child(2)').forEach(el => {
-            el.textContent = translations['ru']['nft_distribution_reserve'];
-        });
-        
-        document.querySelectorAll('.nft-distribution p:nth-child(3)').forEach(el => {
-            el.textContent = translations['ru']['nft_distribution_community'];
-        });
-        
-        document.querySelectorAll('.profit-sharing h4').forEach(el => {
-            el.textContent = translations['ru']['nft_profit_sharing_title'];
-        });
-        
-        document.querySelectorAll('.profit-table th:nth-child(1)').forEach(el => {
-            el.textContent = translations['ru']['nft_profit_column1'];
-        });
-        
-        document.querySelectorAll('.profit-table th:nth-child(2)').forEach(el => {
-            el.textContent = translations['ru']['nft_profit_column2'];
-        });
-        
-        document.querySelectorAll('.investment-bonus h4').forEach(el => {
-            el.textContent = translations['ru']['nft_investment_bonus_title'];
-        });
-        
-        document.querySelectorAll('.investment-bonus p').forEach(el => {
-            el.textContent = translations['ru']['nft_investment_bonus_text'];
-        });
-    }
-    
-    // Обрабатываем глюк-эффект при смене языка
-    document.querySelectorAll('.glitch-text, .glitch-hover').forEach(element => {
-        element.classList.add('active-glitch');
-        setTimeout(() => {
-            element.classList.remove('active-glitch');
-        }, 1000);
-    });
-    
-    // Обновляем активное состояние кнопок переключения языка
-    document.querySelectorAll('.language-switcher button').forEach(btn => {
-        if (btn.getAttribute('data-lang') === currentLanguage) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
+    // Удаляем случайные глитчи через 1 секунду
+    setTimeout(() => {
+        document.body.removeChild(randomGlitches);
+    }, 1000);
 }
 
 // Добавляем функционал для раскрытия блоков фаз
@@ -1671,4 +1112,179 @@ function initPhaseDetailToggle() {
             });
         }
     });
-} 
+}
+
+// Функция для обновления контента на основе выбранного языка
+function updateContent() {
+    console.log('Обновление контента, текущий язык:', currentLanguage);
+    
+    try {
+        // Обновляем заголовок и мета-описание
+        const titleElement = document.querySelector('title');
+        if (titleElement && titleElement.hasAttribute('data-i18n')) {
+            const key = titleElement.getAttribute('data-i18n');
+            if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                titleElement.textContent = translations[currentLanguage][key];
+            }
+        }
+        
+        const descriptionElement = document.querySelector('meta[name="description"]');
+        if (descriptionElement && descriptionElement.hasAttribute('data-i18n')) {
+            const key = descriptionElement.getAttribute('data-i18n');
+            if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                descriptionElement.setAttribute('content', translations[currentLanguage][key]);
+            }
+        }
+        
+        // Обновляем все элементы с атрибутом data-i18n
+        const elements = document.querySelectorAll('[data-i18n]');
+        console.log(`Найдено ${elements.length} элементов с атрибутом data-i18n`);
+        
+        elements.forEach(element => {
+            // Пропускаем заголовок и мета-описание, так как они уже обработаны
+            if (element === titleElement || element === descriptionElement) {
+                return;
+            }
+            
+            const key = element.getAttribute('data-i18n');
+            if (!key) return;
+            
+            if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                const translatedText = translations[currentLanguage][key];
+                
+                // Обновляем атрибут data-text для элементов с глитч-эффектом
+                if (element.hasAttribute('data-text')) {
+                    element.setAttribute('data-text', translatedText);
+                }
+                
+                // Обновляем содержимое элемента
+                if (element.hasAttribute('data-html-content')) {
+                    element.innerHTML = translatedText;
+                } else {
+                    element.textContent = translatedText;
+                }
+                
+                // Добавляем класс для анимации
+                element.classList.add('temp-glitch');
+                setTimeout(() => {
+                    element.classList.remove('temp-glitch');
+                }, 300);
+            }
+        });
+        
+        console.log('Обновление контента завершено');
+    } catch (error) {
+        console.error('Ошибка при обновлении контента:', error);
+    }
+}
+
+// Инициализация переключателя языка
+function initLanguageSwitcher() {
+    console.log('Инициализация переключателя языка');
+    
+    // Находим переключатель языка
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (!languageSwitcher) {
+        console.error('Переключатель языка не найден!');
+        return;
+    }
+    
+    // Находим кнопки языков
+    const enButton = languageSwitcher.querySelector('button[data-lang="en"]');
+    const ruButton = languageSwitcher.querySelector('button[data-lang="ru"]');
+    
+    if (!enButton || !ruButton) {
+        console.error('Кнопки языков не найдены!');
+        return;
+    }
+    
+    console.log('Найдены кнопки языков:', enButton, ruButton);
+    
+    // Устанавливаем активную кнопку
+    if (currentLanguage === 'en') {
+        enButton.classList.add('active');
+        ruButton.classList.remove('active');
+    } else {
+        ruButton.classList.add('active');
+        enButton.classList.remove('active');
+    }
+    
+    // Добавляем обработчики событий
+    enButton.addEventListener('click', function() {
+        console.log('Нажата кнопка EN');
+        if (currentLanguage !== 'en') {
+            currentLanguage = 'en';
+            localStorage.setItem('language', 'en');
+            
+            // Обновляем активные кнопки
+            enButton.classList.add('active');
+            ruButton.classList.remove('active');
+            
+            // Добавляем эффект глитча
+            enButton.classList.add('active-glitch');
+            setTimeout(() => {
+                enButton.classList.remove('active-glitch');
+            }, 500);
+            
+            // Обновляем контент
+            document.documentElement.lang = 'en';
+            updateContent();
+        }
+    });
+    
+    ruButton.addEventListener('click', function() {
+        console.log('Нажата кнопка RU');
+        if (currentLanguage !== 'ru') {
+            currentLanguage = 'ru';
+            localStorage.setItem('language', 'ru');
+            
+            // Обновляем активные кнопки
+            ruButton.classList.add('active');
+            enButton.classList.remove('active');
+            
+            // Добавляем эффект глитча
+            ruButton.classList.add('active-glitch');
+            setTimeout(() => {
+                ruButton.classList.remove('active-glitch');
+            }, 500);
+            
+            // Обновляем контент
+            document.documentElement.lang = 'ru';
+            updateContent();
+        }
+    });
+    
+    console.log('Обработчики событий для кнопок языков добавлены');
+}
+
+// Global variables
+let currentLanguage = localStorage.getItem('language') || 'en'; // Получаем язык из localStorage или используем 'en' по умолчанию
+let isNavOpen = false;
+
+// Инициализация языка при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed, initializing language');
+    
+    // Проверяем сохраненный язык в localStorage или устанавливаем язык по умолчанию
+    let savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ru')) {
+        currentLanguage = savedLanguage;
+    } else {
+        // Если язык не сохранен, используем язык браузера или по умолчанию 'en'
+        const browserLang = navigator.language || navigator.userLanguage;
+        currentLanguage = browserLang && browserLang.startsWith('ru') ? 'ru' : 'en';
+    }
+    
+    console.log('Initial language set to:', currentLanguage);
+    
+    // Устанавливаем атрибут языка для HTML документа
+    document.documentElement.lang = currentLanguage;
+    
+    // Инициализация переключателя языка
+    initLanguageSwitcher();
+    
+    // Обновляем контент для текущего языка
+    updateContent();
+    
+    console.log('Language initialization complete');
+}); 

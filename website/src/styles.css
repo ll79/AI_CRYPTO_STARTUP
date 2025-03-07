@@ -5278,11 +5278,22 @@ html[lang="ru"] .logo-text {
     font-size: 1.3rem;
     white-space: nowrap;
     letter-spacing: 1px;
+    display: inline-block;
+    transform: scale(0.9);
+    transform-origin: left center;
 }
 
 @media (max-width: 1024px) {
     html[lang="ru"] .logo-text {
         font-size: 1.2rem;
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    html[lang="ru"] .logo-text {
+        font-size: 1.1rem;
+        transform: scale(0.8);
     }
 }
 
@@ -5430,5 +5441,351 @@ html[lang="ru"] .logo-text {
     
     .scroll-text {
         font-size: 0.9rem;
+    }
+}
+
+@keyframes language-glitch-2 {
+    0% {
+        clip-path: var(--random-clip-1);
+        transform: translate(0, 0);
+        opacity: 0.8;
+    }
+    50% {
+        clip-path: var(--random-clip-2);
+        transform: translate(5px, 5px);
+        opacity: 0.5;
+    }
+    100% {
+        clip-path: var(--random-clip-3);
+        transform: translate(-5px, 5px);
+        opacity: 0.8;
+    }
+}
+
+/* Новые стили для улучшенной анимации смены языка */
+.temp-glitch {
+    position: relative;
+    animation: glitch 0.5s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.scanline-effect::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 9999;
+    animation: scanline 2s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.random-glitches {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    pointer-events: none;
+}
+
+/* Дополнительные стили для случайных глитчей */
+.random-glitch {
+    position: absolute;
+    background: rgba(56, 255, 200, 0.5);
+    box-shadow: 0 0 10px rgba(56, 255, 200, 0.8);
+    animation: glitchFlicker 0.3s ease infinite;
+    pointer-events: none;
+}
+
+@keyframes glitchFlicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Language switching animation */
+.language-switching {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.language-switching::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 217, 255, 0.1) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(255, 0, 128, 0.1) 100%
+    );
+    animation: language-switch-scan 0.5s linear;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes language-switch-scan {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.temp-glitch {
+    position: relative;
+    animation: temp-glitch-anim 0.3s steps(3) forwards;
+}
+
+@keyframes temp-glitch-anim {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        opacity: 0.9;
+        color: #0ff;
+    }
+    40% {
+        transform: translate(2px, -2px);
+        opacity: 0.8;
+        color: #f0f;
+    }
+    60% {
+        transform: translate(-1px, -1px);
+        opacity: 0.9;
+        color: #ff0;
+    }
+    80% {
+        transform: translate(1px, 1px);
+        opacity: 0.8;
+        color: #0ff;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/* Новые стили для улучшенной анимации смены языка */
+.language-switching {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.language-switching::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 217, 255, 0.1) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(255, 0, 128, 0.1) 100%
+    );
+    animation: language-switch-scan 0.5s linear;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes language-switch-scan {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Улучшенный глитч-эффект для элементов */
+.temp-glitch {
+    position: relative;
+    animation: enhanced-glitch 0.5s steps(3) forwards;
+}
+
+@keyframes enhanced-glitch {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+        filter: none;
+    }
+    20% {
+        transform: translate(-3px, 2px);
+        opacity: 0.9;
+        filter: hue-rotate(90deg) brightness(1.2);
+        text-shadow: 2px 0 #0ff, -2px 0 #f0f;
+    }
+    40% {
+        transform: translate(3px, -2px);
+        opacity: 0.8;
+        filter: hue-rotate(-90deg) contrast(1.5);
+        text-shadow: -2px 0 #ff0, 2px 0 #0ff;
+    }
+    60% {
+        transform: translate(-2px, -2px);
+        opacity: 0.9;
+        filter: saturate(2) brightness(0.8);
+        text-shadow: 2px 0 #f0f, -2px 0 #0ff;
+    }
+    80% {
+        transform: translate(2px, 2px);
+        opacity: 0.8;
+        filter: hue-rotate(45deg) brightness(1.3);
+        text-shadow: -2px 0 #0ff, 2px 0 #f0f;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+        filter: none;
+        text-shadow: none;
+    }
+}
+
+/* Новый эффект сканлайна для смены языка */
+.language-switch-scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        to right,
+        rgba(0, 217, 255, 0.8),
+        rgba(255, 255, 255, 0.9),
+        rgba(110, 0, 255, 0.8)
+    );
+    z-index: 9999;
+    animation: language-scanline 0.8s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.8);
+}
+
+@keyframes language-scanline {
+    0% {
+        top: -5px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Глобальный оверлей для эффекта смены языка */
+.language-switch-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 217, 255, 0.05) 0%,
+        rgba(110, 0, 255, 0.05) 50%,
+        rgba(255, 0, 128, 0.05) 100%
+    );
+    z-index: 9998;
+    pointer-events: none;
+    animation: language-overlay 0.8s ease-out forwards;
+    mix-blend-mode: screen;
+}
+
+@keyframes language-overlay {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Улучшенный эффект для кнопок языка */
+.language-switcher button.active-glitch {
+    animation: button-glitch 0.5s steps(3) forwards;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+}
+
+@keyframes button-glitch {
+    0% {
+        transform: translate(0);
+        filter: none;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(90deg) brightness(1.5);
+    }
+    40% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(-90deg) contrast(2);
+    }
+    60% {
+        transform: translate(-1px, -1px);
+        filter: saturate(3) brightness(1.2);
+    }
+    80% {
+        transform: translate(1px, 1px);
+        filter: hue-rotate(45deg) brightness(1.5);
+    }
+    100% {
+        transform: translate(0);
+        filter: none;
     }
 }

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASINGULARITY AI | Decentralized AI Ecosystem</title>
-    <meta name="description" content="Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain">
+    <title data-i18n="page_title">ASINGULARITY AI | Decentralized AI Ecosystem</title>
+    <meta name="description" data-i18n="page_description" content="Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +39,8 @@
     <!-- Логотип с глитч-эффектами для букв AI и SINGULARITY -->
     <header id="header">
         <div class="container">
-            <nav>
-                <div class="logo-container">
+        <nav>
+            <div class="logo-container">
                     <a href="#" class="logo">
                         <div class="logo-text cyberpunk-text"><span class="highlight">A</span>S<span class="highlight">I</span>NGULAR<span class="highlight">I</span>TY</div>
                     </a>
@@ -58,9 +58,9 @@
                 </div>
                 <div class="mobile-menu-toggle">
                     <span data-i18n="menu_btn">Menu</span>
-                </div>
+            </div>
                 <a href="https://t.me/LND_MAN" class="invest-btn" target="_blank" data-i18n="invest_btn">Invest</a>
-            </nav>
+        </nav>
         </div>
     </header>
 
@@ -216,7 +216,7 @@
                                     <li data-i18n="roadmap_phase1_goals_item3">Создать сильное присутствие сообщества</li>
                                     <li data-i18n="roadmap_phase1_goals_item4">Разработать начальные прототипы ИИ-агентов</li>
                                     <li data-i18n="roadmap_phase1_goals_item5">Создать комплексную документацию</li>
-                                </ul>
+                            </ul>
                             </div>
                         </div>
                     </div>
@@ -299,13 +299,11 @@
                                 <ul>
                                     <li data-i18n="roadmap_phase4_list_item1">Launching comprehensive DeFi services including P2P exchange and crypto processing</li>
                                     <li data-i18n="roadmap_phase4_list_item2">Developing the decentralized VPN/Proxy service for enhanced privacy and security</li>
-                                    <li>Launching comprehensive DeFi services including P2P exchange and crypto processing</li>
-                                    <li>Developing the decentralized VPN/Proxy service for enhanced privacy and security</li>
-                                    <li>Creating the AI-Oracles system for decentralized data collection and analysis</li>
-                                    <li>Implementing the NFT for Graphics Cards system to monetize computing resources</li>
-                                    <li>Expanding to international markets with localized services and marketing</li>
-                                    <li>Introducing real estate tokenization services with AI assistance</li>
-                                    <li>Developing UltrAPI framework for creating any services with ai agents</li>
+                                    <li data-i18n="roadmap_phase4_list_item3">Creating the AI-Oracles system for decentralized data collection and analysis</li>
+                                    <li data-i18n="roadmap_phase4_list_item4">Implementing the NFT for Graphics Cards system to monetize computing resources</li>
+                                    <li data-i18n="roadmap_phase4_list_item5">Expanding to international markets with localized services and marketing</li>
+                                    <li data-i18n="roadmap_phase4_list_item6">Introducing real estate tokenization services with AI assistance</li>
+                                    <li data-i18n="roadmap_phase4_list_item7">Developing UltrAPI framework for creating any services with ai agents</li>
                                 </ul>
                             </div>
                         </div>
@@ -330,15 +328,15 @@
                             <span class="timeline-date" data-i18n="roadmap_phase5_date">LVL UP</span>
                             <div class="extra-info">
                                 <h4 data-i18n="roadmap_phase5_desc">Creating a Self-Sustaining Economy</h4>
-                                <p>In this mature phase, we complete the ecosystem with advanced components:</p>
+                                <p data-i18n="roadmap_phase5_paragraph">In this mature phase, we complete the ecosystem with advanced components:</p>
                                 <ul>
-                                    <li>Launching the DAO Advertising Exchange for decentralized marketing</li>
-                                    <li>Developing the AI-Launchpool to support and fund new startups</li>
-                                    <li>Creating the Alternative Energy Crypto Project for sustainable operations</li>
-                                    <li>Implementing QuadrAD/ADrone service for innovative aerial advertising</li>
-                                    <li>Establishing a comprehensive AGI framework with self-improvement capabilities</li>
-                                    <li>Introducing the prediction market platform for forecasting and betting</li>
-                                    <li>Achieving economic self-sufficiency through DeFi tools and token mechanisms</li>
+                                    <li data-i18n="roadmap_phase5_list_item1">Launching the DAO Advertising Exchange for decentralized marketing</li>
+                                    <li data-i18n="roadmap_phase5_list_item2">Developing the AI-Launchpool to support and fund new startups</li>
+                                    <li data-i18n="roadmap_phase5_list_item3">Creating the Alternative Energy Crypto Project for sustainable operations</li>
+                                    <li data-i18n="roadmap_phase5_list_item4">Implementing QuadrAD/ADrone service for innovative aerial advertising</li>
+                                    <li data-i18n="roadmap_phase5_list_item5">Establishing a comprehensive AGI framework with self-improvement capabilities</li>
+                                    <li data-i18n="roadmap_phase5_list_item6">Introducing the prediction market platform for forecasting and betting</li>
+                                    <li data-i18n="roadmap_phase5_list_item7">Achieving economic self-sufficiency through DeFi tools and token mechanisms</li>
                                 </ul>
                             </div>
                         </div>
@@ -1111,36 +1109,6 @@
                 });
             });
             
-            // Инициализация переключателя языков
-            const languageSwitcher = document.querySelector('.language-switcher');
-            if (languageSwitcher) {
-                const languageButtons = languageSwitcher.querySelectorAll('button');
-                
-                languageButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        const lang = this.getAttribute('data-lang');
-                        changeLanguage(lang);
-                        
-                        // Обновляем активное состояние кнопок
-                        languageButtons.forEach(btn => {
-                            if (btn === this) {
-                                btn.classList.add('active');
-                            } else {
-                                btn.classList.remove('active');
-                            }
-                        });
-                        
-                        // Добавляем глитч-эффект при смене языка
-                        document.querySelectorAll('.glitch-text, .glitch-hover').forEach(element => {
-                            element.classList.add('active-glitch');
-                            setTimeout(() => {
-                                element.classList.remove('active-glitch');
-                            }, 1000);
-                        });
-                    });
-                });
-            }
-            
             // Мобильное меню-бургер
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -1178,5 +1146,6 @@
             window.addEventListener('resize', toggleMobileFooter);
         });
     </script>
+    <script src="language-switcher.js"></script>
 </body>
 </html> 
