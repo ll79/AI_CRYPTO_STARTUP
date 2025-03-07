@@ -28,70 +28,66 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset any previous animations
         logoText.classList.remove('glitch-text');
-        aiText.classList.remove('random-glitch');
-        singularityText.classList.remove('random-glitch');
-        highlightedLetters.forEach(el => {
-            el.classList.remove('random-glitch');
-        });
         
-        // Remove any previously created elements
-        const oldElements = document.querySelectorAll('.logo-ai, .logo-singularity');
-        oldElements.forEach(el => el.remove());
-        
-        // Animation sequence
-        
-        // Step 1: Add glitch effect to the logo text
+        // Add glitch effect
         setTimeout(() => {
             logoText.classList.add('glitch-text');
-        }, 1000);
-        
-        // Step 2: Highlight and glitch the AI letters in the logo
-        setTimeout(() => {
-            highlightedLetters.forEach(el => {
-                el.style.color = 'var(--accent-color)';
-                el.style.textShadow = '0 0 10px var(--accent-color)';
-                el.classList.add('random-glitch');
+            
+            // Animate highlighted letters
+            highlightedLetters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.style.animation = 'logo-highlight-pulse 1.5s infinite';
+                }, index * 200);
             });
             
-            // Show and glitch the AI text in subtitle
+            // Fade in AI and SINGULARITY text
+        setTimeout(() => {
             aiText.style.opacity = '1';
-            aiText.classList.add('random-glitch');
-        }, 2000);
+                aiText.style.transform = 'translateY(0)';
         
-        // Step 3: Show SINGULARITY text with glitch effect
         setTimeout(() => {
             singularityText.style.opacity = '1';
-            singularityText.classList.add('random-glitch');
-        }, 3000);
-        
-        // Step 4: Hold the glitch effect for a moment
-        setTimeout(() => {
-            // Keep the glitch effect active for a while
-        }, 4000);
-        
-        // Step 5: Reset animation
-        setTimeout(() => {
-            logoText.classList.remove('glitch-text');
-            highlightedLetters.forEach(el => {
-                el.classList.remove('random-glitch');
-                el.style.color = 'var(--secondary-color)';
-                el.style.textShadow = 'none';
-            });
-            
-            aiText.classList.remove('random-glitch');
-            singularityText.classList.remove('random-glitch');
-            
-            // Keep the subtitle visible
-            aiText.style.opacity = '1';
-            singularityText.style.opacity = '1';
-        }, 6000);
+                    singularityText.style.transform = 'translateY(0)';
+                }, 300);
+            }, 600);
+        }, 500);
     }
     
     // Run animation on page load
-    setTimeout(animateLogo, 1000);
+    animateLogo();
     
-    // Repeat animation every 15 seconds
-    setInterval(animateLogo, 15000);
+    // Language switcher functionality
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (languageSwitcher) {
+        const languageButtons = languageSwitcher.querySelectorAll('button');
+        
+        // Set initial active state based on current language
+        languageButtons.forEach(button => {
+            if (button.getAttribute('data-lang') === currentLanguage) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+            
+            // Add click event listener
+            button.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                
+                // Update active state
+                languageButtons.forEach(btn => {
+                    if (btn === this) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
+    
+    // Initialize language on page load
+    updateContent();
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -447,6 +443,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize visualization
     initVisualization();
+
+    // Функция для инициализации мобильного меню
+    initMobileMenu();
+    initReadMoreButtons();
+    addLogoGlitchEffect();
+    
+    // Обновляем текст кнопок "Читать далее" при смене языка
+    document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.addEventListener('click', function() {
+            setTimeout(() => {
+                document.querySelectorAll('.read-more-btn').forEach(btn => {
+                    const isExpanded = btn.previousElementSibling.classList.contains('expanded');
+                    btn.textContent = isExpanded 
+                        ? (document.documentElement.lang === 'ru' ? 'Свернуть' : 'Show less') 
+                        : (document.documentElement.lang === 'ru' ? 'Читать далее' : 'Read more');
+                });
+            }, 300);
+        });
+    });
 });
 
 // Random digital glitches
@@ -851,8 +866,287 @@ function initVisualization() {
     }
 }
 
-// Initialize all animations when the DOM is loaded
+// Функция для инициализации мобильного меню
+function initMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links li a');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', function() {
+                setTimeout(() => {
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }, 300); // Небольшая задержка для анимации
+            });
+        });
+        
+        // Закрытие меню при клике вне меню
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-links') && !event.target.closest('.mobile-menu-toggle')) {
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    }
+}
+
+// Функция для добавления функционала "Читать далее" в блоках "О проекте"
+function initReadMoreButtons() {
+    // Добавляем класс и кнопку "Читать далее" к описанию о проекте
+    const aboutDescription = document.querySelector('.about-description');
+    if (aboutDescription) {
+        const readMoreBtn = document.createElement('span');
+        readMoreBtn.className = 'read-more-btn';
+        readMoreBtn.textContent = document.documentElement.lang === 'ru' ? 'Читать далее' : 'Read more';
+        
+        aboutDescription.parentNode.insertBefore(readMoreBtn, aboutDescription.nextSibling);
+        
+        readMoreBtn.addEventListener('click', function() {
+            aboutDescription.classList.toggle('expanded');
+            this.textContent = aboutDescription.classList.contains('expanded') 
+                ? (document.documentElement.lang === 'ru' ? 'Свернуть' : 'Show less') 
+                : (document.documentElement.lang === 'ru' ? 'Читать далее' : 'Read more');
+        });
+    }
+    
+    // Добавляем такой же функционал к другим информационным блокам
+    const infoBlocks = document.querySelectorAll('.timeline-content, .ecosystem-card');
+    infoBlocks.forEach(block => {
+        const description = block.querySelector('p');
+        if (description && description.textContent.length > 100) {
+            description.classList.add('about-description');
+            
+            const readMoreBtn = document.createElement('span');
+            readMoreBtn.className = 'read-more-btn';
+            readMoreBtn.textContent = document.documentElement.lang === 'ru' ? 'Подробнее' : 'More details';
+            
+            description.parentNode.insertBefore(readMoreBtn, description.nextSibling);
+            
+            readMoreBtn.addEventListener('click', function() {
+                description.classList.toggle('expanded');
+                this.textContent = description.classList.contains('expanded') 
+                    ? (document.documentElement.lang === 'ru' ? 'Свернуть' : 'Show less') 
+                    : (document.documentElement.lang === 'ru' ? 'Подробнее' : 'More details');
+            });
+        }
+    });
+}
+
+// Добавляем глитч-эффект для логотипа
+function addLogoGlitchEffect() {
+    const logoText = document.querySelector('.logo-text');
+    if (logoText) {
+        setInterval(() => {
+            if (Math.random() > 0.95) { // 5% шанс глитча
+                logoText.classList.add('active-glitch');
+                setTimeout(() => {
+                    logoText.classList.remove('active-glitch');
+                }, 500);
+            }
+        }, 3000);
+    }
+}
+
+// Улучшенный эффект переключения языка
+function updateGlitchEffects() {
+    // Обновление атрибутов data-text для элементов с глитч-эффектами при наведении
+    document.querySelectorAll('.glitch-hover').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (key && translations[currentLanguage][key]) {
+            element.setAttribute('data-text', translations[currentLanguage][key]);
+        }
+    });
+    
+    // Обновление атрибутов data-text для элементов с глитч-текстом
+    document.querySelectorAll('.glitch-text').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (key && translations[currentLanguage][key]) {
+            element.setAttribute('data-text', translations[currentLanguage][key]);
+        }
+    });
+
+    // Добавляем временный класс glitch к элементам для анимации смены языка
+    const glitchElements = document.querySelectorAll('.section-title, h3, .feature-card, .ecosystem-card, .btn');
+    
+    glitchElements.forEach(element => {
+        // Удаляем класс active-glitch, если он уже был
+        element.classList.remove('active-glitch');
+        
+        // Добавляем временно атрибут data-text с текущим содержимым (для глитч-эффекта)
+        if (!element.hasAttribute('data-text') && element.innerText) {
+            element.setAttribute('data-text', element.innerText);
+        }
+        
+        // Применяем glitch-эффект с задержкой для каждого элемента
+        setTimeout(() => {
+            element.classList.add('active-glitch');
+            
+            // Удаляем класс через некоторое время
+            setTimeout(() => {
+                element.classList.remove('active-glitch');
+            }, 800);
+        }, Math.random() * 300); // Случайная задержка для каждого элемента
+    });
+    
+    // Добавление сканлайна при смене языка
+    const scanline = document.createElement('div');
+    scanline.classList.add('scanline');
+    scanline.style.opacity = '0.8';
+    document.body.appendChild(scanline);
+    
+    // Удаляем дополнительную сканлайн через некоторое время
+    setTimeout(() => {
+        if (document.body.contains(scanline)) {
+            document.body.removeChild(scanline);
+        }
+    }, 1000);
+    
+    // Добавление случайных глитч-эффектов на странице
+    for (let i = 0; i < 5; i++) {
+        const glitch = document.createElement('div');
+        glitch.classList.add('random-glitch');
+        glitch.style.top = `${Math.random() * 100}%`;
+        glitch.style.left = `${Math.random() * 100}%`;
+        glitch.style.width = `${50 + Math.random() * 150}px`;
+        glitch.style.height = `${3 + Math.random() * 15}px`;
+        document.body.appendChild(glitch);
+        
+        // Удаляем случайные глитчи через некоторое время
+        setTimeout(() => {
+            if (document.body.contains(glitch)) {
+                document.body.removeChild(glitch);
+            }
+        }, 800 + Math.random() * 1000);
+    }
+}
+
+// Расширяем функцию changeLanguage для обновления глитч-эффектов
+const originalChangeLanguage = changeLanguage;
+changeLanguage = function(lang) {
+    originalChangeLanguage(lang);
+    updateGlitchEffects();
+};
+
+// Обработчик переключения языка
 document.addEventListener('DOMContentLoaded', function() {
-    initAnimations();
-    initVisualization();
-}); 
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (languageSwitcher) {
+        languageSwitcher.addEventListener('click', function(event) {
+            if (event.target.tagName === 'BUTTON') {
+                const lang = event.target.getAttribute('data-lang');
+                if (lang && lang !== currentLanguage) {
+                    changeLanguage(lang);
+                    // Добавляем улучшенный эффект переключения
+                    updateGlitchEffects();
+                }
+            }
+        });
+    }
+});
+
+// Update glitch effects on initial load
+updateGlitchEffects();
+
+// Function to update content based on selected language
+function updateContent() {
+    // Установка языка документа
+    document.documentElement.lang = currentLanguage;
+    
+    // Обновление заголовка страницы и метатегов в зависимости от языка
+    if (currentLanguage === 'ru') {
+        document.title = "ASINGULARITY AI | Децентрализованная ИИ-экосистема";
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', 'Революционная децентрализованная экосистема, объединяющая передовые технологии ИИ, Крипто, NFT и Web3 на блокчейне TON');
+        }
+    } else {
+        document.title = "ASINGULARITY AI | Decentralized AI Ecosystem";
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', 'Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain');
+        }
+    }
+    
+    // Находим все элементы с атрибутом data-i18n
+    const elements = document.querySelectorAll('[data-i18n]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        
+        // Поддержка вложенных ключей (например: "current_stage_highlights.0")
+        let translationValue = translations[currentLanguage];
+        if (translationValue) {
+            const keyParts = key.split('.');
+            try {
+                // Проходим по частям ключа, получая вложенные значения
+                for (const part of keyParts) {
+                    translationValue = translationValue[part];
+                    // Если на каком-то этапе значение не определено, прерываем цикл
+                    if (translationValue === undefined) break;
+                }
+            } catch (error) {
+                console.warn(`Translation error for key: ${key}`, error);
+                translationValue = undefined;
+            }
+        }
+        
+        // Если удалось получить значение перевода
+        if (translationValue !== undefined) {
+            const tagName = element.tagName.toUpperCase();
+            
+            // Обработка разных типов элементов
+            if (tagName === 'INPUT') {
+                if (element.type === 'text' || element.type === 'email' || element.type === 'search') {
+                    element.setAttribute('placeholder', translationValue);
+                } else {
+                    element.value = translationValue;
+                }
+            } else if (tagName === 'META') {
+                element.setAttribute('content', translationValue);
+            } else if (tagName === 'A') {
+                if (element.hasAttribute('title')) {
+                    element.setAttribute('title', translationValue);
+                }
+                // Если у ссылки нет дочерних элементов, обновляем текст
+                if (element.childElementCount === 0) {
+                    element.innerHTML = translationValue; // Используем innerHTML для поддержки HTML в переводах
+                }
+            } else if (tagName === 'IMG' || tagName === 'IFRAME') {
+                element.setAttribute('alt', translationValue);
+            } else {
+                // Обрабатываем элементы с data-text атрибутом для glitch-эффекта
+                if (element.hasAttribute('data-text')) {
+                    element.setAttribute('data-text', translationValue);
+                }
+                
+                // Устанавливаем содержимое HTML, чтобы поддерживать теги в переводах
+                element.innerHTML = translationValue;
+            }
+        }
+    });
+    
+    // Добавляем glitch-эффект при смене языка
+    document.querySelectorAll('.glitch-text, .glitch-hover').forEach(element => {
+        element.classList.add('active-glitch');
+        setTimeout(() => {
+            element.classList.remove('active-glitch');
+        }, 1000);
+    });
+    
+    // Обновляем активное состояние кнопок переключения языка
+    document.querySelectorAll('.language-switcher button').forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLanguage) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+} 
