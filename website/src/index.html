@@ -36,32 +36,32 @@
     <div class="glitch-overlay"></div>
     <div class="scanline"></div>
 
-    <header>
-        <nav>
-            <div class="logo-container">
-                <a href="#" class="logo glitch-hover">
-                    <span class="logo-text cyberpunk-text" data-i18n="logo_text">A<span class="highlight">S</span>INGUL<span class="highlight">A</span>R<span class="highlight">I</span>TY</span>
-                </a>
-            </div>
-            
-            <!-- Мобильное меню -->
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-links">
-                <li><a href="#about" class="glitch-hover" data-text="About" data-i18n="nav_about">About</a></li>
-                <li><a href="#roadmap" class="glitch-hover" data-text="Roadmap" data-i18n="nav_roadmap">Roadmap</a></li>
-                <li><a href="#ecosystem" class="glitch-hover" data-text="Ecosystem" data-i18n="nav_ecosystem">Ecosystem</a></li>
-                <li><a href="#nft" class="glitch-hover" data-text="NFT Rewards" data-i18n="nav_nft">NFT Rewards</a></li>
-                <li><a href="#join" class="glitch-hover" data-text="Join Us" data-i18n="nav_join">Join Us</a></li>
-            </ul>
-            <div class="language-switcher">
-                <button data-lang="en" class="active">EN</button>
-                <button data-lang="ru">RU</button>
-            </div>
-            <a href="https://t.me/landemon" class="btn primary-btn cyberpunk-btn invest-btn" target="_blank" data-i18n="invest_btn">Pre-Seed Investment</a>
-        </nav>
+    <!-- Логотип с глитч-эффектами для букв AI и SINGULARITY -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <a href="#" class="logo">
+                        <div class="logo-text cyberpunk-text"><span class="highlight">A</span>S<span class="highlight">I</span>NGULAR<span class="highlight">I</span>TY</div>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav_about">About</a></li>
+                    <li><a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a></li>
+                    <li><a href="#ecosystem" data-i18n="nav_ecosystem">Ecosystem</a></li>
+                    <li><a href="#nft" data-i18n="nav_nft">NFT</a></li>
+                    <li><a href="#join" data-i18n="nav_join">Join</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span data-i18n="menu_btn">Menu</span>
+                </div>
+                <a href="https://t.me/LND_MAN" class="invest-btn" target="_blank" data-i18n="invest_btn">Invest</a>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -129,78 +129,52 @@
 
         <section id="current-stage" class="section">
             <div class="section-container">
-                <h2 class="section-title glitch-text" data-text="Current Stage" data-i18n="current_stage_title">Current Stage</h2>
+                <h2 class="section-title glitch-text" data-text="Current Phase" data-i18n="current_phase_title">Current <span class="gradient-text" data-text="Phase">Phase</span></h2>
                 <div class="current-stage-content">
                     <div class="stage-info">
-                        <div class="stage-badge cyberpunk-badge" data-i18n="current_stage_subtitle">Phase 1: Foundation</div>
-                        <h3 data-i18n="current_stage_desc">Building the Community and Educational Platform</h3>
-                        <p data-i18n="current_stage_text">
-                            We are currently in the initial phase of our ecosystem development, focusing on creating comprehensive educational courses and building a strong community of like-minded individuals. Our open-source repository serves as the foundation for collaborative development of the ASINGULARITY AI ecosystem.
-                        </p>
-                        <div class="education-focus cyberpunk-card">
-                            <h4 data-i18n="educational_courses_development"><i class="fas fa-graduation-cap"></i> Educational Courses Development</h4>
-                            <p data-i18n="educational_courses_description">We are actively developing a series of specialized courses that will train new potential team members and ecosystem participants in TON blockchain technology, AI integration, and decentralized systems development.</p>
-                            <ul class="education-highlights">
-                                <li><i class="fas fa-rocket"></i> <strong data-i18n="course1_name">AI CRYPTO STARTUP - LAUNCH YOUR ROCKET</strong>: <span data-i18n="course1_short_desc">Comprehensive course on building decentralized AI startups on TON</span> <a href="https://stepik.org/course/231513" class="course-link" target="_blank" data-i18n="enroll_button">Enroll <i class="fas fa-external-link-alt"></i></a></li>
-                                <li><i class="fas fa-code"></i> <strong data-i18n="course2_name">PYTHON FROM ZERO TO MIDDLE - AI-BOOSTED DEV</strong>: <span data-i18n="course2_short_desc">Programming fundamentals with AI tools integration</span> <a href="https://stepik.org/course/186465" class="course-link" target="_blank" data-i18n="enroll_button">Enroll <i class="fas fa-external-link-alt"></i></a></li>
-                                <li><i class="fas fa-globe"></i> <strong data-i18n="course3_name">CRYPTO WORLD & DECENTRALIZATION</strong>: <span data-i18n="course3_short_desc">Deep dive into DAOs, security, and marketing in Web3</span> <a href="https://stepik.org/course/233105" class="course-link" target="_blank" data-i18n="enroll_button">Enroll <i class="fas fa-external-link-alt"></i></a></li>
-                            </ul>
-                            <p data-i18n="courses_team_building">Through these courses, we're not just sharing knowledge—we're building our team and ecosystem by training the next generation of TON blockchain developers and AI specialists who will contribute directly to our project.</p>
-                            <div class="education-cta">
-                                <a href="https://stepik.org/course/231513" class="btn secondary-btn cyberpunk-btn" target="_blank" data-i18n="join_main_course">Join Our Main Course</a>
-                            </div>
-                        </div>
+                        <span class="stage-badge" data-i18n="current_phase_badge">Фаза 1: Фундамент</span>
+                        <h3 data-i18n="current_phase_subtitle">Мы создаем прочный технологический фундамент</h3>
+                        <p data-i18n="current_phase_desc">Текущий этап сфокусирован на построении ключевой инфраструктуры и формировании сообщества. Присоединяйтесь к нашей команде и станьте частью революционного проекта!</p>
                         <ul class="stage-highlights">
-                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_stage_highlights.0">Launching educational courses on Stepik platform</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_stage_highlights.1">Building the GitHub repository structure</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_stage_highlights.2">Establishing NFT rewards system for contributors</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_stage_highlights.3">Creating community channels on Telegram</span></li>
-                            <li><i class="fas fa-spinner fa-pulse"></i> <span data-i18n="current_stage_highlights.4">Developing the AI agent system prototype</span></li>
-                            <li><i class="fas fa-spinner fa-pulse"></i> <span data-i18n="current_stage_highlights.5">Implementing initial smart contracts on TON</span></li>
-                            <li><i class="fas fa-spinner fa-pulse"></i> <span data-i18n="current_stage_highlights.6">Training new team members through our educational platform</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight1">Разработка образовательных курсов</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight2">Формирование структуры репозитория</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight3">Создание базовой функциональности ИИ-агентов</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight4">Implementing NFT reward system</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight5">Setting up community channels and initial marketing</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight6">Designing architecture for TON smart contracts</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="current_phase_highlight7">Forming core team and attracting initial contributors</span></li>
                         </ul>
-                        <p data-i18n="join_early_text">
-                            Join us now to become an early contributor and earn NFTs that will provide you with a share in the project's future profits. Together, we're building a revolutionary decentralized AI startup that will change the future of work and value creation.
-                        </p>
+                        <div class="cta-buttons">
+                            <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="current_phase_cta_primary">GitHub</a>
+                            <a href="https://t.me/AI_CRYPTO_STARTUP" class="btn secondary-btn cyberpunk-btn" target="_blank" data-i18n="current_phase_cta_secondary">Telegram</a>
+                        </div>
                     </div>
                     <div class="stage-image">
                         <div class="cyberpunk-visualization">
                             <div class="visualization-container">
-                                <div class="visualization-cube">
-                                    <div class="cube-face front"><i class="fas fa-robot"></i></div>
-                                    <div class="cube-face back"><i class="fas fa-brain"></i></div>
-                                    <div class="cube-face right"><i class="fas fa-network-wired"></i></div>
-                                    <div class="cube-face left"><i class="fas fa-code"></i></div>
-                                    <div class="cube-face top"><i class="fas fa-cubes"></i></div>
-                                    <div class="cube-face bottom"><i class="fas fa-microchip"></i></div>
-                                </div>
-                                <div class="visualization-particles"></div>
                                 <div class="visualization-grid"></div>
-                                <div class="visualization-data">
-                                    <div class="data-line" style="--delay: 0s;"></div>
-                                    <div class="data-line" style="--delay: 0.5s;"></div>
-                                    <div class="data-line" style="--delay: 1s;"></div>
-                                    <div class="data-line" style="--delay: 1.5s;"></div>
-                                    <div class="data-line" style="--delay: 2s;"></div>
+                                <div class="visualization-particles"></div>
+                                <div class="visualization-cube">
+                                    <div class="cube-face front"><i class="fas fa-brain"></i></div>
+                                    <div class="cube-face back"><i class="fas fa-robot"></i></div>
+                                    <div class="cube-face right"><i class="fas fa-microchip"></i></div>
+                                    <div class="cube-face left"><i class="fas fa-network-wired"></i></div>
+                                    <div class="cube-face top"><i class="fas fa-code-branch"></i></div>
+                                    <div class="cube-face bottom"><i class="fas fa-database"></i></div>
                                 </div>
-                            </div>
-                            <div class="visualization-action-buttons">
-                                <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="visualization-btn" target="_blank" data-i18n="github_link">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="https://t.me/AI_CRYPTO_STARTUP" class="visualization-btn" target="_blank" data-i18n="telegram_link">
-                                    <i class="fab fa-telegram"></i>
-                                    <span>Telegram</span>
-                                </a>
-                                <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" class="visualization-btn" target="_blank" data-i18n="nft_rewards_link">
-                                    <i class="fas fa-gem"></i>
-                                    <span>NFT Rewards</span>
-                                </a>
-                                <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/CONTRIBUTION_GUIDELINES.md" class="visualization-btn" target="_blank" data-i18n="contribute_link">
-                                    <i class="fas fa-code-branch"></i>
-                                    <span>Contribute</span>
-                                </a>
+                                <div class="visualization-data">
+                                    <div class="data-line"></div>
+                                    <div class="data-line"></div>
+                                    <div class="data-line"></div>
+                                    <div class="data-line"></div>
+                                    <div class="data-line"></div>
+                                </div>
+                                <div class="visualization-action-buttons">
+                                    <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP" class="visualization-btn github-btn" data-i18n="visual_btn_github" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://t.me/AI_CRYPTO_STARTUP" class="visualization-btn telegram-btn" data-i18n="visual_btn_telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                                    <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP/blob/main/community/rewards/NFT_REWARDS_SYSTEM.md" class="visualization-btn nft-btn" data-i18n="visual_btn_nft" target="_blank"><i class="fas fa-gem"></i></a>
+                                    <a href="#join" class="visualization-btn contribute-btn" data-i18n="visual_btn_contribute"><i class="fas fa-code-branch"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -210,41 +184,44 @@
 
         <section id="roadmap" class="section">
             <div class="section-container">
-                <h2 class="section-title glitch-text" data-text="Ecosystem Roadmap" data-i18n="roadmap_title">Ecosystem <span class="gradient-text" data-text="Roadmap">Roadmap</span></h2>
+                <h2 class="section-title glitch-text" data-text="Стратегическая дорожная карта" data-i18n="roadmap_title">Стратегическая <span class="gradient-text" data-text="дорожная карта">дорожная карта</span></h2>
                 <div class="timeline">
-                    <div class="timeline-item active">
+                    <!-- Roadmap Phase 1 -->
+                    <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content cyberpunk-card">
-                            <h3 data-i18n="roadmap_phase1_title">Phase 1: Foundation</h3>
-                            <span class="timeline-date" data-i18n="roadmap_phase1_date">Current Phase</span>
+                            <h3 data-i18n="roadmap_phase1_title">Фаза 1: Фундамент</h3>
+                            <span class="timeline-date" data-i18n="roadmap_phase1_date">Текущий этап</span>
                             <div class="extra-info">
-                                <h4 data-i18n="roadmap_phase1_desc">Building the Foundation</h4>
-                                <p data-i18n="roadmap_phase1_paragraph">During this critical initial phase, we are establishing the core infrastructure and community:</p>
+                                <h4 data-i18n="roadmap_phase1_desc">Создание прочного технологического фундамента</h4>
+                                <p data-i18n="roadmap_phase1_paragraph">На этом критическом начальном этапе мы создаем основную инфраструктуру и сообщество:</p>
                                 <ul>
-                                    <li data-i18n="roadmap_phase1_list_item1">Developing comprehensive educational courses on the Stepik platform</li>
-                                    <li data-i18n="roadmap_phase1_list_item2">Creating the GitHub repository structure and documentation</li>
-                                    <li data-i18n="roadmap_phase1_list_item3">Building a prototype of the AI agent system with basic functionality</li>
-                                    <li data-i18n="roadmap_phase1_list_item4">Establishing the NFT rewards system for contributors</li>
+                                    <li data-i18n="roadmap_phase1_list_item1">Разработка комплексных образовательных курсов на платформе Stepik</li>
+                                    <li data-i18n="roadmap_phase1_list_item2">Создание структуры репозитория GitHub и документации</li>
+                                    <li data-i18n="roadmap_phase1_list_item3">Создание прототипа системы ИИ-агентов с базовой функциональностью</li>
+                                    <li data-i18n="roadmap_phase1_list_item4">Implementing NFT reward system</li>
                                     <li data-i18n="roadmap_phase1_list_item5">Setting up community channels and initial marketing</li>
-                                    <li data-i18n="roadmap_phase1_list_item6">Designing the architecture for smart contracts on TON</li>
-                                    <li data-i18n="roadmap_phase1_list_item7">Forming the core team and attracting early contributors</li>
+                                    <li data-i18n="roadmap_phase1_list_item6">Designing architecture for TON smart contracts</li>
+                                    <li data-i18n="roadmap_phase1_list_item7">Forming core team and attracting initial contributors</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="timeline-detail">
                             <div class="timeline-detail-content">
                                 <div class="timeline-detail-icon"><i class="fas fa-rocket"></i></div>
-                                <h4 data-i18n="roadmap_phase1_goals_title">Foundation Phase Goals</h4>
+                                <h4 data-i18n="roadmap_phase1_goals_title">Цели фундаментального этапа</h4>
                                 <ul>
-                                    <li data-i18n="roadmap_phase1_goals_item1">Recruit 20+ active contributors to the project</li>
-                                    <li data-i18n="roadmap_phase1_goals_item2">Start the educational courses on Stepik platform</li>
-                                    <li data-i18n="roadmap_phase1_goals_item3">Establish a strong community presence</li>
-                                    <li data-i18n="roadmap_phase1_goals_item4">Develop initial AI agent prototypes</li>
-                                    <li data-i18n="roadmap_phase1_goals_item5">Create comprehensive documentation</li>
-                            </ul>
+                                    <li data-i18n="roadmap_phase1_goals_item1">Привлечь 20+ активных участников проекта</li>
+                                    <li data-i18n="roadmap_phase1_goals_item2">Запустить образовательные курсы на платформе Stepik</li>
+                                    <li data-i18n="roadmap_phase1_goals_item3">Создать сильное присутствие сообщества</li>
+                                    <li data-i18n="roadmap_phase1_goals_item4">Разработать начальные прототипы ИИ-агентов</li>
+                                    <li data-i18n="roadmap_phase1_goals_item5">Создать комплексную документацию</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Roadmap Phase 2 -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content cyberpunk-card">
@@ -763,12 +740,17 @@
         <!-- Дополнительные секции для проектных планов -->
         <section id="project-plans" class="section">
             <div class="section-container">
-                <h2 class="section-title glitch-text" data-text="Project Plans" data-i18n="project_plans_title">Project Plans</h2>
-                <p class="section-description" data-i18n="project_plans_desc">We are developing an innovative ecosystem that will transform human interaction with artificial intelligence.</p>
+                <h2 class="section-title glitch-text" data-text="Project Plans" data-i18n="project_plans_title">Project <span class="gradient-text" data-text="Plans">Plans</span></h2>
+                <p class="section-description" data-i18n="project_plans_desc">We are developing an innovative ecosystem that will transform how humans interact with artificial intelligence.</p>
                 
-                <!-- Дополнительный контент для проектных планов -->
-                <div class="project-plans-content">
-                    <!-- Здесь можно добавить дополнительный контент -->
+                <!-- Добавляем стильные указатели вниз -->
+                <div class="scroll-indicators">
+                    <div class="scroll-arrow-container">
+                        <div class="scroll-arrow"></div>
+                        <div class="scroll-arrow"></div>
+                        <div class="scroll-arrow"></div>
+                    </div>
+                    <p class="scroll-text">Explore our detailed plans below</p>
                 </div>
             </div>
         </section>
@@ -782,64 +764,64 @@
                 <div class="courses-grid">
                     <!-- Курс 1 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course1_title">⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 LAUNCH YOUR ROCKET 🚀</h3>
-                        <p data-i18n="course1_desc">Dive into the AI Agent revolution era! Let's enter the AI and CRYPTO world on TON blockchain. Learn cutting-edge technologies and participate in course development.</p>
+                        <h3 data-i18n="course1_title">⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 ЗАПУСКАЕМ РАКЕТУ 🚀</h3>
+                        <p data-i18n="course1_desc">Погрузись в эпоху революции ИИ-Агентов! Залетаем в AI и CRYPTO мир на блокчейне TON. Изучай передовые технологии и участвуй в разработке полезных инструментов.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 2 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course2_title">⚡YOUR WAY TO IT 💻 PYTHON FROM ZERO TO MIDDLE</h3>
-                        <p data-i18n="course2_desc">Start programming from scratch and level up to middle+ with AI help! We'll master Python, modern frameworks, and AI tools for complete products.</p>
+                        <h3 data-i18n="course2_title">⚡ТВОЙ ВКАТ В IT 💻 PYTHON С НУЛЯ ДО МИДЛА</h3>
+                        <p data-i18n="course2_desc">Начни программировать с нуля и прокачайся до мидл+ уровня с помощью ИИ! Освоим Python, современные фреймворки и ИИ-инструменты для создания полноценных продуктов.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 3 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course3_title">🌐 CRYPTO WORLD & DECENTRALIZATION</h3>
-                        <p data-i18n="course3_desc">Enter the Web3 world! Learn about DAOs and smart contracts, blockchain security, and promote DeFi products in a fast-growing ecosystem.</p>
+                        <h3 data-i18n="course3_title">🌐 КРИПТО МИР И ДЕЦЕНТРАЛИЗАЦИЯ</h3>
+                        <p data-i18n="course3_desc">Входи в мир Web3! Изучи работу DAO и смарт-контрактов, безопасность блокчейн-систем и продвижение DeFi-продуктов в быстрорастущей экосистеме.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 4 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course4_title">🧩 BROWSER EXTENSIONS: AI AGENTS</h3>
-                        <p data-i18n="course4_desc">Transform your browser into an intelligent assistant! Create an Open Source extension with AI agents, connect them to models, and add crypto functionality.</p>
+                        <h3 data-i18n="course4_title">🧩 БРАУЗЕРНЫЕ РАСШИРЕНИЯ: ИИ-АГЕНТЫ</h3>
+                        <p data-i18n="course4_desc">Преобразим браузер в интеллектуального помощника! Создадим Open Source расширение с ИИ-агентами, подключим их к моделям и добавим крипто-функционал.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 5 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course5_title">⚙️ SMART CONTRACTS ON TON</h3>
-                        <p data-i18n="course5_desc">Learn FunC and TVM, create DeFi or NFT projects on the TON blockchain. Master writing, testing, and deploying smart contracts in a growing ecosystem.</p>
+                        <h3 data-i18n="course5_title">⚙️ СМАРТ-КОНТРАКТЫ НА TON</h3>
+                        <p data-i18n="course5_desc">Изучи FunC и TVM, создай DeFi или NFT-проекты на блокчейне TON. Освой написание, тестирование и развертывание смарт-контрактов в быстрорастущей экосистеме.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 6 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course6_title">🔮 AI AGENTS DEVELOPMENT</h3>
-                        <p data-i18n="course6_desc">Master the art of creating autonomous AI agents that can perform complex tasks. Learn about vector databases, LLM integration, and agent orchestration.</p>
+                        <h3 data-i18n="course6_title">🔮 РАЗРАБОТКА ИИ-АГЕНТОВ</h3>
+                        <p data-i18n="course6_desc">Освойте искусство создания автономных ИИ-агентов, выполняющих сложные задачи. Изучите векторные базы данных, интеграцию с LLM и оркестрацию агентов.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 7 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course7_title">📱 MOBILE APPS WITH AI</h3>
-                        <p data-i18n="course7_desc">Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and how to connect your apps to AI services and blockchain.</p>
+                        <h3 data-i18n="course7_title">📱 МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ С ИИ</h3>
+                        <p data-i18n="course7_desc">Создавайте мощные мобильные приложения с интегрированными возможностями ИИ. Изучите Flutter, React Native и подключение приложений к ИИ-сервисам и блокчейну.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 8 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course8_title">💰 DEFI & CRYPTO TRADING</h3>
-                        <p data-i18n="course8_desc">Dive into decentralized finance and crypto trading strategies. Learn about liquidity pools, yield farming, and how to create trading bots with AI algorithms.</p>
+                        <h3 data-i18n="course8_title">💰 DEFI И КРИПТО-ТРЕЙДИНГ</h3>
+                        <p data-i18n="course8_desc">Погрузитесь в децентрализованные финансы и стратегии крипто-трейдинга. Изучите пулы ликвидности, фарминг доходности и создание торговых ботов с ИИ-алгоритмами.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                     
                     <!-- Курс 9 -->
                     <div class="course-card cyberpunk-card">
-                        <h3 data-i18n="course9_title">🔐 BLOCKCHAIN SECURITY</h3>
-                        <p data-i18n="course9_desc">Master the security aspects of blockchain development. Learn about common vulnerabilities, audit techniques, and how to build secure smart contracts and DApps.</p>
+                        <h3 data-i18n="course9_title">🔐 БЕЗОПАСНОСТЬ БЛОКЧЕЙНА</h3>
+                        <p data-i18n="course9_desc">Освойте аспекты безопасности разработки блокчейна. Изучите распространенные уязвимости, методы аудита и создание безопасных смарт-контрактов и DApps.</p>
                         <a href="https://stepik.org/course/233103" class="btn primary-btn cyberpunk-btn" target="_blank" data-i18n="stepik_button">Stepik</a>
                     </div>
                 </div>
@@ -965,6 +947,20 @@
                     <div class="project-status cyberpunk-card">
                         <h3 data-i18n="project_status_title">Статус проекта</h3>
                         <p data-i18n="project_status_active">Активная разработка</p>
+                        
+                        <!-- Добавляем блок о сборе команды -->
+                        <div class="project-team-status">
+                            <h4 data-i18n="project_team_status">Actively Recruiting Team</h4>
+                            <p data-i18n="project_team_desc">We are looking for talented developers, designers, and content creators to join our revolutionary startup</p>
+                            <a href="https://t.me/asingularity_ai" class="btn cyberpunk-btn" data-i18n="join_team_btn">Join the Team</a>
+                        </div>
+                        
+                        <!-- Добавляем блок об инвестициях -->
+                        <div class="project-investment">
+                            <h4 data-i18n="project_investment_title">Investment Opportunity</h4>
+                            <p data-i18n="project_investment_desc">We are currently raising seed funding for our project. Contact us to learn more about investment opportunities</p>
+                            <a href="https://t.me/asingularity_ai" class="btn cyberpunk-btn" data-i18n="investment_btn">Discuss Investment</a>
+                        </div>
                     </div>
                     
                     <div class="project-goals cyberpunk-card">

@@ -6,9 +6,16 @@ const translations = {
         nav_about: "About",
         nav_roadmap: "Roadmap",
         nav_ecosystem: "Ecosystem",
-        nav_nft: "NFT Rewards",
-        nav_join: "Join Us",
+        nav_nft: "NFT",
+        nav_join: "Join",
         invest_btn: "Pre-Seed Investment",
+        menu_btn: "Menu",
+        
+        // Visual Buttons
+        visual_btn_github: "GitHub",
+        visual_btn_telegram: "Telegram",
+        visual_btn_nft: "NFT Rewards",
+        visual_btn_contribute: "Contribute",
         
         // Hero section
         hero_title: "The Future of Decentralized AI",
@@ -49,27 +56,110 @@ const translations = {
             "Training new team members through our educational platform"
         ],
         
+        // Добавляем переводы для секции Current Phase
+        current_phase_title: "Current Phase",
+        current_phase_badge: "Phase 1: Foundation",
+        current_phase_subtitle: "We are building a solid technological foundation",
+        current_phase_desc: "The current stage is focused on building key infrastructure and forming the community. Join our team and become part of a revolutionary project!",
+        current_phase_highlight1: "Developing educational courses",
+        current_phase_highlight2: "Forming repository structure",
+        current_phase_highlight3: "Creating basic AI agent functionality",
+        current_phase_highlight4: "NFT reward system",
+        current_phase_highlight5: "Preparing TON smart contracts",
+        current_phase_highlight6: "Designing architecture for TON smart contracts",
+        current_phase_highlight7: "Forming core team and attracting initial contributors",
+        current_phase_cta_primary: "GitHub",
+        current_phase_cta_secondary: "Telegram",
+        
         // Roadmap
         roadmap_title: "Ecosystem Roadmap",
         roadmap_phase1_title: "Phase 1: Foundation",
         roadmap_phase1_date: "Current Phase",
         roadmap_phase1_desc: "Building the Foundation",
+        roadmap_phase1_paragraph: "We are creating a solid technological foundation",
+        roadmap_phase1_list_item1: "Developing educational courses",
+        roadmap_phase1_list_item2: "Forming repository structure",
+        roadmap_phase1_list_item3: "Creating basic AI agent functionality",
+        roadmap_phase1_list_item4: "Implementing NFT reward system",
+        roadmap_phase1_list_item5: "Preparing TON smart contracts",
+        roadmap_phase1_goals_title: "Foundation Milestones",
+        roadmap_phase1_goals_item1: "Launch educational platform",
+        roadmap_phase1_goals_item2: "Complete GitHub repository structure",
+        roadmap_phase1_goals_item3: "Develop NFT rewards system prototype",
+        roadmap_phase1_goals_item4: "Build initial community",
+        roadmap_phase1_goals_item5: "Establish development workflows",
         
         roadmap_phase2_title: "Phase 2: MVP Development",
         roadmap_phase2_date: "Q1-Q3 2025",
         roadmap_phase2_desc: "Creating Functional Products",
+        roadmap_phase2_paragraph: "In this phase, we transform concepts into working products:",
+        roadmap_phase2_list_item1: "Releasing a functional MVP of the AI agent system with real-world capabilities",
+        roadmap_phase2_list_item2: "Implementing core smart contracts for token management and rewards",
+        roadmap_phase2_list_item3: "Launching initial web interfaces and mobile applications",
+        roadmap_phase2_list_item4: "Expanding educational content to cover more specialized topics",
+        roadmap_phase2_list_item5: "Beginning targeted marketing campaigns to attract users and contributors",
+        roadmap_phase2_list_item6: "Creating the distributed vector database for agent knowledge sharing",
+        roadmap_phase2_list_item7: "Establishing partnerships with key players in the AI and crypto space",
+        roadmap_phase2_goals_title: "MVP Development Milestones",
+        roadmap_phase2_goals_item1: "Complete AI agent system with basic task execution",
+        roadmap_phase2_goals_item2: "Deploy smart contracts on TON testnet",
+        roadmap_phase2_goals_item3: "Launch beta version of web and mobile interfaces",
+        roadmap_phase2_goals_item4: "Establish initial partnerships with AI and crypto projects",
+        roadmap_phase2_goals_item5: "Begin user testing and feedback collection",
         
         roadmap_phase3_title: "Phase 3: Ecosystem Growth",
         roadmap_phase3_date: "Q2-Q4 2025",
         roadmap_phase3_desc: "Scaling the Ecosystem",
+        roadmap_phase3_paragraph: "This phase focuses on expansion and integration of core components:",
+        roadmap_phase3_list_item1: "Launching RockeDAPP - our AI-powered crypto wallet and financial hub",
+        roadmap_phase3_list_item2: "Developing the AI-SMM Agency for automated content creation and management",
+        roadmap_phase3_list_item3: "Expanding the distributed vector database with more action patterns",
+        roadmap_phase3_list_item4: "Implementing token mining via computations to reward resource providers",
+        roadmap_phase3_list_item5: "Securing significant investments ($1M+) to accelerate development",
+        roadmap_phase3_list_item6: "Creating browser extensions for seamless AI agent integration",
+        roadmap_phase3_list_item7: "Establishing the framework for AI personas with specialized capabilities",
+        roadmap_phase3_goals_title: "Ecosystem Growth Strategy",
+        roadmap_phase3_goals_item1: "Integrate all components into a cohesive ecosystem",
+        roadmap_phase3_goals_item2: "Launch token and begin distribution to NFT holders",
+        roadmap_phase3_goals_item3: "Expand user base through targeted marketing",
+        roadmap_phase3_goals_item4: "Establish partnerships with major blockchain projects",
+        roadmap_phase3_goals_item5: "Begin international expansion efforts",
         
         roadmap_phase4_title: "Phase 4: Expansion",
         roadmap_phase4_date: "2026",
         roadmap_phase4_desc: "Broadening Our Reach",
+        roadmap_phase4_paragraph: "During this phase, we introduce additional services and expand globally:",
+        roadmap_phase4_list_item1: "Launching comprehensive DeFi services including P2P exchange and crypto processing",
+        roadmap_phase4_list_item2: "Developing the decentralized VPN/Proxy service for enhanced privacy and security",
+        roadmap_phase4_list_item3: "Creating the AI-Oracles system for decentralized data collection and analysis",
+        roadmap_phase4_list_item4: "Implementing the NFT for Graphics Cards system to monetize computing resources",
+        roadmap_phase4_list_item5: "Expanding to international markets with localized services and marketing",
+        roadmap_phase4_list_item6: "Introducing real estate tokenization services with AI assistance",
+        roadmap_phase4_list_item7: "Developing UltrAPI framework for creating any services with ai agents",
+        roadmap_phase4_goals_title: "Global Expansion Plan",
+        roadmap_phase4_goals_item1: "Establish presence in key markets across Asia, Europe, and Americas",
+        roadmap_phase4_goals_item2: "Develop localized versions of all services",
+        roadmap_phase4_goals_item3: "Create regional partnerships and community hubs",
+        roadmap_phase4_goals_item4: "Implement multi-language support across the ecosystem",
+        roadmap_phase4_goals_item5: "Adapt to regional regulatory requirements",
         
         roadmap_phase5_title: "Phase 5: Advanced Ecosystem",
         roadmap_phase5_date: "LVL UP",
         roadmap_phase5_desc: "Creating a Self-Sustaining Economy",
+        roadmap_phase5_paragraph: "In this mature phase, we complete the ecosystem with advanced components:",
+        roadmap_phase5_list_item1: "Launching the DAO Advertising Exchange for decentralized marketing",
+        roadmap_phase5_list_item2: "Developing the AI-Launchpool to support and fund new startups",
+        roadmap_phase5_list_item3: "Creating the Alternative Energy Crypto Project for sustainable operations",
+        roadmap_phase5_list_item4: "Implementing QuadrAD/ADrone service for innovative aerial advertising",
+        roadmap_phase5_list_item5: "Establishing a comprehensive AGI framework with self-improvement capabilities",
+        roadmap_phase5_list_item6: "Introducing the prediction market platform for forecasting and betting",
+        roadmap_phase5_list_item7: "Achieving economic self-sufficiency through DeFi tools and token mechanisms",
+        roadmap_phase5_goals_title: "Advanced AI Integration",
+        roadmap_phase5_goals_item1: "Develop self-improving AI systems with advanced learning capabilities",
+        roadmap_phase5_goals_item2: "Create fully autonomous agent networks",
+        roadmap_phase5_goals_item3: "Implement cross-chain interoperability for all services",
+        roadmap_phase5_goals_item4: "Establish AI governance mechanisms",
+        roadmap_phase5_goals_item5: "Develop next-generation human-AI collaboration tools",
         
         // Roadmap phase 4
         roadmap_phase4_paragraph: "During this phase, we introduce additional services and expand globally:",
@@ -186,7 +276,23 @@ const translations = {
         nft_description: "Earn NFTs by Contributing to Our Ecosystem",
         nft_text: "Active contributors to our ecosystem receive exclusive NFTs that provide a share in the project's future profits. These NFTs represent both recognition of contribution and entitle holders to a percentage of net profits according to our structured reward system.",
         nft_distribution_title: "NFT Distribution (1000 NFTs Total)",
+        nft_distribution_reserve: "420 NFTs (42%) - Reserved for sales, marketing, and non-public parts",
+        nft_distribution_community: "580 NFTs (58%) - Allocated for community participants",
         nft_profit_sharing_title: "Profit Sharing Structure",
+        nft_profit_column1: "Profit Share",
+        nft_profit_column2: "Until Payment Reaches",
+        nft_profit_row1_col1: "42%",
+        nft_profit_row1_col2: "$1,000 per NFT",
+        nft_profit_row2_col1: "23%",
+        nft_profit_row2_col2: "$2,000 per NFT",
+        nft_profit_row3_col1: "16%",
+        nft_profit_row3_col2: "$5,000 per NFT",
+        nft_profit_row4_col1: "15%",
+        nft_profit_row4_col2: "$10,000 per NFT",
+        nft_profit_row5_col1: "8%",
+        nft_profit_row5_col2: "$50,000 per NFT",
+        nft_profit_row6_col1: "4%",
+        nft_profit_row6_col2: "$100,000 per NFT",
         nft_investment_bonus_title: "Investment Milestone Bonus",
         nft_investment_bonus_text: "When the project reaches $1M in investments, each NFT holder will receive $100 (or equivalent in our token) directly to their wallet.",
         nft_view_full_system: "View Full NFT Rewards System",
@@ -355,16 +461,13 @@ const translations = {
 
         // Новые курсы
         course6_title: "🔮 AI AGENTS DEVELOPMENT",
-        course6_desc: "Master the art of creating autonomous AI agents that can perform complex tasks. Learn about vector databases, LLM integration, and agent orchestration.",
-
+        course6_desc: "Master the art of creating autonomous AI agents that perform complex tasks. Learn about vector databases, LLM integration, and agent orchestration.",
         course7_title: "📱 MOBILE APPS WITH AI",
-        course7_desc: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and how to connect your apps to AI services and blockchain.",
-
+        course7_desc: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and how to connect apps to AI services and blockchain.",
         course8_title: "💰 DEFI & CRYPTO TRADING",
-        course8_desc: "Dive into decentralized finance and crypto trading strategies. Learn about liquidity pools, yield farming, and how to create trading bots with AI algorithms.",
-
+        course8_desc: "Dive into decentralized finance and crypto trading strategies. Learn about liquidity pools, yield farming, and creating trading bots with AI algorithms.",
         course9_title: "🔐 BLOCKCHAIN SECURITY",
-        course9_desc: "Master the security aspects of blockchain development. Learn about common vulnerabilities, audit techniques, and how to build secure smart contracts and DApps.",
+        course9_desc: "Master blockchain development security aspects. Learn about common vulnerabilities, audit methods, and creating secure smart contracts and DApps.",
 
         // Финансовые перспективы
         financial_prospects_title: "Financial Prospects",
@@ -389,426 +492,6 @@ const translations = {
 
         educational_revenue_title: "Educational Courses",
         educational_revenue_desc: "Revenue from premium educational content, specialized courses, and certification programs.",
-
-        // Project Details
-        project_details_title: "Project Details",
-        project_status_title: "Project Status",
-        project_status_active: "Active Development",
-        project_goals_title: "Key Goals",
-        project_goal1: "Creating a decentralized AI agent system",
-        project_goal2: "Development of a DAO-AI-Freelance platform",
-        project_goal3: "Integration with TON blockchain",
-        project_goal4: "Creating multi-platform access",
-        project_goal5: "Implementation of the NFT rewards system",
-        project_goal6: "Development of educational courses",
-        join_team_btn: "Join the Team",
-        contact_team_btn: "Contact the Team"
-    },
-    ru: {
-        logo_text: "ASINGULARITY",
-        // Navigation
-        nav_about: "О проекте",
-        nav_roadmap: "Дорожная карта",
-        nav_ecosystem: "Экосистема",
-        nav_nft: "NFT Награды",
-        nav_join: "Присоединиться",
-        invest_btn: "🔥 Инвестировать в будущее!",
-        
-        // Hero section
-        hero_title: "Будущее децентрализованного ИИ",
-        hero_subtitle: "Создаем революционную экосистему, объединяющую передовые технологии ИИ, Крипто, NFT и Web3 на сверхскоростном блокчейне TON",
-        hero_cta_primary: "GitHub Репозиторий",
-        hero_cta_secondary: "Telegram Сообщество",
-        
-        // About section
-        about_title: "О проекте ASINGULARITY",
-        about_description: "ASINGULARITY AI — это революционная децентрализованная экосистема, объединяющая мощь Искусственного Суперинтеллекта (ASI) и технологической Сингулярности. Наша миссия — создать синергетическую экосистему нового поколения, использующую высокоскоростной блокчейн TON, виртуальную машину TVM и передовые технологии ИИ для создания автономного цифрового экономического пространства.",
-        
-        // Features
-        feature_1_title: "ИИ-агенты нового поколения",
-        feature_1_desc: "Прорывная система с открытым кодом для виртуальных ИИ-агентов, выполняющих любую работу на ПК и генерирующих прибыль 24/7",
-        feature_2_title: "DAO-AI-Фриланс",
-        feature_2_desc: "Революционная децентрализованная платформа, где ИИ-агенты самостоятельно находят работу и зарабатывают для своих владельцев",
-        feature_3_title: "Мощь блокчейна TON",
-        feature_3_desc: "Использование уникальных возможностей TON для молниеносной скорости, безграничной гибкости и масштабируемости",
-        feature_4_title: "Доступ с любого устройства",
-        feature_4_desc: "Мгновенное взаимодействие через Telegram, стильные мобильные приложения и интуитивные веб-интерфейсы",
-        feature_5_title: "Эксклюзивные NFT награды",
-        feature_5_desc: "Активные участники получают уникальные NFT, гарантирующие долю в будущей прибыли и особые привилегии",
-        feature_6_title: "Образовательная экосистема",
-        feature_6_desc: "Инновационные курсы и тренинги для развития нашего сообщества и экосистемы следующего поколения",
-        
-        // Current Stage
-        current_stage_title: "Текущий этап проекта",
-        current_stage_subtitle: "Фаза 1: Создание фундамента",
-        current_stage_desc: "Формирование сообщества и образовательной платформы",
-        current_stage_text: "Сейчас мы находимся на стартовом этапе развития нашей революционной экосистемы, фокусируясь на создании передовых образовательных курсов и формировании мощного сообщества единомышленников. Наш репозиторий с открытым кодом служит основой для коллективной разработки экосистемы ASINGULARITY AI, где каждый вклад ценен и вознаграждается.",
-        current_stage_highlights: [
-            "Запуск инновационных образовательных курсов на платформе Stepik",
-            "Создание продвинутой структуры репозитория GitHub",
-            "Внедрение уникальной системы вознаграждений NFT для участников",
-            "Формирование активных каналов сообщества в Telegram",
-            "Разработка прототипа системы ИИ-агентов нового поколения",
-            "Создание передовых смарт-контрактов на блокчейне TON",
-            "Обучение и подготовка талантливых членов команды через нашу образовательную платформу"
-        ],
-        
-        // Roadmap
-        roadmap_title: "Стратегическая дорожная карта",
-        roadmap_phase1_title: "Фаза 1: Фундамент",
-        roadmap_phase1_date: "Текущий этап",
-        roadmap_phase1_desc: "Создание прочного технологического фундамента",
-        
-        roadmap_phase2_title: "Фаза 2: Разработка MVP",
-        roadmap_phase2_date: "1-3 кв. 2025",
-        roadmap_phase2_desc: "Запуск инновационных прототипов продуктов",
-        
-        roadmap_phase3_title: "Фаза 3: Рост экосистемы",
-        roadmap_phase3_date: "2-4 кв. 2025",
-        roadmap_phase3_desc: "Стремительное масштабирование экосистемы",
-        
-        roadmap_phase4_title: "Фаза 4: Глобальная экспансия",
-        roadmap_phase4_date: "2026",
-        roadmap_phase4_desc: "Покорение новых рынков и технологических высот",
-        
-        roadmap_phase5_title: "Фаза 5: Революционная экосистема",
-        roadmap_phase5_date: "ПРОРЫВ",
-        roadmap_phase5_desc: "Создание самоподдерживающейся цифровой экономики",
-        
-        // Roadmap phase 4
-        roadmap_phase4_paragraph: "В течение этого этапа мы внедряем дополнительные сервисы и расширяемся глобально:",
-        roadmap_phase4_list_item1: "Запуск комплексных DeFi-сервисов, включая P2P-обмен и крипто-процессинг",
-        roadmap_phase4_list_item2: "Разработка децентрализованного сервиса VPN/Proxy для повышения приватности и безопасности",
-        roadmap_phase4_list_item3: "Создание системы ИИ-Оракулов для децентрализованного сбора и анализа данных",
-        roadmap_phase4_list_item4: "Внедрение системы NFT для видеокарт для монетизации вычислительных ресурсов",
-        roadmap_phase4_list_item5: "Расширение на международные рынки с локализованными сервисами и маркетингом",
-        roadmap_phase4_list_item6: "Внедрение сервисов токенизации недвижимости с помощью ИИ",
-        roadmap_phase4_list_item7: "Разработка фреймворка UltrAPI для создания любых сервисов с ИИ-агентами",
-        
-        // Roadmap phase 5
-        roadmap_phase5_paragraph: "На этом зрелом этапе мы завершаем экосистему продвинутыми компонентами:",
-        roadmap_phase5_list_item1: "Запуск DAO Рекламной Биржи для децентрализованного маркетинга",
-        roadmap_phase5_list_item2: "Разработка ИИ-Launchpool для поддержки и финансирования новых стартапов",
-        roadmap_phase5_list_item3: "Создание Альтернативного Энергетического Крипто-Проекта для устойчивых операций",
-        roadmap_phase5_list_item4: "Внедрение сервиса QuadrAD/ADrone для инновационной воздушной рекламы",
-        roadmap_phase5_list_item5: "Создание комплексного фреймворка AGI с возможностями самосовершенствования",
-        roadmap_phase5_list_item6: "Внедрение платформы прогнозного рынка для прогнозирования и ставок",
-        roadmap_phase5_list_item7: "Достижение экономической самодостаточности через инструменты DeFi и механизмы токенов",
-        
-        // Ecosystem
-        ecosystem_title: "Компоненты экосистемы",
-        ecosystem_card1_title: "Система ИИ-агентов",
-        ecosystem_card1_desc: "Комплексная система AGI с распределенной векторной базой данных, мультичейн-интеграцией и майнингом токенов через вычисления.",
-        ecosystem_card1_extra_title: "Революционная система ИИ",
-        ecosystem_card1_extra_desc: "Наша децентрализованная система ИИ-агентов создана для эволюции и обучения из любых доступных внешних ресурсов, применяя полученные знания для эффективной монетизации. Ключевые особенности включают:",
-        ecosystem_card1_feature1: "Тесная интеграция с блокчейном TON для управления токенами, базой знаний и вознаграждениями",
-        ecosystem_card1_feature2: "Распределенная векторная база данных, хранящая оптимизированные шаблоны действий из различных источников",
-        ecosystem_card1_feature3: "Мультичейн и оффчейн возможности для максимальной гибкости",
-        ecosystem_card1_feature4: "Майнинг токенов через вычисления - зарабатывайте токены, предоставляя вычислительную мощность",
-        ecosystem_card1_feature5: "Система NFT-GPU, позволяющая владеть вычислительными ресурсами с пассивным доходом",
-
-        ecosystem_card2_title: "Образовательные курсы",
-        ecosystem_card2_desc: "Серия курсов, обучающих ИИ, крипто и разработке стартапов, одновременно формирующих наше сообщество.",
-        ecosystem_card2_extra_title: "Образовательная экосистема",
-        ecosystem_card2_extra_desc: "Наша комплексная образовательная платформа служит как базой знаний, так и строителем сообщества:",
-        ecosystem_card2_feature1: "Основной курс: \"AI CRYPTO STARTUP - ЗАПУСКАЕМ РАКЕТУ\" обучает созданию децентрализованных ИИ-стартапов",
-        ecosystem_card2_feature2: "Специализированные курсы, охватывающие разработку на Python, смарт-контракты TON, браузерные расширения и многое другое",
-        ecosystem_card2_feature3: "Создавайте систему ИИ-агентов с открытым исходным кодом вместе с другими студентами",
-        ecosystem_card2_feature4: "Формируйте собственное сообщество внутри нашей экосистемы",
-        ecosystem_card2_feature5: "Зарабатывайте NFT за активное участие, предоставляющие долю в прибыли экосистемы",
-        ecosystem_card2_feature6: "Доступно на нескольких платформах и на разных языках",
-
-        ecosystem_card3_title: "RockeDAPP - ИИ-кошелек",
-        ecosystem_card3_desc: "Многофункциональный мультичейн-кошелек с ИИ-агентами для трейдинга и встроенным агрегатором криптоинформации.",
-        ecosystem_card3_extra_title: "Криптокошелек нового поколения",
-        ecosystem_card3_extra_desc: "RockeDAPP - это больше, чем просто кошелек, это полная финансовая экосистема:",
-        ecosystem_card3_feature1: "Многофункциональный мультичейн полу/холодный кошелек, поддерживающий множество криптовалют",
-        ecosystem_card3_feature2: "Встроенные ИИ-агенты для технического и фундаментального анализа",
-        ecosystem_card3_feature3: "Тестирование и оптимизация торговых стратегий на исторических данных",
-        ecosystem_card3_feature4: "Подписка на торговые сигналы или делегирование управления средствами ИИ",
-        ecosystem_card3_feature5: "\"CoinMarketCap на стероидах\" - комплексный агрегатор криптоинформации",
-        ecosystem_card3_feature6: "Частный стейблкоин (USDX), обеспеченный другими стейблкоинами с доходностью на балансе",
-        ecosystem_card3_feature7: "Токен GOLDX, обеспеченный физическим золотом",
-        ecosystem_card3_feature8: "Опциональные функции анонимности для конфиденциальности транзакций",
-
-        ecosystem_card4_title: "Сеть социальных медиа",
-        ecosystem_card4_desc: "Сеть каналов и групп, управляемых ИИ-инструментами для генерации контента и вовлечения аудитории.",
-        ecosystem_card4_extra_title: "Социальная сеть на базе ИИ",
-        ecosystem_card4_extra_desc: "Наша стратегия в социальных медиа создает мощную систему продвижения и сбора данных:",
-        ecosystem_card4_feature1: "Сеть каналов и групп, охватывающих IT, бизнес, крипто, технологии будущего и мотивацию",
-        ecosystem_card4_feature2: "ИИ-инструменты для генерации контента, планирования и анализа аудитории",
-        ecosystem_card4_feature3: "Боты и ИИ-персоны, автономно управляющие каналами",
-        ecosystem_card4_feature4: "Автоматизированная оптимизация вовлеченности",
-        ecosystem_card4_feature5: "Сбор данных для обучения наших ИИ-систем",
-        ecosystem_card4_feature6: "Создание базы активных пользователей для всех проектов экосистемы",
-
-        ecosystem_card5_title: "DeFi-сервисы",
-        ecosystem_card5_desc: "P2P-обмен, крипто-процессинг, токенизация недвижимости и UltrAPI.app для доступа к ИИ-моделям.",
-        ecosystem_card5_extra_title: "Комплексная DeFi-экосистема",
-        ecosystem_card5_extra_desc: "Наши DeFi-сервисы обеспечивают финансовую инфраструктуру для всей экосистемы:",
-        ecosystem_card5_feature1: "P2P-обмен и крипто-процессинг: токенизация фиатных валют в стейблкоины",
-        ecosystem_card5_feature2: "Автоматизированные двусторонние платежи \"фиат-крипто\" с использованием смарт-контрактов и ИИ-агентов",
-        ecosystem_card5_feature3: "Сектор недвижимости: токенизированные инвестиции в недвижимость с помощью ИИ",
-        ecosystem_card5_feature4: "UltrAPI.app: Универсальный доступ к различным ИИ-моделям через API с микроплатежами на базе TON",
-        ecosystem_card5_feature5: "Интеграция со всеми продуктами экосистемы для бесшовных финансовых операций",
-
-        ecosystem_card6_title: "DAO Рекламная Биржа",
-        ecosystem_card6_desc: "NFT-фикация прав на каналы и рекламные площадки с автоматизированным управлением.",
-        ecosystem_card6_extra_title: "Децентрализованная рекламная платформа",
-        ecosystem_card6_extra_desc: "Наша DAO Рекламная Биржа революционизирует цифровой маркетинг:",
-        ecosystem_card6_feature1: "NFT-фикация прав на каналы и рекламные площадки",
-        ecosystem_card6_feature2: "Автоматизированное управление и продажа рекламных слотов",
-        ecosystem_card6_feature3: "ИИ-агенты для SMM, маркетинговой стратегии и аналитики",
-        ecosystem_card6_feature4: "Масштабируемый механизм привлечения рекламодателей и создателей контента",
-        ecosystem_card6_feature5: "Прозрачное распределение прибыли держателям NFT",
-        ecosystem_card6_feature6: "Услуги продвижения для всех проектов экосистемы",
-
-        ecosystem_card7_title: "NFT для видеокарт",
-        ecosystem_card7_desc: "Цифровизация прав на вычислительную мощность с пассивным доходом от неиспользуемых ресурсов.",
-        ecosystem_card7_extra_title: "Токенизированная вычислительная мощность",
-        ecosystem_card7_extra_desc: "Наша система NFT-GPU создает рынок вычислительных ресурсов:",
-        ecosystem_card7_feature1: "Цифровизация прав на вычислительную мощность через NFT",
-        ecosystem_card7_feature2: "Генерация пассивного дохода от неиспользуемых ресурсов GPU",
-        ecosystem_card7_feature3: "Возможность \"приобретения\" GPU, физически расположенных в наших дата-центрах",
-        ecosystem_card7_feature4: "Зарабатывайте, когда ваш GPU не используется лично вами",
-        ecosystem_card7_feature5: "Приоритетный доступ к вычислительной мощности для задач ИИ",
-        ecosystem_card7_feature6: "Прозрачное распределение прибыли на основе вклада",
-
-        ecosystem_card8_title: "ИИ-Launchpool",
-        ecosystem_card8_desc: "Launchpool, управляемый системой ИИ-агентов для стартапов с маркетингом, технической поддержкой и привлечением средств.",
-        ecosystem_card8_extra_title: "Акселератор стартапов под управлением ИИ",
-        ecosystem_card8_extra_desc: "Наш ИИ-Launchpool обеспечивает комплексную поддержку новых проектов:",
-        ecosystem_card8_feature1: "Полностью управляется системой ИИ-агентов для стартапов и проектов",
-        ecosystem_card8_feature2: "Полный пакет запуска: маркетинг, SMM, техническая поддержка и привлечение средств",
-        ecosystem_card8_feature3: "Помощь ИИ в структурировании концепций и создании моделей финансирования",
-        ecosystem_card8_feature4: "Автоматизированная проверка и поддержка проекта во время разработки",
-        ecosystem_card8_feature5: "Интеграция с другими сервисами экосистемы (RockeDAPP, DAO Рекламная Биржа, Система ИИ-агентов)",
-        ecosystem_card8_feature6: "Механизмы привлечения сообщества и инвесторов",
-        
-        // NFT Rewards
-        nft_title: "Революционная система NFT-наград",
-        nft_description: "Зарабатывайте эксклюзивные NFT, внося вклад в нашу экосистему",
-        nft_text: "Активные участники нашей экосистемы получают ценные NFT, дающие гарантированную долю в будущей прибыли проекта. Эти токены не только признание вашего вклада, но и ваш ключ к стабильному пассивному доходу и эксклюзивным преимуществам в нашей растущей экосистеме.",
-        nft_distribution_title: "Распределение NFT (всего 1000 эксклюзивных токенов)",
-        nft_distribution_reserve: "420 NFT (42%) - Зарезервировано для продаж, маркетинга и непубличных частей",
-        nft_distribution_community: "580 NFT (58%) - Выделено для участников сообщества",
-        nft_profit_sharing_title: "Прогрессивная структура распределения прибыли",
-        nft_profit_column1: "Доля прибыли",
-        nft_profit_column2: "Пока выплата не достигнет",
-        nft_profit_row1_col1: "42%",
-        nft_profit_row1_col2: "$1,000 за NFT",
-        nft_profit_row2_col1: "23%",
-        nft_profit_row2_col2: "$2,000 за NFT",
-        nft_profit_row3_col1: "16%",
-        nft_profit_row3_col2: "$5,000 за NFT",
-        nft_profit_row4_col1: "15%",
-        nft_profit_row4_col2: "$10,000 за NFT",
-        nft_profit_row5_col1: "8%",
-        nft_profit_row5_col2: "$50,000 за NFT",
-        nft_profit_row6_col1: "4%",
-        nft_profit_row6_col2: "$100,000 за NFT",
-        nft_investment_bonus_title: "Гарантированный инвестиционный бонус",
-        nft_investment_bonus_text: "Как только проект достигнет отметки в $1 млн инвестиций, каждый владелец NFT получит мгновенный бонус в $100 (или эквивалент в нашем токене) напрямую на свой крипто-кошелек.",
-        nft_view_full_system: "Подробнее о системе NFT-наград",
-        
-        // Join Us
-        join_title: "Станьте частью революции",
-        join_banner_title: "Мы активно формируем звёздную команду!",
-        join_banner_text: "Присоединяйтесь к нашему инновационному проекту с открытым кодом и станьте частью создания революционной децентрализованной ИИ-экосистемы. Каждый ценный вклад вознаграждается эксклюзивными NFT, обеспечивающими вашу долю в будущей прибыли проекта.",
-        join_banner_btn: "Начать на GitHub",
-        join_how_title: "5 простых шагов к NFT-наградам и пассивному доходу",
-        
-        join_step1_title: "Сделайте форк репозитория",
-        join_step1_desc: "Первый шаг — форкните наш репозиторий GitHub на свой аккаунт",
-        
-        join_step2_title: "Создайте профиль участника",
-        join_step2_desc: "Добавьте информацию о себе в специальную директорию участников",
-        
-        join_step3_title: "Выберите интересные задачи",
-        join_step3_desc: "Найдите задачи по душе в GitHub issues или предложите свои идеи",
-        
-        join_step4_title: "Внесите свой вклад",
-        join_step4_desc: "Создайте Pull Request с вашими уникальными разработками",
-        
-        join_step5_title: "Получите ценные NFT",
-        join_step5_desc: "Заработайте эксклюзивные NFT в зависимости от значимости вашего вклада",
-        
-        // Types of Contributions
-        contributions_title: "Возможности для вашего вклада",
-        contributions_intro: "Наш революционная проект с открытым кодом приветствует талантливых участников с любым опытом и навыками. Выбирайте задачи, которые вас по-настоящему вдохновляют, и работайте в комфортном для вас темпе. Мы создаем будущее вместе, ценя уникальный подход каждого участника!",
-        opensource_note: "Свобода открытого кода",
-        opensource_desc: "Как инновационный проект с открытым исходным кодом, мы верим в гибкость и свободу выбора. Работайте над теми задачами, которые вызывают у вас настоящий интерес и энтузиазм, в своем темпе и любимым способом. Ваш уникальный взгляд и таланты — наше главное богатство! Никаких жестких дедлайнов или ограничений — вносите вклад тогда и так, как удобно именно вам, фокусируясь на том, что действительно зажигает вас.",
-        github_btn: "Исследовать GitHub",
-        contribution_guidelines_btn: "Правила участия",
-        join_telegram_btn: "Присоединиться к Telegram",
-        
-        // Contribution types
-        contrib_code_title: "Разработка кода",
-        contrib_code_desc: "Создавайте передовые смарт-контракты, интуитивные интерфейсы, мощные бэкенд-системы и революционнае модели ИИ. Станьте архитектором технологий будущего.",
-        contrib_code_tasks: [
-            "Разработка инновационных смарт-контрактов",
-            "Создание интуитивных фронтенд-интерфейсов",
-            "Интеграция продвинутых моделей ИИ",
-            "Взаимодействие с высокоскоростным блокчейном TON"
-        ],
-        contrib_code_btn: "Стать разработчиком",
-        
-        contrib_edu_title: "Образовательный контент",
-        contrib_edu_desc: "Создавайте увлекательные учебные материалы, интерактивные курсы и понятную документацию, помогающую другим освоить наши революционнае технологии.",
-        contrib_edu_tasks: [
-            "Разработка модулей инновационных курсов",
-            "Создание пошаговых руководств",
-            "Написание доступной технической документации",
-            "Производство захватывающих обучающих видео"
-        ],
-        contrib_edu_btn: "Стать преподавателем",
-        
-        contrib_design_title: "Дизайн будущего",
-        contrib_design_desc: "Создавайте захватывающие визуальные материалы, революционная UI/UX, уникальный NFT-арт и мощный брендинг, воплощающие наше видение будущего.",
-        contrib_design_tasks: [
-            "Разработка инновационного UI/UX дизайна",
-            "Создание уникального NFT-арта",
-            "Формирование узнаваемого брендинга",
-            "Разработка впечатляющих визуальных материалов"
-        ],
-        contrib_design_btn: "Стать дизайнером",
-        
-        contrib_content_title: "Создание контента",
-        contrib_content_desc: "Пишите захватывающие статьи, увлекательные блог-посты, вирусный контент для соцсетей и убедительные маркетинговые материалы о нашем революционнам проекте.",
-        contrib_content_tasks: [
-            "Техническое письмо высокого уровня",
-            "Создание вовлекающих блог-постов",
-            "Качественные переводы материалов",
-            "Разработка убедительных маркетинговых текстов"
-        ],
-        contrib_content_btn: "Стать контент-создателем",
-        
-        contrib_qa_title: "Тестирование и QA",
-        contrib_qa_desc: "Обеспечивайте безупречное качество и непробиваемую безопасность наших продуктов, тестируя функциональность, выявляя уязвимости и предлагая инновационные улучшения.",
-        contrib_qa_tasks: [
-            "Комплексное функциональное тестирование",
-            "Профессиональные аудиты безопасности",
-            "Улучшение пользовательского опыта",
-            "Детальные отчеты о найденных ошибках"
-        ],
-        contrib_qa_btn: "Стать тестировщиком",
-        
-        contrib_community_title: "Развитие сообщества",
-        contrib_community_desc: "Помогайте выстраивать и укреплять наше глобальное сообщество через активную модерацию, профессиональную поддержку, вовлекающие инициативы и незабываемые мероприятия.",
-        contrib_community_tasks: [
-            "Эффективная модерация сообщества",
-            "Оперативная поддержка и помощь участникам",
-            "Организация захватывающих онлайн и офлайн мероприятий",
-            "Запуск вирусных инициатив по вовлечению"
-        ],
-        contrib_community_btn: "Присоединиться к команде сообщества",
-        
-        // Footer
-        footer_rights: "Все права защищены",
-        footer_contact: "Связаться с нами",
-        footer_social: "Мы в соцсетях",
-        footer_legal: "Юридическая информация",
-        footer_privacy: "Политика конфиденциальности",
-        footer_terms: "Условия использования",
-        
-        // Repository Structure
-        repository_structure: "Структура репозитория",
-        
-        // Useful Links
-        useful_links: "Полезные ссылки",
-        documentation: "Документация",
-        course_materials: "Материалы курсов",
-        community_guidelines: "Правила сообщества",
-        reward_system: "Система вознаграждений",
-        
-        // Contact
-        contact_title: "Связаться с командой",
-        telegram_community: "Сообщество в Telegram",
-        
-        // Future Vision
-        future_vision_title: "Наше видение будущего",
-        future_vision_desc: "Мы создаем не просто платформу, а целую революционную децентрализованную экосистему, которая полностью изменит представление о взаимодействии ИИ-агентов и генерации ценности в крипто-пространстве. Присоединяйтесь к нам сейчас и станьте пионером технологий будущего уже сегодня!",
-        
-        // Join our team
-        join_team_title: "Присоединяйтесь к нашей звездной команде",
-        join_team_desc: "Станьте частью глобальной революции ИИ-агентов! Ваше активное участие в разработке и выполнении задач будет вознаграждено эксклюзивными NFT, которые обеспечат вам гарантированную долю в будущей прибыли проекта. Вместе мы создадим технологии, меняющие мир!",
-        
-        extended_team_title: "Расширенная команда",
-        extended_team_desc: "Специалисты, необходимые для реализации всех аспектов экосистемы",
-        
-        role_project_lead: "Руководитель проекта",
-        role_tech_director: "Технический директор",
-        role_ai_lead: "Руководитель исследований ИИ",
-        role_blockchain_lead: "Ведущий разработчик блокчейна",
-        role_education_director: "Директор по образовательному контенту",
-        role_community_manager: "Менеджер сообщества",
-        role_marketing_director: "Директор по маркетингу",
-        
-        // Project Plans
-        project_plans_title: "Планы проекта",
-        project_plans_desc: "Мы разрабатываем инновационную экосистему, которая изменит взаимодействие человека с искусственным интеллектом.",
-        
-        // Educational courses section
-        courses_title: "Образовательные курсы",
-        courses_description: "Мы разрабатываем серию взаимно-дополняющих курсов и Open Source проектов, которые помогают построить нашу экосистему и создать большое сообщество единомышленников",
-        
-        // Repository Structure
-        repo_structure_title: "Структура репозитория",
-        repo_structure_desc: "Наша структура репозитория организована для обеспечения максимальной эффективности коллективной разработки.",
-        repo_folder1: "Документация на разных языках",
-        repo_folder2: "Описание проектов и материалов",
-        repo_folder3: "Контент для социальных сетей",
-        repo_folder4: "Образовательные материалы",
-        repo_folder5: "Веб-сайт проекта",
-        repo_folder6: "Медиа-файлы и презентации",
-        repo_folder7: "Материалы сообщества и DAO",
-        repo_folder8: "Техническая документация и инструменты",
-        
-        // Footer and additional sections
-        footer_project_name: "ASINGULARITY AI",
-        footer_join_revolution: "Присоединяйтесь к революции!",
-        action_join_team: "Присоединиться к команде",
-        action_explore_courses: "Изучить курсы",
-        action_browse_projects: "Просмотреть проекты",
-        action_view_roadmap: "Просмотр дорожной карты",
-        action_contact_us: "Связаться с командой",
-
-        // Новые курсы
-        course6_title: "🔮 РАЗРАБОТКА ИИ-АГЕНТОВ",
-        course6_desc: "Освойте искусство создания автономных ИИ-агентов, выполняющих сложные задачи. Изучите векторные базы данных, интеграцию с LLM и оркестрацию агентов.",
-
-        course7_title: "📱 МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ С ИИ",
-        course7_desc: "Создавайте мощные мобильные приложения с интегрированными возможностями ИИ. Изучите Flutter, React Native и подключение приложений к ИИ-сервисам и блокчейну.",
-
-        course8_title: "💰 DEFI И КРИПТО-ТРЕЙДИНГ",
-        course8_desc: "Погрузитесь в децентрализованные финансы и стратегии крипто-трейдинга. Изучите пулы ликвидности, фарминг доходности и создание торговых ботов с ИИ-алгоритмами.",
-
-        course9_title: "🔐 БЕЗОПАСНОСТЬ БЛОКЧЕЙНА",
-        course9_desc: "Освойте аспекты безопасности разработки блокчейна. Изучите распространенные уязвимости, методы аудита и создание безопасных смарт-контрактов и DApps.",
-
-        // Финансовые перспективы
-        financial_prospects_title: "Финансовые перспективы",
-        financial_prospects_desc: "Наш проект имеет значительный потенциал роста благодаря инновационной бизнес-модели",
-        revenue_streams_title: "Источники дохода",
-        revenue_streams_desc: "Наша экосистема обеспечивает множественные потоки доходов через различные компоненты",
-
-        ai_agents_revenue_title: "Система ИИ-агентов",
-        ai_agents_revenue_desc: "Наши ИИ-агенты будут генерировать доход через комиссии за выполненные задачи, абонентскую плату и комиссии за транзакции на платформе DAO-AI-Freelance.",
-
-        defi_services_revenue_title: "DeFi-сервисы",
-        defi_services_revenue_desc: "Доход от комиссий P2P-обмена, крипто-процессинга, токенизации недвижимости и доступа к API для ИИ-моделей через UltrAPI.app.",
-
-        dao_advertising_revenue_title: "DAO Рекламная Биржа",
-        dao_advertising_revenue_desc: "Доход от NFT-фикации прав на каналы и рекламные площадки, автоматизированного управления и продажи рекламных слотов.",
-
-        nft_gpu_revenue_title: "NFT для видеокарт",
-        nft_gpu_revenue_desc: "Доход от цифровизации прав на вычислительную мощность, генерации пассивного дохода от неиспользуемых ресурсов GPU.",
-
-        ai_launchpool_revenue_title: "ИИ-Launchpool",
-        ai_launchpool_revenue_desc: "Доход от поддержки и финансирования новых стартапов с услугами маркетинга, технической поддержки и привлечения средств.",
-
-        educational_revenue_title: "Образовательные курсы",
-        educational_revenue_desc: "Доход от премиум образовательного контента, специализированных курсов и программ сертификации.",
         
         // Восстановление перевода для ecosystem_card8
         ecosystem_card8_title: "ИИ-Launchpool",
@@ -823,18 +506,119 @@ const translations = {
         ecosystem_card8_feature6: "Механизмы привлечения сообщества и инвесторов",
 
         // Project Details
-        project_details_title: "Детали проекта",
-        project_status_title: "Статус проекта",
-        project_status_active: "Активная разработка",
-        project_goals_title: "Ключевые цели",
-        project_goal1: "Создание децентрализованной системы ИИ-агентов",
-        project_goal2: "Разработка DAO-AI-Freelance платформы",
-        project_goal3: "Интеграция с блокчейном TON",
-        project_goal4: "Создание мультиплатформенного доступа",
-        project_goal5: "Внедрение системы вознаграждений NFT",
-        project_goal6: "Развитие образовательных курсов",
-        join_team_btn: "Присоединиться к команде",
-        contact_team_btn: "Связаться с командой"
+        project_details_title: "Project Details",
+        project_status_title: "Project Status",
+        project_status_active: "Active Development",
+        project_team_status: "Actively Recruiting Team",
+        project_team_desc: "We are looking for talented developers, designers, and content creators to join our revolutionary startup",
+        project_investment_title: "Investment Opportunity",
+        project_investment_desc: "We are currently raising seed funding for our project. Contact us to learn more about investment opportunities",
+        project_goals_title: "Key Goals",
+        project_goal1: "Decentralized AI Agent System",
+        project_goal2: "DAO-AI-Freelance Platform Development",
+        project_goal3: "Integration with TON Blockchain",
+        project_goal4: "Multi-Platform Access Creation",
+        project_goal5: "Implementation of NFT Rewards",
+        project_goal6: "Educational Course Development",
+        join_team_btn: "Join the Team",
+        contact_team_btn: "Contact the Team",
+        investment_btn: "Discuss Investment",
+
+        // Детальные описания фаз
+        phase1_goals_title: "Ключевые цели:",
+        phase1_goal1: "Создать образовательную платформу",
+        phase1_goal2: "Разработать структуру репозитория",
+        phase1_goal3: "Создать прототипы AI-агентов",
+        phase1_tasks_title: "Текущие задачи:",
+        phase1_task1: "Разработка образовательных курсов",
+        phase1_task2: "Подготовка смарт-контрактов на TON",
+        phase1_task3: "Установка системы NFT-вознаграждений",
+        
+        phase2_goals_title: "Ключевые цели:",
+        phase2_goal1: "Запустить рабочий прототип DAO-AI-Freelance",
+        phase2_goal2: "Интегрировать базовые AI-сервисы",
+        phase2_goal3: "Создать первые нейронные сети для криптоаналитики",
+        phase2_tasks_title: "Запланированные задачи:",
+        phase2_task1: "Разработка ключевых смарт-контрактов",
+        phase2_task2: "Создание прототипа DEX-агрегатора",
+        phase2_task3: "Тестирование базовых AI-агентов",
+        
+        phase3_goals_title: "Ключевые цели:",
+        phase3_goal1: "Запустить альфа-версию платформы",
+        phase3_goal2: "Привлечь первую когорту активных разработчиков",
+        phase3_goal3: "Интегрировать расширенные AI-возможности",
+        phase3_tasks_title: "Запланированные задачи:",
+        phase3_task1: "Расширение образовательной платформы",
+        phase3_task2: "Внедрение первых автономных AI-агентов",
+        phase3_task3: "Расширение функционала децентрализованной биржи",
+        
+        phase4_goals_title: "Ключевые цели:",
+        phase4_goal1: "Запустить полную экосистему продуктов",
+        phase4_goal2: "Внедрить расширенные AI-функции для трейдинга",
+        phase4_goal3: "Развернуть децентрализованные сервисы",
+        phase4_tasks_title: "Запланированные задачи:",
+        phase4_task1: "Усовершенствование DAO-AI-Freelance",
+        phase4_task2: "Запуск сложных смарт-контрактов",
+        phase4_task3: "Расширение интеграций с блокчейн-сетями",
+        
+        phase5_goals_title: "Ключевые цели:",
+        phase5_goal1: "Глобальное масштабирование платформы",
+        phase5_goal2: "Достижение полной децентрализации",
+        phase5_goal3: "Создание сети взаимосвязанных AI-агентов",
+        phase5_tasks_title: "Запланированные задачи:",
+        phase5_task1: "Интеграция с ведущими DeFi-протоколами",
+        phase5_task2: "Расширение международного сообщества",
+        phase5_task3: "Внедрение продвинутых AI-моделей",
+
+        // Добавляем английские версии для первых 5 курсов
+        course1_title: "⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 LAUNCH YOUR ROCKET 🚀",
+        course1_desc: "Enter the AI Agent revolution era! Learn cutting-edge technologies, participate in project development, earn exclusive NFTs with profit sharing.",
+
+        course2_title: "⚡YOUR WAY TO IT 💻 PYTHON FROM ZERO TO MIDDLE 🐍",
+        course2_desc: "Start programming from scratch and level up to middle+ with AI assistance. Master Python, modern frameworks, and create real projects.",
+
+        course3_title: "🌐 CRYPTO WORLD & DECENTRALIZATION: DAO 🤝 SECURITY 🔒",
+        course3_desc: "Enter the Web3 world! Learn about DAOs, smart contracts, security, and marketing. Master decentralized project management.",
+
+        course4_title: "🧩 BROWSER EXTENSIONS: AI-AGENT FOR CHROME & FIREFOX",
+        course4_desc: "Transform your browser into an intelligent assistant! Build an Open Source extension with AI agents and crypto functionality.",
+
+        course5_title: "⚙️ TON SMART CONTRACTS: FUNC, TVM & ECOSYSTEM!💎",
+        course5_desc: "Master FunC and TVM, create DeFi or NFT projects on TON. Learn smart contract development and become a blockchain pioneer.",
+
+        // Оставшиеся курсы
+        course6_title: "🔮 AI AGENTS DEVELOPMENT",
+        course6_desc: "Master the art of creating autonomous AI agents that perform complex tasks. Learn about vector databases, LLM integration, and agent orchestration.",
+        course7_title: "📱 MOBILE APPS WITH AI",
+        course7_desc: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and how to connect apps to AI services and blockchain.",
+        course8_title: "💰 DEFI & CRYPTO TRADING",
+        course8_desc: "Dive into decentralized finance and crypto trading strategies. Learn about liquidity pools, yield farming, and creating trading bots with AI algorithms.",
+        course9_title: "🔐 BLOCKCHAIN SECURITY",
+        course9_desc: "Master blockchain development security aspects. Learn about common vulnerabilities, audit methods, and creating secure smart contracts and DApps.",
+
+        // Финансовые перспективы
+        financial_prospects_title: "Financial Prospects",
+        financial_prospects_desc: "Our project has significant growth potential due to its innovative business model",
+        revenue_streams_title: "Revenue Streams",
+        revenue_streams_desc: "Our ecosystem provides multiple revenue streams through various components",
+
+        ai_agents_revenue_title: "AI Agents System",
+        ai_agents_revenue_desc: "Our AI agents will generate revenue through commissions on tasks performed, subscription fees, and transaction fees on the DAO-AI-Freelance platform.",
+
+        defi_services_revenue_title: "DeFi Services",
+        defi_services_revenue_desc: "Revenue from P2P exchange fees, crypto processing, real estate tokenization, and API access to AI models through UltrAPI.app.",
+
+        dao_advertising_revenue_title: "DAO Advertising Exchange",
+        dao_advertising_revenue_desc: "Income from NFT-ification of rights to channels and advertising platforms, automated management and sale of advertising slots.",
+
+        nft_gpu_revenue_title: "NFT for Graphics Cards",
+        nft_gpu_revenue_desc: "Revenue from digitization of rights to computing power, passive income generation from unused GPU resources.",
+
+        ai_launchpool_revenue_title: "AI-Launchpool",
+        ai_launchpool_revenue_desc: "Income from supporting and funding new startups with marketing, technical support, and fundraising services.",
+
+        educational_revenue_title: "Educational Courses",
+        educational_revenue_desc: "Revenue from premium educational content, specialized courses, and certification programs.",
     }
 };
 

@@ -699,11 +699,15 @@ nav {
 
 /* Position timeline items alternately */
 .timeline-item:nth-child(odd) .timeline-content {
-    left: 0;
+    float: left;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    left: 55%;
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 /* Detailed roadmap info on the opposite side */
@@ -1688,11 +1692,15 @@ footer {
 
 /* Position timeline items alternately */
 .timeline-item:nth-child(odd) .timeline-content {
-    left: 0;
+    float: left;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    left: 55%;
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 /* Detailed roadmap info on the opposite side */
@@ -3235,8 +3243,9 @@ h2.glitch-text::after, h3.glitch-text::after {
 @media (max-width: 768px) {
     .language-switcher {
         position: absolute;
-        top: 15px;
-        right: 80px;
+        top: 70px;
+        right: 15px;
+        z-index: 100;
     }
     
     .language-switcher button {
@@ -4532,11 +4541,15 @@ html[lang="ru"] .project-goals h3 {
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    margin-left: auto;
+    float: left;
+    margin-right: auto;
+    margin-left: 0;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    margin-right: auto;
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .timeline-content h3 {
@@ -4598,6 +4611,7 @@ html[lang="ru"] .project-goals h3 {
         width: calc(100% - 60px);
         margin-left: 60px !important;
         margin-right: 0 !important;
+        float: none !important;
     }
     
     .timeline-item:nth-child(odd) .timeline-content,
@@ -4846,6 +4860,9 @@ html[lang="ru"] .project-goals h3 {
     overflow: hidden;
     z-index: 1;
     animation: invest-pulse 2s infinite;
+    white-space: nowrap;
+    min-width: 220px;
+    text-align: center;
 }
 
 .invest-btn::before {
@@ -4879,8 +4896,8 @@ html[lang="ru"] .project-goals h3 {
 /* Улучшенный логотип с глитч-эффектом */
 .logo-text.cyberpunk-text {
     font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 2px;
+    font-weight: 300; /* Более тонкий шрифт */
+    letter-spacing: 3px; /* Увеличенный интервал между буквами */
     background: linear-gradient(135deg, #6e00ff 0%, #00d9ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -4893,24 +4910,14 @@ html[lang="ru"] .project-goals h3 {
     font-family: 'Orbitron', 'Rajdhani', sans-serif;
 }
 
+/* Анимация для букв "A", "I" и "S" в ASINGULARITY */
 .logo-text .highlight {
     position: relative;
     display: inline-block;
     animation: logo-highlight-pulse 3s infinite alternate;
     color: #00d9ff;
     -webkit-text-fill-color: #00d9ff;
-}
-
-.logo-text .highlight:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.logo-text .highlight:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.logo-text .highlight:nth-child(3) {
-    animation-delay: 2s;
+    font-weight: 400; /* Немного жирнее для выделения */
 }
 
 @keyframes logo-highlight-pulse {
@@ -4943,27 +4950,6 @@ html[lang="ru"] .project-goals h3 {
         transform: scale(1);
         filter: hue-rotate(0);
     }
-}
-
-/* Улучшенная кнопка инвестиций */
-.invest-btn {
-    background: linear-gradient(135deg, #ff6b00 0%, #ff00d4 100%);
-    border: none;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 12px 25px;
-    border-radius: 30px;
-    box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    animation: invest-pulse 2s infinite;
-    white-space: nowrap;
-    min-width: 220px;
-    text-align: center;
 }
 
 /* Русский шрифт более футуристичный */
@@ -5128,5 +5114,321 @@ html[lang="ru"] .timeline-content h3 {
     .timeline-item:nth-child(even) .timeline-content {
         margin-left: 60px;
         margin-right: 0;
+    }
+}
+
+.logo-text .highlight:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo-text .highlight:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.logo-text .highlight:nth-child(3) {
+    animation-delay: 2s;
+}
+
+/* Улучшенные стили для мобильной версии дорожной карты */
+@media (max-width: 768px) {
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+        float: none !important;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    /* Индикатор раскрытия для мобильной версии */
+    .timeline-content::after {
+        content: "+";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 24px;
+        height: 24px;
+        background: rgba(0, 217, 255, 0.2);
+        color: #00d9ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 8px rgba(0, 217, 255, 0.5);
+    }
+    
+    /* Изменение индикатора при активном состоянии */
+    .timeline-item.active-mobile .timeline-content::after {
+        content: "-";
+        background: rgba(0, 217, 255, 0.4);
+        transform: rotate(0deg);
+    }
+    
+    /* Стили для раскрытого блока */
+    .timeline-item.active-mobile .timeline-content {
+        background: rgba(25, 30, 40, 0.9);
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    }
+    
+    /* Показываем детали при активном состоянии */
+    .timeline-detail {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        margin-top: 0;
+        transform: translateY(-20px);
+    }
+    
+    .timeline-item.active-mobile .timeline-detail {
+        max-height: 1000px;
+        opacity: 1;
+        transform: translateY(0);
+        margin-top: 15px;
+    }
+    
+    /* Остальные стили для мобильной версии */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+        margin-right: 0;
+    }
+}
+
+/* Улучшенное отображение языкового переключателя на мобильных устройствах */
+@media (max-width: 768px) {
+    .language-switcher {
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        z-index: 100;
+    }
+    
+    .language-switcher button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Стили для раскрывающихся карточек дорожной карты */
+.roadmap-card {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    max-height: 320px;
+}
+
+.roadmap-card.expanded {
+    max-height: 600px;
+    z-index: 10;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 84, 255, 0.3);
+}
+
+.roadmap-card .roadmap-details {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.roadmap-card.expanded .roadmap-details {
+    opacity: 1;
+    max-height: 300px;
+    padding: 15px;
+}
+
+.expand-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 84, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.roadmap-card.expanded .expand-indicator span {
+    transform: rotate(45deg);
+}
+
+/* Улучшение вида карточек для четных и нечетных номеров (выравнивание) */
+.roadmap-container .roadmap-card:nth-child(odd) {
+    text-align: left;
+}
+
+.roadmap-container .roadmap-card:nth-child(even) {
+    text-align: right;
+}
+
+/* Исправление логотипа для русской версии */
+html[lang="ru"] .logo-text {
+    font-size: 1.3rem;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+    html[lang="ru"] .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Стили для указателей прокрутки */
+.scroll-indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.scroll-arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 4px solid #00c3ff;
+    border-bottom: 4px solid #00c3ff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: arrow-bounce 2s infinite;
+    box-shadow: 0 0 10px #00c3ff, 0 0 20px rgba(0, 195, 255, 0.3);
+}
+
+.scroll-arrow:nth-child(2) {
+    animation-delay: 0.2s;
+    opacity: 0.8;
+}
+
+.scroll-arrow:nth-child(3) {
+    animation-delay: 0.4s;
+    opacity: 0.6;
+}
+
+@keyframes arrow-bounce {
+    0% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: rotate(45deg) translate(10px, 10px);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.6;
+    }
+}
+
+.scroll-text {
+    font-size: 1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00c3ff;
+    animation: text-pulse 2s infinite;
+}
+
+@keyframes text-pulse {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Стили для блока инвестиций в Project Details */
+.project-investment {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 50, 100, 0.5));
+    border: 1px solid #00c3ff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-investment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 195, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.project-investment:hover::before {
+    left: 100%;
+}
+
+.project-investment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
+}
+
+.project-investment h4 {
+    color: #00c3ff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.project-investment p {
+    margin-bottom: 15px;
+}
+
+.project-team-status {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(100, 0, 100, 0.5));
+    border: 1px solid #ff00ff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-team-status h4 {
+    color: #ff00ff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .scroll-indicators {
+        margin-top: 30px;
+    }
+    
+    .scroll-arrow {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .scroll-text {
+        font-size: 0.9rem;
     }
 }
