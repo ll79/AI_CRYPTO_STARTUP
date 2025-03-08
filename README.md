@@ -3,17 +3,10 @@
 OPEN EDUCATIONAL INITIATIVE
 -->
 
-<div align="center" style="background: linear-gradient(45deg, #0a001a, #240046); padding: 30px; border-radius: 15px; border: 1px solid #7b2cbf; box-shadow: 0 0 20px #9d4edd;">
+# ⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀
+## Open Educational Initiative
 
-<h1 style="font-family: 'Orbitron', sans-serif; color: #ff0000; margin-bottom: 20px; font-weight: bold;">⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀</h1>
-<h2 style="font-family: 'Rajdhani', sans-serif; color: #9d4edd; margin-top: 0;">Open Educational Initiative</h2>
-
-<p align="center" style="margin-bottom: 30px; font-style: italic; color: #c77dff;">
-<a href="README.md" style="color: #e0aaff; text-decoration: none; font-weight: bold; background: #10002b; padding: 5px 10px; border-radius: 5px; border: 1px solid #c77dff; margin-right: 10px;">EN</a> | 
-<a href="README.ru.md" style="color: #e0aaff; text-decoration: none; font-weight: bold; background: #10002b; padding: 5px 10px; border-radius: 5px; border: 1px solid #c77dff;">RU</a>
-</p>
-
-<div style="text-align: left; color: #e0aaff; font-family: 'Roboto', sans-serif;">
+[EN](README.md) | [RU](README.ru.md)
 
 ## Open Educational Initiative
 
@@ -154,13 +147,10 @@ To learn more about the broader ASINGULARITY project and ecosystem that this edu
 
 This educational repository is available under the MIT License, allowing you to freely use, modify, and share the educational materials while maintaining attribution.
 
-<div align="center" style="background: linear-gradient(45deg, #240046, #3c096c); padding: 20px; border-radius: 10px; margin-top: 30px; border: 1px solid #7b2cbf;">
-  <p style="color: #e0aaff; font-family: 'Rajdhani', sans-serif; font-size: 18px;">Together we'll learn, build, and innovate! Join our educational community today! 🚀💎🤖</p>
-  
-  <a href="https://github.com/ASINGULARITY-AI/ASINGULARITY" style="display: inline-block; margin-top: 15px; background: linear-gradient(90deg, #7b2cbf, #c77dff); color: white; text-decoration: none; padding: 10px 25px; border-radius: 30px; font-weight: bold; font-family: 'Orbitron', sans-serif; box-shadow: 0 0 15px rgba(201, 126, 255, 0.5);">EXPLORE ASINGULARITY</a>
-</div>
+---
 
-</div>
-</div>
+**Together we'll learn, build, and innovate! Join our educational community today! 🚀💎🤖**
+
+[EXPLORE ASINGULARITY](https://github.com/ASINGULARITY-AI/ASINGULARITY)
 
 

@@ -3,12 +3,8 @@
 OPEN EDUCATIONAL INITIATIVE
 -->
 
-<div align="center" style="background: linear-gradient(45deg, #0a001a, #240046); padding: 30px; border-radius: 15px; border: 1px solid #7b2cbf; box-shadow: 0 0 20px #9d4edd;">
-
-<h1 style="font-family: 'Orbitron', sans-serif; color: #ff0000; margin-bottom: 20px; font-weight: bold;">⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀</h1>
-<h2 style="font-family: 'Rajdhani', sans-serif; color: #9d4edd; margin-top: 0;">Open Educational Initiative</h2>
-
-<div style="text-align: left; color: #e0aaff; font-family: 'Roboto', sans-serif;">
+# ⚡️ AI 🤖 CRYPTO 💎 $TARTUP 🚀
+## Open Educational Initiative
 
 Welcome to our Open Educational Initiative focused on hands-on learning with AI, blockchain, and Web3 technologies!
 
@@ -82,9 +78,4 @@ This educational repository is available under the MIT License, allowing you to 
 
 ### Learn, build, and innovate with us! 🚀💎🤖🔥 
 
-<div align="center" style="margin-top: 30px;">
-  <a href="https://github.com/ASINGULARITY-AI/ASINGULARITY" style="display: inline-block; background: linear-gradient(90deg, #7b2cbf, #c77dff); color: white; text-decoration: none; padding: 10px 25px; border-radius: 30px; font-weight: bold; font-family: 'Orbitron', sans-serif; box-shadow: 0 0 15px rgba(201, 126, 255, 0.5);">LEARN MORE ABOUT ASINGULARITY</a>
-</div>
-
-</div>
-</div> 
+[LEARN MORE ABOUT ASINGULARITY](https://github.com/ASINGULARITY-AI/ASINGULARITY) 
