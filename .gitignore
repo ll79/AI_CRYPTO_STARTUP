@@ -1,0 +1,17 @@
+# Git ignore file for AI_CRYPTO_STARTUP project
+
+# Ignore .cursor directory with all Cursor AI settings
+.cursor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules
+node_modules/ 

@@ -707,9 +707,9 @@ function initCardAnimations() {
                     });
                 }
             });
-        });
-    });
-}
+}});
+    }
+
 
 // Features animation
 function checkFeaturesInView() {
