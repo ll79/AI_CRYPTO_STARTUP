@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Добавляем функционал для раскрытия блоков фаз
-    initPhaseDetailToggle();
+    // initPhaseDetailToggle();
 
     // Добавляем функционал раскрытия блоков фаз дорожной карты
     const roadmapCards = document.querySelectorAll('.roadmap-card');
@@ -665,7 +665,6 @@ function checkTimelineInView() {
 
 // Smoother card animations
 function initCardAnimations() {
-    // Add smooth hover effects for ecosystem cards
     const ecosystemCards = document.querySelectorAll('.ecosystem-card');
     ecosystemCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -707,9 +706,9 @@ function initCardAnimations() {
                     });
                 }
             });
-}});
-    }
-
+        }
+    });
+}
 
 // Features animation
 function checkFeaturesInView() {
@@ -1083,35 +1082,6 @@ function updateGlitchEffects() {
     setTimeout(() => {
         document.body.removeChild(randomGlitches);
     }, 1000);
-}
-
-// Добавляем функционал для раскрытия блоков фаз
-function initPhaseDetailToggle() {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    
-    timelineItems.forEach(item => {
-        const content = item.querySelector('.timeline-content');
-        const detail = item.querySelector('.timeline-detail');
-        
-        if (content && detail) {
-            content.addEventListener('click', function(e) {
-                // Если клик был на ссылке внутри блока, не раскрываем блок
-                if (e.target.tagName === 'A') {
-                    return;
-                }
-                
-                // Переключаем активное состояние для текущего элемента
-                item.classList.toggle('active-mobile');
-                
-                // Скроллим к элементу, если он активирован
-                if (item.classList.contains('active-mobile')) {
-                    setTimeout(() => {
-                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 300);
-                }
-            });
-        }
-    });
 }
 
 // Функция для обновления контента на основе выбранного языка

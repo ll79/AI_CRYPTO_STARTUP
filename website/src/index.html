@@ -13,6 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Индикатор прокрутки для мобильных устройств -->
+    <div class="mobile-scroll-indicator">
+        <div class="scroll-arrow"></div>
+        <div class="scroll-arrow"></div>
+        <div class="scroll-arrow"></div>
+        <div class="scroll-text">Scroll Down</div>
+    </div>
+    
     <!-- Cyberpunk effects -->
     <div class="data-stream">
         <div class="data-line" style="top: 10%; animation-delay: 0s;"></div>
@@ -1004,17 +1012,14 @@
         </div>
     </footer>
 
-    <!-- Мобильный стикки футер с кнопкой инвестиций -->
+    <!-- Добавляю обновленный мобильный футер с киберпанк-кнопкой -->
     <div class="mobile-sticky-footer">
-        <a href="https://t.me/LANDEMON" class="btn primary-btn cyberpunk-btn invest-btn" target="_blank" data-i18n="invest_btn">🔥 Инвестировать в будущее!</a>
+        <a href="https://t.me/LANDEMON" class="invest-btn cyberpunk-btn mobile-invest-btn" target="_blank">
+            <span>PRE-SEED INVEST</span>
+            <i class="fas fa-rocket"></i>
+        </a>
     </div>
-
-    <!-- Project Details Modal -->
-    <!-- Модальное окно удалено -->
-
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-    <script src="check-i18n.js"></script>
+    
     <script>
         // Добавление космических частиц
         function createSpaceParticles() {
@@ -1105,6 +1110,33 @@
                 if (mobileFooter) {
                     if (window.innerWidth <= 768) {
                         mobileFooter.style.display = 'block';
+                        
+                        // Позиционируем кнопку сначала под кнопками текущей фазы
+                        const currentPhaseSection = document.querySelector('.current-stage-content');
+                        const githubButton = document.querySelector('.current-stage-content .cta-buttons');
+                        
+                        if (currentPhaseSection && githubButton) {
+                            // При прокрутке отслеживаем положение футера
+                            window.addEventListener('scroll', function() {
+                                const footerTop = document.querySelector('footer').getBoundingClientRect().top;
+                                const windowHeight = window.innerHeight;
+                                
+                                // Если футер виден, закрепляем кнопку в футере
+                                if (footerTop < windowHeight) {
+                                    mobileFooter.classList.add('footer-visible');
+                                } else {
+                                    mobileFooter.classList.remove('footer-visible');
+                                }
+                                
+                                // Добавляем эффект глитча при прокрутке
+                                if (window.scrollY > windowHeight / 2) {
+                                    mobileFooter.querySelector('.invest-btn').classList.add('active-glitch');
+                                    setTimeout(() => {
+                                        mobileFooter.querySelector('.invest-btn').classList.remove('active-glitch');
+                                    }, 500);
+                                }
+                            });
+                        }
                     } else {
                         mobileFooter.style.display = 'none';
                     }
@@ -1116,6 +1148,10 @@
             window.addEventListener('resize', toggleMobileFooter);
         });
     </script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="check-i18n.js"></script>
+    <script src="mobile-functions.js"></script>
     <script src="language-switcher.js"></script>
 </body>
 </html> 
