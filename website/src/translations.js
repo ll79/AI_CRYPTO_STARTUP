@@ -698,7 +698,7 @@ const translations = {
         nav_ecosystem: "Экосистема",
         nav_nft: "NFT",
         nav_join: "Присоединиться",
-        invest_btn: "Пресейд-инвестиция",
+        invest_btn: "PRE-SEED INVEST",
         menu_btn: "Меню",
         
         // Visual Buttons
