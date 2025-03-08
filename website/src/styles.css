@@ -7066,3 +7066,490 @@ html[lang="ru"] .logo-text {
         margin-bottom: 20px !important;
     }
 }
+
+/* Оптимизация расстояний между блоками фаз на мобильных устройствах */
+@media (max-width: 768px) {
+    /* Базовые стили для элементов таймлайна */
+    .timeline-item {
+        margin: 2px auto !important; /* Максимально уменьшаем отступы между блоками */
+        padding: 0 !important;
+        height: auto !important; /* Высота по содержимому */
+        width: 95% !important; /* Увеличиваем ширину для большей заметности */
+    }
+    
+    /* Стиль для неактивного контента блока */
+    .timeline-content {
+        padding: 8px 10px !important; /* Уменьшаем внутренние отступы */
+        margin: 0 !important;
+        height: auto !important;
+        min-height: 70px !important; /* Минимальная высота для кликабельности */
+        border-radius: 6px !important;
+    }
+    
+    /* Стили для детальной информации в неактивном состоянии */
+    .timeline-detail {
+        max-height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Стили для активного элемента */
+    .timeline-item.active-mobile {
+        margin: 10px auto !important;
+        transform: scale(1.02) !important;
+        z-index: 10 !important;
+        box-shadow: 0 0 15px rgba(0, 217, 255, 0.3) !important;
+    }
+    
+    /* Контент активного элемента */
+    .timeline-item.active-mobile .timeline-content {
+        padding: 12px !important;
+        margin-bottom: 0 !important;
+        border: 1px solid rgba(0, 217, 255, 0.2) !important;
+    }
+    
+    /* Детали активного элемента */
+    .timeline-item.active-mobile .timeline-detail {
+        max-height: 2000px !important;
+        padding: 10px 12px 50px 12px !important;
+        margin: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Дополнительные отступы для русской версии */
+    html[lang="ru"] .timeline-item.active-mobile .timeline-detail {
+        max-height: 2500px !important;
+    }
+    
+    /* Стиль для индикатора */
+    .timeline-indicator {
+        bottom: 8px !important;
+        padding: 4px 12px !important;
+        font-size: 13px !important;
+    }
+    
+    /* Стиль для контента с деталями */
+    .timeline-detail-content {
+        padding: 5px !important;
+    }
+    
+    /* Заголовки в деталях */
+    .timeline-detail h4 {
+        margin-top: 8px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    /* Списки в деталях */
+    .timeline-detail ul {
+        margin: 5px 0 15px 0 !important;
+    }
+    
+    /* Элементы списка в деталях */
+    .timeline-detail ul li {
+        margin-bottom: 5px !important;
+    }
+}
+
+/* Стили для глитч-эффектов индикаторов */
+.subtle-glitch-effect {
+    animation: indicator-subtle-glitch 0.3s ease forwards !important;
+}
+
+.active-glitch-effect {
+    animation: indicator-active-glitch 0.5s ease forwards !important;
+}
+
+@keyframes indicator-subtle-glitch {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    20% {
+        transform: translateX(-51%) scale(1.03) skewX(2deg);
+        text-shadow: 0 0 4px rgba(0, 217, 255, 0.5);
+        letter-spacing: 0.5px;
+    }
+    40% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+    60% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+    80% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+    100% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+}
+
+@keyframes indicator-active-glitch {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    20% {
+        transform: translateX(-51%) scale(1.03) skewX(2deg);
+        text-shadow: 0 0 4px rgba(0, 217, 255, 0.5);
+        letter-spacing: 0.5px;
+    }
+    40% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+    60% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+    80% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+    100% {
+        transform: translateX(-49%) scale(0.98) skewX(-1deg);
+        text-shadow: 0 0 2px rgba(0, 217, 255, 0.3);
+        letter-spacing: -0.3px;
+    }
+}
+
+/* Улучшенные стили для индикаторов фаз */
+@media (max-width: 768px) {
+    .timeline-indicator {
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important; /* Высокий z-index, чтобы всегда быть поверх */
+        font-size: 0.9rem !important;
+        background: rgba(10, 20, 40, 0.9) !important;
+        color: rgba(0, 217, 255, 0.9) !important;
+        padding: 5px 15px !important;
+        border-radius: 4px !important;
+        border: 1px solid rgba(0, 217, 255, 0.5) !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        box-shadow: 0 0 8px rgba(0, 217, 255, 0.3) !important;
+        transition: all 0.3s ease !important;
+        font-family: 'VT323', monospace !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        overflow: visible !important; /* Чтобы глитч-эффект не обрезался */
+    }
+    
+    .timeline-item.active-mobile .timeline-indicator {
+        background: rgba(30, 10, 10, 0.9) !important;
+        color: rgba(255, 92, 92, 0.9) !important;
+        border: 1px solid rgba(255, 92, 92, 0.6) !important;
+        box-shadow: 0 0 10px rgba(255, 92, 92, 0.4) !important;
+    }
+    
+    /* Усиленный глитч-эффект для индикаторов */
+    .timeline-indicator {
+        animation: phase-indicator-idle 8s infinite alternate !important;
+    }
+    
+    .timeline-item.active-mobile .timeline-indicator {
+        animation: phase-indicator-active 4s infinite alternate !important;
+    }
+    
+    .subtle-glitch-effect {
+        animation: phase-indicator-hover 0.5s ease forwards !important;
+    }
+    
+    .active-glitch-effect {
+        animation: phase-indicator-click 0.8s ease forwards !important;
+    }
+    
+    /* Анимация для индикатора в спокойном состоянии */
+    @keyframes phase-indicator-idle {
+        0%, 85%, 100% {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+            text-shadow: none;
+            letter-spacing: 1px;
+        }
+        86%, 88%, 90% {
+            transform: translateX(-51%) scale(1.03) skewX(2deg);
+            opacity: 0.95;
+            text-shadow: 0 0 5px rgba(0, 217, 255, 0.6), -2px 0 2px rgba(255, 0, 0, 0.3), 2px 0 2px rgba(0, 255, 255, 0.3);
+            letter-spacing: 1.5px;
+        }
+        87%, 89%, 91% {
+            transform: translateX(-49%) scale(0.98) skewX(-1deg);
+            opacity: 0.9;
+            text-shadow: 0 0 3px rgba(0, 217, 255, 0.4), 2px 0 2px rgba(255, 0, 0, 0.2), -2px 0 2px rgba(0, 255, 255, 0.2);
+            letter-spacing: 0.8px;
+        }
+    }
+    
+    /* Анимация для активного индикатора */
+    @keyframes phase-indicator-active {
+        0%, 75%, 100% {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+            text-shadow: 0 0 3px rgba(255, 92, 92, 0.3);
+            letter-spacing: 1px;
+        }
+        76%, 80%, 84%, 88% {
+            transform: translateX(-52%) scale(1.05) skewX(3deg) translateY(-1px);
+            opacity: 0.9;
+            text-shadow: 0 0 8px rgba(255, 92, 92, 0.7), -3px 0 3px rgba(0, 255, 255, 0.4), 3px 0 3px rgba(255, 255, 0, 0.4);
+            letter-spacing: 2px;
+        }
+        78%, 82%, 86%, 90% {
+            transform: translateX(-48%) scale(0.97) skewX(-2deg) translateY(1px);
+            opacity: 0.95;
+            text-shadow: 0 0 5px rgba(255, 92, 92, 0.5), 3px 0 3px rgba(0, 255, 255, 0.3), -3px 0 3px rgba(255, 255, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+    }
+    
+    /* Анимация при наведении */
+    @keyframes phase-indicator-hover {
+        0% {
+            transform: translateX(-50%) scale(1);
+            text-shadow: none;
+        }
+        20%, 80% {
+            transform: translateX(-51%) scale(1.08) skewX(4deg);
+            text-shadow: 0 0 8px rgba(0, 217, 255, 0.8), -3px 0 3px rgba(255, 0, 0, 0.4), 3px 0 3px rgba(0, 255, 255, 0.4);
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+        40%, 60% {
+            transform: translateX(-49%) scale(0.95) skewX(-3deg);
+            text-shadow: 0 0 5px rgba(0, 217, 255, 0.6), 3px 0 3px rgba(255, 0, 0, 0.3), -3px 0 3px rgba(0, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+            opacity: 0.95;
+        }
+        100% {
+            transform: translateX(-50%) scale(1);
+            text-shadow: 0 0 3px rgba(0, 217, 255, 0.4);
+            letter-spacing: 1px;
+            opacity: 1;
+        }
+    }
+    
+    /* Анимация при клике */
+    @keyframes phase-indicator-click {
+        0% {
+            transform: translateX(-50%) scale(1);
+            text-shadow: none;
+        }
+        10%, 30%, 50% {
+            transform: translateX(-53%) scale(1.15) skewX(8deg) translateY(-3px);
+            text-shadow: 0 0 12px rgba(255, 92, 92, 0.9), -5px 0 5px rgba(0, 255, 255, 0.6), 5px 0 5px rgba(255, 255, 0, 0.6);
+            letter-spacing: 3px;
+            opacity: 0.8;
+            filter: blur(0.5px);
+        }
+        20%, 40%, 60% {
+            transform: translateX(-47%) scale(0.9) skewX(-6deg) translateY(2px);
+            text-shadow: 0 0 8px rgba(255, 92, 92, 0.7), 4px 0 4px rgba(0, 255, 255, 0.5), -4px 0 4px rgba(255, 255, 0, 0.5);
+            letter-spacing: -1px;
+            opacity: 0.9;
+            filter: blur(0px);
+        }
+        70%, 90% {
+            transform: translateX(-51%) scale(1.05) skewX(2deg) translateY(-1px);
+            text-shadow: 0 0 6px rgba(255, 92, 92, 0.6), -2px 0 2px rgba(0, 255, 255, 0.4), 2px 0 2px rgba(255, 255, 0, 0.4);
+            letter-spacing: 1.5px;
+            opacity: 0.95;
+            filter: blur(0.2px);
+        }
+        80%, 100% {
+            transform: translateX(-50%) scale(1) skewX(0) translateY(0);
+            text-shadow: 0 0 4px rgba(255, 92, 92, 0.5);
+            letter-spacing: 1px;
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+    
+    /* Дополнительный эффект сканирования для индикаторов */
+    .timeline-indicator::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 217, 255, 0.4),
+            transparent
+        );
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
+    
+    .timeline-indicator:hover::before {
+        left: 150%;
+        transition: all 0.8s ease;
+    }
+    
+    .timeline-item.active-mobile .timeline-indicator::before {
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 92, 92, 0.4),
+            transparent
+        );
+    }
+    
+    /* Фиксированное позиционирование для индикаторов */
+    .timeline-item.active-mobile .timeline-indicator {
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+    }
+    
+    /* Дополнительные стили для улучшения внешнего вида */
+    .timeline-indicator::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 217, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 217, 255, 0.1) 100%
+        );
+        z-index: -1;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+    
+    .timeline-item.active-mobile .timeline-indicator::after {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 92, 92, 0.1) 0%,
+            transparent 50%,
+            rgba(255, 92, 92, 0.1) 100%
+        );
+    }
+}
+
+/* Удаляем стили для .timeline-indicator */
+@media (max-width: 768px) {
+    /* Компактные стили для таймлайна в русской версии */
+    html[lang="ru"] .timeline-item {
+        margin: 2px auto !important;
+        padding: 0 !important;
+        width: 95% !important;
+        box-sizing: border-box !important;
+    }
+    
+    html[lang="ru"] .timeline-content {
+        padding: 10px !important;
+        margin-bottom: 0 !important;
+        min-height: 70px !important;
+        box-sizing: border-box !important;
+    }
+    
+    html[lang="ru"] .timeline-detail {
+        max-height: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s ease !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    html[lang="ru"] .timeline-item.active-mobile .timeline-detail {
+        max-height: 1000px !important;
+        padding: 15px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Дополнительные стили для всех блоков фаз */
+    .timeline-item {
+        margin: 2px auto !important;
+        padding: 0 !important;
+        width: 95% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .timeline-content {
+        padding: 10px !important;
+        margin-bottom: 0 !important;
+        min-height: 70px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .timeline-detail {
+        max-height: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s ease !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .timeline-item.active-mobile .timeline-detail {
+        max-height: 1000px !important;
+        padding: 15px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .timeline-item.active-mobile + .timeline-item {
+        margin-top: 8px !important;
+    }
+    
+    html[lang="ru"] .timeline-item.active-mobile + .timeline-item {
+        margin-top: 8px !important;
+    }
+    
+    /* Улучшенный стиль контента в активном состоянии */
+    .timeline-item.active-mobile .timeline-content {
+        border: 1px solid rgba(0, 217, 255, 0.2) !important;
+        box-shadow: 0 0 10px rgba(0, 217, 255, 0.15) !important;
+    }
+}
+
+/* Полностью удаляем стили для индикаторов и их анимаций */
+.timeline-indicator {
+    display: none !important;
+}
+
+.subtle-glitch-effect, .active-glitch-effect {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .timeline-indicator,
+    [class*="indicator"],
+    .timeline-content::after {
+        display: none !important;
+    }
+}

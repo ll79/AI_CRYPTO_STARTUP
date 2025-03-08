@@ -203,7 +203,7 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content cyberpunk-card">
                             <h3 data-i18n="roadmap_phase2_title">Phase 2: MVP Development</h3>
-                            <span class="timeline-date" data-i18n="roadmap_phase2_date">Q1-Q3 2025</span>
+                            <span class="timeline-date" data-i18n="roadmap_phase2_date">Q2-Q4 2025</span>
                             <div class="extra-info">
                                 <h4 data-i18n="roadmap_phase2_desc">Creating Functional Products</h4>
                                 <p data-i18n="roadmap_phase2_paragraph">In this phase, we transform concepts into working products:</p>
@@ -1166,63 +1166,300 @@
                         timeline.style.margin = '0 auto';
                         
                         // Принудительно стилизуем псевдоэлемент через дополнительную вставку
-                        const timelineStyle = document.createElement('style');
-                        timelineStyle.innerHTML = `
-                            @media (max-width: 768px) {
-                                .timeline::before {
-                                    display: none !important;
-                                    width: 0 !important;
-                                    height: 0 !important;
-                                    opacity: 0 !important;
+                        
+                        // Обрабатываем все элементы таймлайна
+                        const timelineItems = document.querySelectorAll('.timeline-item');
+                        const isRussian = document.documentElement.lang === 'ru';
+                        
+                        timelineItems.forEach((item, index) => {
+                            item.style.width = '95%';
+                            item.style.margin = '2px auto';
+                            item.style.padding = '0';
+                            
+                            // Применяем стили для контента
+                            const content = item.querySelector('.timeline-content');
+                            if (content) {
+                                content.style.padding = '10px';
+                                content.style.position = 'relative';
+                                content.style.cursor = 'pointer';
+                                content.style.marginBottom = '0';
+                                
+                                // Получаем текст даты из элемента timeline-date, если он есть
+                                let phaseDate = '';
+                                const timelineDate = content.querySelector('.timeline-date');
+                                if (timelineDate) {
+                                    phaseDate = timelineDate.textContent.trim();
                                 }
-                                .timeline-item {
-                                    width: 90% !important;
-                                    margin: 15px auto !important;
-                                    left: 0 !important;
-                                    right: 0 !important;
+                                
+                                // Создаем или обновляем индикатор
+                                let indicator = item.querySelector('.timeline-indicator');
+                                if (!indicator) {
+                                    indicator = document.createElement('div');
+                                    indicator.className = 'timeline-indicator';
+                                    
+                                    // Используем тайминг фазы вместо "Details/Подробнее"
+                                    indicator.textContent = phaseDate;
+                                    
+                                    // Стиль для индикатора как кнопки
+                                    indicator.style.position = 'absolute';
+                                    indicator.style.bottom = '10px';
+                                    indicator.style.left = '50%';
+                                    indicator.style.transform = 'translateX(-50%)';
+                                    indicator.style.fontSize = isRussian ? '0.8rem' : '0.9rem';
+                                    indicator.style.color = 'rgba(0, 217, 255, 0.9)';
+                                    indicator.style.background = 'rgba(10, 20, 40, 0.9)';
+                                    indicator.style.padding = '4px 15px';
+                                    indicator.style.borderRadius = '4px';
+                                    indicator.style.border = '1px solid rgba(0, 217, 255, 0.4)';
+                                    indicator.style.boxShadow = '0 0 8px rgba(0, 217, 255, 0.3)';
+                                    indicator.style.zIndex = '100';
+                                    indicator.style.textAlign = 'center';
+                                    indicator.style.cursor = 'pointer';
+                                    indicator.style.fontFamily = "'VT323', monospace";
+                                    indicator.style.letterSpacing = '1px';
+                                    indicator.style.textTransform = 'uppercase';
+                                    
+                                    // Добавляем дата-атрибут для определения состояния и фазы
+                                    indicator.setAttribute('data-state', 'closed');
+                                    indicator.setAttribute('data-phase', index + 1);
+                                    indicator.setAttribute('data-timing', phaseDate);
+                                    
+                                    content.appendChild(indicator);
+                                } else {
+                                    // Обновляем существующий индикатор
+                                    indicator.textContent = item.classList.contains('active-mobile') ? 
+                                        (isRussian ? `Фаза ${index + 1}` : `Phase ${index + 1}`) : 
+                                        phaseDate;
+                                    
+                                    // Обновляем атрибуты
+                                    indicator.setAttribute('data-phase', index + 1);
+                                    indicator.setAttribute('data-timing', phaseDate);
+                                    
+                                    // Обновляем стили в зависимости от состояния
+                                    if (item.classList.contains('active-mobile')) {
+                                        indicator.style.color = 'rgba(255, 92, 92, 0.9)';
+                                        indicator.style.border = '1px solid rgba(255, 92, 92, 0.5)';
+                                        indicator.style.background = 'rgba(30, 10, 10, 0.9)';
+                                        indicator.style.boxShadow = '0 0 8px rgba(255, 92, 92, 0.3)';
+                                        indicator.setAttribute('data-state', 'opened');
+                                    } else {
+                                        indicator.style.color = 'rgba(0, 217, 255, 0.9)';
+                                        indicator.style.border = '1px solid rgba(0, 217, 255, 0.4)';
+                                        indicator.style.background = 'rgba(10, 20, 40, 0.9)';
+                                        indicator.style.boxShadow = '0 0 8px rgba(0, 217, 255, 0.3)';
+                                        indicator.setAttribute('data-state', 'closed');
+                                    }
                                 }
-                                .timeline-content {
-                                    width: 100% !important;
-                                    margin: 0 auto !important;
-                                    left: 0 !important;
-                                    right: 0 !important;
-                                    text-align: left !important;
-                                    cursor: pointer !important;
-                                }
-                                .timeline-item:nth-child(odd) .timeline-content,
-                                .timeline-item:nth-child(even) .timeline-content {
-                                    left: 0 !important;
-                                    right: 0 !important;
-                                    text-align: left !important;
-                                }
-                                .timeline-dot {
-                                    display: none !important;
+                                
+                                // Добавляем мягкий глитч-эффект
+                                if (indicator) {
+                                    // Удаляем существующие обработчики
+                                    const newIndicator = indicator.cloneNode(true);
+                                    if (indicator.parentNode) {
+                                        indicator.parentNode.replaceChild(newIndicator, indicator);
+                                    }
+                                    indicator = newIndicator;
+                                    
+                                    // Добавляем новые обработчики
+                                    indicator.addEventListener('mouseenter', function() {
+                                        indicator.classList.add('subtle-glitch-effect');
+                                        setTimeout(() => {
+                                            indicator.classList.remove('subtle-glitch-effect');
+                                        }, 500);
+                                    });
+                                    
+                                    // Также обрабатываем тач-события для мобильных устройств
+                                    indicator.addEventListener('touchstart', function() {
+                                        indicator.classList.add('subtle-glitch-effect');
+                                        setTimeout(() => {
+                                            indicator.classList.remove('subtle-glitch-effect');
+                                        }, 500);
+                                    });
+                                    
+                                    // Обработчик клика для индикатора
+                                    indicator.addEventListener('click', function(e) {
+                                        e.stopPropagation(); // Предотвращаем всплытие
+                                        
+                                        // Активируем глитч-эффект
+                                        indicator.classList.add('active-glitch-effect');
+                                        setTimeout(() => {
+                                            indicator.classList.remove('active-glitch-effect');
+                                        }, 800);
+                                        
+                                        // Переключаем состояние
+                                        const wasActive = item.classList.contains('active-mobile');
+                                        
+                                        // Закрываем все другие элементы
+                                        timelineItems.forEach(otherItem => {
+                                            if (otherItem !== item) {
+                                                otherItem.classList.remove('active-mobile');
+                                                
+                                                // Обновляем индикаторы
+                                                const otherIndicator = otherItem.querySelector('.timeline-indicator');
+                                                if (otherIndicator) {
+                                                    const otherPhase = otherIndicator.getAttribute('data-phase');
+                                                    const otherTiming = otherIndicator.getAttribute('data-timing');
+                                                    
+                                                    otherIndicator.textContent = otherTiming;
+                                                    otherIndicator.style.color = 'rgba(0, 217, 255, 0.9)';
+                                                    otherIndicator.style.border = '1px solid rgba(0, 217, 255, 0.4)';
+                                                    otherIndicator.style.background = 'rgba(10, 20, 40, 0.9)';
+                                                    otherIndicator.style.boxShadow = '0 0 8px rgba(0, 217, 255, 0.3)';
+                                                    otherIndicator.setAttribute('data-state', 'closed');
+                                                }
+                                                
+                                                // Скрываем детали
+                                                const otherDetail = otherItem.querySelector('.timeline-detail');
+                                                if (otherDetail) {
+                                                    otherDetail.style.maxHeight = '0';
+                                                    otherDetail.style.padding = '0';
+                                                    otherDetail.style.opacity = '0';
+                                                    otherDetail.style.visibility = 'hidden';
+                                                    otherDetail.style.margin = '0';
+                                                }
+                                            }
+                                        });
+                                        
+                                        // Переключаем текущий элемент
+                                        item.classList.toggle('active-mobile');
+                                        
+                                        // Обновляем индикатор и детали
+                                        if (item.classList.contains('active-mobile')) {
+                                            // Показываем номер фазы
+                                            indicator.textContent = isRussian ? `Фаза ${index + 1}` : `Phase ${index + 1}`;
+                                            indicator.style.color = 'rgba(255, 92, 92, 0.9)';
+                                            indicator.style.border = '1px solid rgba(255, 92, 92, 0.5)';
+                                            indicator.style.background = 'rgba(30, 10, 10, 0.9)';
+                                            indicator.style.boxShadow = '0 0 8px rgba(255, 92, 92, 0.3)';
+                                            indicator.setAttribute('data-state', 'opened');
+                                            
+                                            // Показываем детали
+                                            const detail = item.querySelector('.timeline-detail');
+                                            if (detail) {
+                                                detail.style.maxHeight = isRussian ? '1000px' : '800px';
+                                                detail.style.padding = '15px';
+                                                detail.style.opacity = '1';
+                                                detail.style.visibility = 'visible';
+                                                detail.style.marginTop = '5px';
+                                                detail.style.marginBottom = '15px';
+                                            }
+                                            
+                                            // Скроллим к элементу
+                                            setTimeout(() => {
+                                                item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                            }, 100);
+                                        } else {
+                                            // Показываем тайминг
+                                            indicator.textContent = phaseDate;
+                                            indicator.style.color = 'rgba(0, 217, 255, 0.9)';
+                                            indicator.style.border = '1px solid rgba(0, 217, 255, 0.4)';
+                                            indicator.style.background = 'rgba(10, 20, 40, 0.9)';
+                                            indicator.style.boxShadow = '0 0 8px rgba(0, 217, 255, 0.3)';
+                                            indicator.setAttribute('data-state', 'closed');
+                                            
+                                            // Скрываем детали
+                                            const detail = item.querySelector('.timeline-detail');
+                                            if (detail) {
+                                                detail.style.maxHeight = '0';
+                                                detail.style.padding = '0';
+                                                detail.style.opacity = '0';
+                                                detail.style.visibility = 'hidden';
+                                                detail.style.margin = '0';
+                                            }
+                                        }
+                                    });
                                 }
                             }
-                        `;
-                        document.head.appendChild(timelineStyle);
-                        
-                        // Обрабатываем элементы
-                        const timelineItems = document.querySelectorAll('.timeline-item');
-                        timelineItems.forEach(item => {
-                            item.style.width = '90%';
-                            item.style.margin = '15px auto';
-                            item.style.left = '0';
-                            item.style.right = '0';
-                            item.style.position = 'relative';
+                            
+                            // Устанавливаем компактные стили для деталей
+                            const detail = item.querySelector('.timeline-detail');
+                            if (detail) {
+                                if (!item.classList.contains('active-mobile')) {
+                                    detail.style.maxHeight = '0';
+                                    detail.style.padding = '0';
+                                    detail.style.opacity = '0';
+                                    detail.style.visibility = 'hidden';
+                                    detail.style.overflow = 'hidden';
+                                    detail.style.margin = '0';
+                                } else {
+                                    // Если блок активен, обновляем индикатор
+                                    const indicator = item.querySelector('.timeline-indicator');
+                                    if (indicator) {
+                                        indicator.textContent = isRussian ? `Фаза ${index + 1}` : `Phase ${index + 1}`;
+                                        indicator.style.color = 'rgba(255, 92, 92, 0.9)';
+                                        indicator.style.border = '1px solid rgba(255, 92, 92, 0.5)';
+                                        indicator.style.background = 'rgba(30, 10, 10, 0.9)';
+                                        indicator.style.boxShadow = '0 0 8px rgba(255, 92, 92, 0.3)';
+                                    }
+                                }
+                            }
                         });
                     }
                 }
             }
             
-            // Вызываем функцию сразу
+            // Вызываем функцию немедленно для исправления стилей
             fixTimelineImmediately();
             
-            // И повторно вызываем после полной загрузки страницы
-            window.addEventListener('load', fixTimelineImmediately);
+            // Добавляем обработчик для переключения языка
+            if (window.changeLanguage) {
+                const originalChangeLanguage = window.changeLanguage;
+                
+                // Переопределяем функцию changeLanguage
+                window.changeLanguage = function(lang) {
+                    // Вызываем оригинальную функцию
+                    originalChangeLanguage(lang);
+                    
+                    // Исправляем таймлайн с учетом нового языка
+                    setTimeout(() => {
+                        if (window.fixMobileTimeline) {
+                            console.log('Running fixMobileTimeline after language change to:', lang);
+                            window.fixMobileTimeline();
+                        } else {
+                            console.log('Using backup timeline fix after language change');
+                            fixTimelineImmediately();
+                        }
+                    }, 100);
+                };
+                
+                console.log('Language change handler with timeline fix has been installed');
+            }
             
-            // А также при изменении размера окна
-            window.addEventListener('resize', fixTimelineImmediately);
+            // Также обновляем стили при изменении размера окна
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 768) {
+                    if (window.fixMobileTimeline) {
+                        window.fixMobileTimeline();
+                    } else {
+                        fixTimelineImmediately();
+                    }
+                }
+            });
+            
+            // Обеспечиваем компактность фаз
+            function ensureCompactLayout() {
+                if (window.innerWidth <= 768) {
+                    const timelineItems = document.querySelectorAll('.timeline-item');
+                    timelineItems.forEach(item => {
+                        item.style.margin = '2px auto';
+                        item.style.padding = '0';
+                        item.style.width = '95%';
+                        
+                        // Удаляем любые индикаторы
+                        const indicators = item.querySelectorAll('.timeline-indicator');
+                        indicators.forEach(indicator => {
+                            if (indicator.parentNode) {
+                                indicator.parentNode.removeChild(indicator);
+                            }
+                        });
+                    });
+                }
+            }
+            
+            // Вызываем функцию сразу и после полной загрузки
+            ensureCompactLayout();
+            window.addEventListener('load', ensureCompactLayout);
+            window.addEventListener('resize', ensureCompactLayout);
         });
         
         // Добавляем функцию для обработки раскрытия блоков таймлайна
@@ -1995,6 +2232,60 @@
                     
                     console.log('Language button click handler executed');
                 });
+            });
+        });
+        
+        // Непосредственно вызываем функцию обновления стилей таймлайна при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            // Импортируем функцию fixMobileTimeline, если она доступна как модуль
+            if (window.fixMobileTimeline) {
+                console.log('Calling fixMobileTimeline from window...');
+                window.fixMobileTimeline();
+            } else {
+                // Создаем прямое исправление для таймлайна, если функция недоступна
+                console.log('Direct timeline fix...');
+                const timeline = document.querySelector('.timeline');
+                if (timeline && window.innerWidth <= 768) {
+                    // Центрируем таймлайн
+                    timeline.style.display = 'flex';
+                    timeline.style.flexDirection = 'column';
+                    timeline.style.alignItems = 'center';
+                    timeline.style.width = '100%';
+                    
+                    // Компактно размещаем элементы
+                    const items = document.querySelectorAll('.timeline-item');
+                    items.forEach(item => {
+                        item.style.margin = '2px auto';
+                        item.style.width = '95%';
+                        
+                        // Уменьшаем контент
+                        const content = item.querySelector('.timeline-content');
+                        if (content) {
+                            content.style.padding = '8px 10px';
+                            content.style.minHeight = '70px';
+                        }
+                        
+                        // Скрываем детали для неактивных элементов
+                        if (!item.classList.contains('active-mobile')) {
+                            const detail = item.querySelector('.timeline-detail');
+                            if (detail) {
+                                detail.style.maxHeight = '0';
+                                detail.style.padding = '0';
+                                detail.style.opacity = '0';
+                                detail.style.visibility = 'hidden';
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // Регистрируем обработчик для обновления при изменении размера
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 768) {
+                    if (window.fixMobileTimeline) {
+                        window.fixMobileTimeline();
+                    }
+                }
             });
         });
     </script>

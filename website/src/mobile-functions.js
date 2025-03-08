@@ -327,227 +327,160 @@ function fixMobileScroll() {
 
 // Исправление таймлайна для мобильных устройств
 function fixMobileTimeline() {
+    console.log('Fixing mobile timeline for compact view');
     if (window.innerWidth <= 768) {
-        // Находим таймлайн
+        // Находим и удаляем вертикальную линию
         const timeline = document.querySelector('.timeline');
-        if (!timeline) return;
-        
-        // Убираем вертикальную линию
-        timeline.style.cssText = `
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            padding: 0;
-            margin: 0 auto;
-        `;
-        
-        // Добавляем стиль для скрытия вертикальной линии
-        const timelineStyle = document.createElement('style');
-        timelineStyle.innerHTML = `
-            @media (max-width: 768px) {
-                .timeline::before {
-                    display: none !important;
-                }
-                .timeline-item {
-                    width: 90% !important;
-                    margin: 15px auto !important;
-                    left: 0 !important;
-                    right: 0 !important;
-                }
-            }
-        `;
-        document.head.appendChild(timelineStyle);
-        
-        // Обрабатываем элементы таймлайна
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach(item => {
-            // Стилизуем элементы
-            item.style.cssText = `
-                width: 90%;
-                margin: 15px auto;
-                left: 0;
-                right: 0;
-                position: relative;
-            `;
+        if (timeline) {
+            // Находим timeline ::before и удаляем его, устанавливая display: none
+            timeline.style.position = 'relative';
+            timeline.style.display = 'flex';
+            timeline.style.flexDirection = 'column';
+            timeline.style.alignItems = 'center';
+            timeline.style.width = '100%';
+            timeline.style.padding = '0';
+            timeline.style.margin = '0 auto';
             
-            // Находим контент элемента
-            const content = item.querySelector('.timeline-content');
-            if (!content) return;
+            // Устанавливаем стили для timeline-item
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const isRussian = document.documentElement.lang === 'ru';
             
-            // Стилизуем контент
-            content.style.cssText = `
-                width: 100%;
-                margin: 0 auto;
-                left: 0;
-                right: 0;
-                text-align: left;
-                cursor: pointer;
-                position: relative;
-                z-index: 2;
-            `;
-            
-            // Создаем индикатор для раскрытия/сворачивания, если его еще нет
-            let indicator = item.querySelector('.timeline-indicator');
-            if (!indicator) {
-                indicator = document.createElement('div');
-                indicator.className = 'timeline-indicator';
+            timelineItems.forEach((item, index) => {
+                // Компактное расположение
+                item.style.width = '95%';
+                item.style.margin = '2px auto';
+                item.style.padding = '0';
                 
-                // Определяем текст в зависимости от языка
-                const isRussian = document.documentElement.lang === 'ru';
-                indicator.textContent = isRussian ? 'Подробнее' : 'Details';
-                
-                // Добавляем индикатор после контента
-                content.appendChild(indicator);
-            }
-            
-            // Находим детальное содержимое
-            const detail = item.querySelector('.timeline-detail');
-            if (!detail) return;
-            
-            // Стилизуем детальное содержимое
-            detail.style.cssText = `
-                max-height: 0;
-                opacity: 0;
-                overflow: hidden;
-                transition: all 0.5s ease;
-                visibility: hidden;
-                position: relative;
-                padding-bottom: 50px;
-                width: 100%;
-                box-sizing: border-box;
-            `;
-            
-            // Находим содержимое деталей
-            const detailContent = item.querySelector('.timeline-detail-content');
-            if (detailContent) {
-                detailContent.style.cssText = `
-                    padding: 15px;
-                    position: relative;
-                    z-index: 1;
-                    width: 100%;
-                    box-sizing: border-box;
-                `;
-            }
-            
-            // Применяем специальные стили для русского языка
-            if (document.documentElement.lang === 'ru') {
-                if (detailContent) {
-                    // Уменьшаем размер шрифта для русского текста
-                    const headings = detailContent.querySelectorAll('h4');
-                    headings.forEach(h => {
-                        h.style.fontSize = '15px';
-                        h.style.lineHeight = '1.3';
-                    });
+                // Устанавливаем стили для timeline-content
+                const timelineContent = item.querySelector('.timeline-content');
+                if (timelineContent) {
+                    timelineContent.style.padding = '10px';
+                    timelineContent.style.marginBottom = '0';
+                    timelineContent.style.minHeight = '70px';
+                    timelineContent.style.cursor = 'pointer';
+                    timelineContent.style.position = 'relative';
+                    timelineContent.style.borderRadius = '5px';
                     
-                    const listItems = detailContent.querySelectorAll('li');
-                    listItems.forEach(li => {
-                        li.style.fontSize = '13px';
-                        li.style.lineHeight = '1.3';
-                        li.style.marginBottom = '6px';
-                    });
-                }
-            }
-            
-            // Сбрасываем существующие обработчики перед добавлением нового
-            const clonedContent = content.cloneNode(true);
-            content.parentNode.replaceChild(clonedContent, content);
-            const newContent = item.querySelector('.timeline-content');
-            const newIndicator = newContent.querySelector('.timeline-indicator');
-            
-            // Обработчик клика для раскрытия/сворачивания
-            newContent.addEventListener('click', function(event) {
-                // Игнорируем клики по ссылкам и т.д.
-                if (event.target.tagName === 'A' || event.target.closest('a')) {
-                    return;
-                }
-                
-                // Закрываем другие открытые элементы
-                timelineItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active-mobile')) {
-                        otherItem.classList.remove('active-mobile');
+                    // Удаляем существующие индикаторы, если они есть
+                    const existingIndicator = item.querySelector('.timeline-indicator');
+                    if (existingIndicator && existingIndicator.parentNode) {
+                        existingIndicator.parentNode.removeChild(existingIndicator);
+                    }
+                    
+                    // Устанавливаем стили для timeline-detail
+                    const timelineDetail = item.querySelector('.timeline-detail');
+                    if (timelineDetail) {
+                        timelineDetail.style.maxHeight = '0';
+                        timelineDetail.style.padding = '0';
+                        timelineDetail.style.opacity = '0';
+                        timelineDetail.style.visibility = 'hidden';
+                        timelineDetail.style.transition = 'all 0.3s ease';
+                        timelineDetail.style.overflow = 'hidden';
+                        timelineDetail.style.margin = '0';
                         
-                        // Обновляем индикатор
-                        const otherIndicator = otherItem.querySelector('.timeline-indicator');
-                        if (otherIndicator) {
-                            const isRussian = document.documentElement.lang === 'ru';
-                            otherIndicator.textContent = isRussian ? 'Подробнее' : 'Details';
-                        }
-                        
-                        // Скрываем детали
-                        const otherDetail = otherItem.querySelector('.timeline-detail');
-                        if (otherDetail) {
-                            otherDetail.style.maxHeight = '0';
-                            otherDetail.style.opacity = '0';
-                            otherDetail.style.padding = '0';
-                            otherDetail.style.visibility = 'hidden';
+                        // Усиленное применение стилей для русской версии
+                        if (isRussian) {
+                            timelineDetail.style.fontSize = '0.9rem';
+                            const detailHeadings = timelineDetail.querySelectorAll('h4');
+                            detailHeadings.forEach(heading => {
+                                heading.style.fontSize = '1.1rem';
+                                heading.style.marginBottom = '8px';
+                            });
+                            
+                            const detailLists = timelineDetail.querySelectorAll('ul');
+                            detailLists.forEach(list => {
+                                list.style.paddingLeft = '10px';
+                                const listItems = list.querySelectorAll('li');
+                                listItems.forEach(item => {
+                                    item.style.marginBottom = '5px';
+                                    item.style.fontSize = '0.85rem';
+                                });
+                            });
                         }
                     }
-                });
-                
-                // Переключаем состояние текущего элемента
-                item.classList.toggle('active-mobile');
-                
-                // Обновляем индикатор
-                if (newIndicator) {
-                    const isRussian = document.documentElement.lang === 'ru';
-                    newIndicator.textContent = item.classList.contains('active-mobile') ? 
-                        (isRussian ? 'Свернуть' : 'Collapse') : 
-                        (isRussian ? 'Подробнее' : 'Details');
                     
-                    // Дополнительные стили для индикатора
-                    if (item.classList.contains('active-mobile')) {
-                        newIndicator.style.position = 'absolute';
-                        newIndicator.style.bottom = '15px';
-                        newIndicator.style.left = '0';
-                        newIndicator.style.right = '0';
-                        newIndicator.style.margin = '0 auto';
-                        newIndicator.style.width = 'fit-content';
-                        newIndicator.style.zIndex = '10';
-                        newIndicator.style.color = 'rgba(255, 87, 34, 0.9)';
-                        newIndicator.style.border = '1px solid rgba(255, 87, 34, 0.7)';
-                        newIndicator.style.boxShadow = '0 0 10px rgba(255, 87, 34, 0.3)';
-                    } else {
-                        newIndicator.style.color = 'rgba(0, 217, 255, 0.9)';
-                        newIndicator.style.border = '1px solid rgba(0, 217, 255, 0.7)';
-                        newIndicator.style.boxShadow = '0 0 10px rgba(0, 217, 255, 0.3)';
-                    }
-                }
-                
-                // Показываем/скрываем детали
-                if (item.classList.contains('active-mobile')) {
-                    // Используем разные значения max-height в зависимости от языка
-                    const isRussian = document.documentElement.lang === 'ru';
-                    detail.style.maxHeight = isRussian ? '2500px' : '2000px';
-                    detail.style.opacity = '1';
-                    detail.style.padding = '20px 15px 60px 15px'; // Больше места для кнопки внизу
-                    detail.style.visibility = 'visible';
-                    
-                    // Прокручиваем к элементу для лучшей видимости
-                    setTimeout(() => {
-                        const rect = item.getBoundingClientRect();
-                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    // Обработчик клика для открытия/закрытия деталей
+                    const handleClick = function(event) {
+                        // Если клик был на ссылке внутри блока, не раскрываем блок
+                        if (event.target.tagName === 'A') {
+                            return;
+                        }
                         
-                        window.scrollTo({
-                            top: scrollTop + rect.top - 100,
-                            behavior: 'smooth'
+                        // Переключаем активное состояние для текущего элемента
+                        const wasActive = item.classList.contains('active-mobile');
+                        
+                        // Закрываем другие элементы
+                        timelineItems.forEach(otherItem => {
+                            otherItem.classList.remove('active-mobile');
+                            
+                            // Скрываем детали других элементов
+                            const otherDetail = otherItem.querySelector('.timeline-detail');
+                            if (otherDetail) {
+                                otherDetail.style.maxHeight = '0';
+                                otherDetail.style.padding = '0';
+                                otherDetail.style.opacity = '0';
+                                otherDetail.style.visibility = 'hidden';
+                                otherDetail.style.margin = '0';
+                            }
                         });
                         
-                        // Дополнительно улучшаем отображение содержимого деталей
-                        enhanceDetailContent(item);
-                    }, 100);
-                } else {
-                    detail.style.maxHeight = '0';
-                    detail.style.opacity = '0';
-                    detail.style.padding = '0';
-                    detail.style.visibility = 'hidden';
+                        if (!wasActive) {
+                            item.classList.add('active-mobile');
+                            
+                            // Если элемент активирован, раскрываем детали
+                            const detail = item.querySelector('.timeline-detail');
+                            if (detail) {
+                                detail.style.maxHeight = isRussian ? '1000px' : '800px';
+                                detail.style.padding = '15px';
+                                detail.style.opacity = '1';
+                                detail.style.visibility = 'visible';
+                                detail.style.marginTop = '5px';
+                                detail.style.marginBottom = '15px';
+                                
+                                // Улучшаем содержимое detail
+                                enhanceDetailContent(item);
+                            }
+                            
+                            // Скроллим к элементу плавно
+                            setTimeout(() => {
+                                item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 100);
+                        } else {
+                            // Если элемент деактивирован, скрываем детали
+                            const detail = item.querySelector('.timeline-detail');
+                            if (detail) {
+                                detail.style.maxHeight = '0';
+                                detail.style.padding = '0';
+                                detail.style.opacity = '0';
+                                detail.style.visibility = 'hidden';
+                                detail.style.margin = '0';
+                            }
+                        }
+                    };
+                    
+                    // Удаляем существующий обработчик перед добавлением нового
+                    timelineContent.removeEventListener('click', handleClick);
+                    timelineContent.addEventListener('click', handleClick);
                 }
-                
-                // Предотвращаем всплытие события
-                event.stopPropagation();
             });
-        });
+            
+            // Добавляем дополнительные стили для активных элементов
+            const activeItems = document.querySelectorAll('.timeline-item.active-mobile');
+            activeItems.forEach(item => {
+                const detail = item.querySelector('.timeline-detail');
+                if (detail) {
+                    detail.style.maxHeight = isRussian ? '1000px' : '800px';
+                    detail.style.padding = '15px';
+                    detail.style.opacity = '1';
+                    detail.style.visibility = 'visible';
+                    detail.style.marginTop = '5px';
+                    detail.style.marginBottom = '15px';
+                    
+                    // Улучшаем содержимое detail
+                    enhanceDetailContent(item);
+                }
+            });
+        }
     }
 }
 
@@ -672,4 +605,9 @@ window.addEventListener('resize', function() {
 });
 
 // Экспортируем функции для использования в других модулях
-export { fixMobileScroll, fixMobileTimeline, enhanceDetailContent }; 
+export { fixMobileScroll, fixMobileTimeline, enhanceDetailContent };
+
+// Делаем функции доступными глобально
+window.fixMobileScroll = fixMobileScroll;
+window.fixMobileTimeline = fixMobileTimeline;
+window.enhanceDetailContent = enhanceDetailContent; 
