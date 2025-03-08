@@ -1193,15 +1193,37 @@ let currentLanguage = localStorage.getItem('language') || 'en';
 
 // Function to change language
 function changeLanguage(lang) {
-    // This function now just updates the currentLanguage variable
-    // The actual content update happens in script.js
-    console.log('changeLanguage called from translations.js with language:', lang);
-    console.log('Previous language:', currentLanguage);
-    currentLanguage = lang;
-    localStorage.setItem('language', lang);
-    console.log('Language updated to:', currentLanguage);
-    console.log('This function only updates the language variable. The actual content update is handled in script.js');
+    // Устанавливаем язык для документа
+    document.documentElement.lang = lang;
+    
+    // Обновляем содержимое
+    updateContent();
+    
+    // Обновляем контент в кнопках переключения языков
+    document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Добавляем эффект глитча
+    document.body.classList.add('language-switching');
+    setTimeout(() => {
+        document.body.classList.remove('language-switching');
+    }, 1000);
+    
+    // Обновляем содержимое фаз проекта напрямую
+    if (typeof window.directUpdatePhases === 'function') {
+        window.directUpdatePhases(lang);
+    }
+    
+    // Сохраняем выбранный язык в локальное хранилище
+    localStorage.setItem('preferredLanguage', lang);
 }
+
+// Делаем функцию доступной глобально
+window.changeLanguage = changeLanguage;
 
 // Function to update content based on selected language
 function updateContent() {

@@ -1,3 +1,6 @@
+// Импорт функций из других модулей
+import { fixMobileScroll, fixMobileTimeline, enhanceDetailContent } from './mobile-functions.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing language switcher...');
     console.log('Current language:', currentLanguage);
@@ -543,7 +546,247 @@ document.addEventListener('DOMContentLoaded', function() {
         expandIndicator.innerHTML = '<span>+</span>';
         card.appendChild(expandIndicator);
     });
+
+    // Инициализация основных функций
+    initScrollDetection();
+    initCardAnimations();
+    createSpaceParticles();
+    
+    // Инициализация для мобильных устройств
+    if (window.innerWidth <= 768) {
+        fixMobileScroll();
+        fixMobileTimeline();
+        initMobileSpecificFunctions();
+    }
+    
+    // Инициализация таймлайна и фаз
+    enhancePhaseContents();
+    
+    // Обработка кликов на навигацию
+    setupNavigation();
 });
+
+// Повторная инициализация при полной загрузке
+window.addEventListener('load', function() {
+    if (window.innerWidth <= 768) {
+        fixMobileTimeline();
+        enhancePhaseContents();
+        
+        // Повторная инициализация для гарантии через небольшую задержку
+        setTimeout(function() {
+            fixMobileTimeline();
+            enhancePhaseContents();
+        }, 500);
+    }
+});
+
+// Обработка изменения размера окна
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+        fixMobileScroll();
+        fixMobileTimeline();
+        enhancePhaseContents();
+    }
+});
+
+// Обнаружение прокрутки для эффектов
+function initScrollDetection() {
+    // Обнаружение прокрутки для активации анимаций
+    window.addEventListener('scroll', function() {
+        const scrollValue = window.scrollY;
+        
+        // Показываем/скрываем индикатор прокрутки на мобильных устройствах
+        const mobileScrollIndicator = document.querySelector('.mobile-scroll-indicator');
+        if (mobileScrollIndicator) {
+            if (scrollValue > 100) {
+                mobileScrollIndicator.classList.add('hidden');
+            } else {
+                mobileScrollIndicator.classList.remove('hidden');
+            }
+        }
+        
+        // Анимация элементов при скролле
+        document.querySelectorAll('.animate-on-scroll').forEach(function(element) {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+            
+            if (elementPosition < screenHeight * 0.9) {
+                element.classList.add('animated');
+            }
+        });
+    });
+}
+
+// Анимация карточек
+function initCardAnimations() {
+    const cards = document.querySelectorAll('.roadmap-card, .feature-card, .ecosystem-card');
+    
+    cards.forEach(card => {
+        // Для десктопа используем hover эффекты
+        if (window.innerWidth > 768) {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('temp-glitch');
+                setTimeout(() => {
+                    card.classList.remove('temp-glitch');
+                }, 1000);
+            });
+        }
+        
+        // Анимация при появлении
+        const animateCard = () => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+            
+            if (cardPosition < screenHeight * 0.8) {
+                card.classList.add('animate-in');
+            }
+        };
+        
+        window.addEventListener('scroll', animateCard);
+        animateCard(); // Проверяем сразу при загрузке
+    });
+}
+
+// Инициализация специфичных функций для мобильных устройств
+function initMobileSpecificFunctions() {
+    // Мобильное меню-бургер
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuToggle && navLinks) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.contains('active');
+            mobileMenuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Закрываем меню при клике на ссылку
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    }
+    
+    // Мобильный футер
+    toggleMobileFooter();
+    window.addEventListener('resize', toggleMobileFooter);
+    
+    // Мобильные эффекты при скролле
+    window.addEventListener('scroll', function() {
+        const scrollValue = window.scrollY;
+        
+        // Глитч-эффект для кнопки в мобильном футере при прокрутке
+        if (scrollValue > window.innerHeight / 2) {
+            const investBtn = document.querySelector('.mobile-sticky-footer .invest-btn');
+            if (investBtn) {
+                investBtn.classList.add('active-glitch');
+                setTimeout(() => {
+                    investBtn.classList.remove('active-glitch');
+                }, 500);
+            }
+        }
+    });
+}
+
+// Показываем/скрываем мобильный футер
+function toggleMobileFooter() {
+    const mobileFooter = document.querySelector('.mobile-sticky-footer');
+    if (mobileFooter) {
+        if (window.innerWidth <= 768) {
+            mobileFooter.style.display = 'block';
+            
+            // При прокрутке отслеживаем положение футера
+            window.addEventListener('scroll', function() {
+                const footerTop = document.querySelector('footer').getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // Если футер виден, закрепляем кнопку в футере
+                if (footerTop < windowHeight) {
+                    mobileFooter.classList.add('footer-visible');
+                } else {
+                    mobileFooter.classList.remove('footer-visible');
+                }
+            });
+        } else {
+            mobileFooter.style.display = 'none';
+        }
+    }
+}
+
+// Создание космических частиц
+function createSpaceParticles() {
+    const container = document.querySelector('.space-particles');
+    if (!container) return;
+    
+    const particleCount = window.innerWidth <= 768 ? 30 : 50;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('space-particle');
+        
+        // Случайное положение
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        
+        // Случайный размер
+        const size = Math.random() * 3 + 1;
+        
+        // Случайная задержка и продолжительность
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 10 + 10;
+        
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.opacity = Math.random() * 0.5 + 0.3;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        
+        container.appendChild(particle);
+    }
+}
+
+// Настройка навигации с плавной прокруткой
+function setupNavigation() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Получаем высоту заголовка
+                const headerHeight = document.querySelector('header').offsetHeight;
+                
+                // Прокручиваем с учетом высоты заголовка
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Обновляем URL
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
+}
+
+// Экспортируем функции для использования в других модулях
+export { 
+    initScrollDetection, 
+    initCardAnimations, 
+    initMobileSpecificFunctions, 
+    toggleMobileFooter,
+    createSpaceParticles,
+    setupNavigation
+};
 
 // Random digital glitches
 function initRandomGlitches() {
@@ -708,7 +951,7 @@ function initCardAnimations() {
             });
         }
     });
-}
+    }
 
 // Features animation
 function checkFeaturesInView() {

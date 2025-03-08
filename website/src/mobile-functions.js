@@ -4,8 +4,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - initializing mobile functions');
+    
     // Инициализация всех мобильных функций
     if (window.innerWidth <= 768) {
+        // Исправляем таймлайн немедленно
+        setTimeout(fixMobileTimeline, 100);
+        
+        // Остальные функции
         initSmoothScrolling();
         initMobileGlitchEffects();
         initMobileRoadmap();
@@ -16,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Отслеживаем изменение размера окна
         window.addEventListener('resize', function() {
             if (window.innerWidth <= 768) {
+                setTimeout(fixMobileTimeline, 100);
                 initSmoothScrolling();
                 initMobileGlitchEffects();
                 initMobileRoadmap();
@@ -24,6 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Добавляем обработчик для задержки при загрузке страницы
+    window.addEventListener('load', function() {
+        console.log('Window loaded - fixing mobile timeline again');
+        if (window.innerWidth <= 768) {
+            setTimeout(fixMobileTimeline, 500);
+        }
+    });
 });
 
 // Функция для стильной прокрутки с паузами на блоках для мобильных устройств
@@ -276,4 +291,385 @@ function initTimelinePhases() {
             }
         });
     }
-} 
+}
+
+// Фиксирование скролла на мобильных устройствах
+function fixMobileScroll() {
+    if (window.innerWidth <= 768) {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        
+        // Обработка прокрутки с учетом фиксированного заголовка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Прокручиваем с учетом высоты заголовка
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Обновляем URL
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    }
+}
+
+// Исправление таймлайна для мобильных устройств
+function fixMobileTimeline() {
+    if (window.innerWidth <= 768) {
+        // Находим таймлайн
+        const timeline = document.querySelector('.timeline');
+        if (!timeline) return;
+        
+        // Убираем вертикальную линию
+        timeline.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            padding: 0;
+            margin: 0 auto;
+        `;
+        
+        // Добавляем стиль для скрытия вертикальной линии
+        const timelineStyle = document.createElement('style');
+        timelineStyle.innerHTML = `
+            @media (max-width: 768px) {
+                .timeline::before {
+                    display: none !important;
+                }
+                .timeline-item {
+                    width: 90% !important;
+                    margin: 15px auto !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                }
+            }
+        `;
+        document.head.appendChild(timelineStyle);
+        
+        // Обрабатываем элементы таймлайна
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach(item => {
+            // Стилизуем элементы
+            item.style.cssText = `
+                width: 90%;
+                margin: 15px auto;
+                left: 0;
+                right: 0;
+                position: relative;
+            `;
+            
+            // Находим контент элемента
+            const content = item.querySelector('.timeline-content');
+            if (!content) return;
+            
+            // Стилизуем контент
+            content.style.cssText = `
+                width: 100%;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                text-align: left;
+                cursor: pointer;
+                position: relative;
+                z-index: 2;
+            `;
+            
+            // Создаем индикатор для раскрытия/сворачивания, если его еще нет
+            let indicator = item.querySelector('.timeline-indicator');
+            if (!indicator) {
+                indicator = document.createElement('div');
+                indicator.className = 'timeline-indicator';
+                
+                // Определяем текст в зависимости от языка
+                const isRussian = document.documentElement.lang === 'ru';
+                indicator.textContent = isRussian ? 'Подробнее' : 'Details';
+                
+                // Добавляем индикатор после контента
+                content.appendChild(indicator);
+            }
+            
+            // Находим детальное содержимое
+            const detail = item.querySelector('.timeline-detail');
+            if (!detail) return;
+            
+            // Стилизуем детальное содержимое
+            detail.style.cssText = `
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: all 0.5s ease;
+                visibility: hidden;
+                position: relative;
+                padding-bottom: 50px;
+                width: 100%;
+                box-sizing: border-box;
+            `;
+            
+            // Находим содержимое деталей
+            const detailContent = item.querySelector('.timeline-detail-content');
+            if (detailContent) {
+                detailContent.style.cssText = `
+                    padding: 15px;
+                    position: relative;
+                    z-index: 1;
+                    width: 100%;
+                    box-sizing: border-box;
+                `;
+            }
+            
+            // Применяем специальные стили для русского языка
+            if (document.documentElement.lang === 'ru') {
+                if (detailContent) {
+                    // Уменьшаем размер шрифта для русского текста
+                    const headings = detailContent.querySelectorAll('h4');
+                    headings.forEach(h => {
+                        h.style.fontSize = '15px';
+                        h.style.lineHeight = '1.3';
+                    });
+                    
+                    const listItems = detailContent.querySelectorAll('li');
+                    listItems.forEach(li => {
+                        li.style.fontSize = '13px';
+                        li.style.lineHeight = '1.3';
+                        li.style.marginBottom = '6px';
+                    });
+                }
+            }
+            
+            // Сбрасываем существующие обработчики перед добавлением нового
+            const clonedContent = content.cloneNode(true);
+            content.parentNode.replaceChild(clonedContent, content);
+            const newContent = item.querySelector('.timeline-content');
+            const newIndicator = newContent.querySelector('.timeline-indicator');
+            
+            // Обработчик клика для раскрытия/сворачивания
+            newContent.addEventListener('click', function(event) {
+                // Игнорируем клики по ссылкам и т.д.
+                if (event.target.tagName === 'A' || event.target.closest('a')) {
+                    return;
+                }
+                
+                // Закрываем другие открытые элементы
+                timelineItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active-mobile')) {
+                        otherItem.classList.remove('active-mobile');
+                        
+                        // Обновляем индикатор
+                        const otherIndicator = otherItem.querySelector('.timeline-indicator');
+                        if (otherIndicator) {
+                            const isRussian = document.documentElement.lang === 'ru';
+                            otherIndicator.textContent = isRussian ? 'Подробнее' : 'Details';
+                        }
+                        
+                        // Скрываем детали
+                        const otherDetail = otherItem.querySelector('.timeline-detail');
+                        if (otherDetail) {
+                            otherDetail.style.maxHeight = '0';
+                            otherDetail.style.opacity = '0';
+                            otherDetail.style.padding = '0';
+                            otherDetail.style.visibility = 'hidden';
+                        }
+                    }
+                });
+                
+                // Переключаем состояние текущего элемента
+                item.classList.toggle('active-mobile');
+                
+                // Обновляем индикатор
+                if (newIndicator) {
+                    const isRussian = document.documentElement.lang === 'ru';
+                    newIndicator.textContent = item.classList.contains('active-mobile') ? 
+                        (isRussian ? 'Свернуть' : 'Collapse') : 
+                        (isRussian ? 'Подробнее' : 'Details');
+                    
+                    // Дополнительные стили для индикатора
+                    if (item.classList.contains('active-mobile')) {
+                        newIndicator.style.position = 'absolute';
+                        newIndicator.style.bottom = '15px';
+                        newIndicator.style.left = '0';
+                        newIndicator.style.right = '0';
+                        newIndicator.style.margin = '0 auto';
+                        newIndicator.style.width = 'fit-content';
+                        newIndicator.style.zIndex = '10';
+                        newIndicator.style.color = 'rgba(255, 87, 34, 0.9)';
+                        newIndicator.style.border = '1px solid rgba(255, 87, 34, 0.7)';
+                        newIndicator.style.boxShadow = '0 0 10px rgba(255, 87, 34, 0.3)';
+                    } else {
+                        newIndicator.style.color = 'rgba(0, 217, 255, 0.9)';
+                        newIndicator.style.border = '1px solid rgba(0, 217, 255, 0.7)';
+                        newIndicator.style.boxShadow = '0 0 10px rgba(0, 217, 255, 0.3)';
+                    }
+                }
+                
+                // Показываем/скрываем детали
+                if (item.classList.contains('active-mobile')) {
+                    // Используем разные значения max-height в зависимости от языка
+                    const isRussian = document.documentElement.lang === 'ru';
+                    detail.style.maxHeight = isRussian ? '2500px' : '2000px';
+                    detail.style.opacity = '1';
+                    detail.style.padding = '20px 15px 60px 15px'; // Больше места для кнопки внизу
+                    detail.style.visibility = 'visible';
+                    
+                    // Прокручиваем к элементу для лучшей видимости
+                    setTimeout(() => {
+                        const rect = item.getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        
+                        window.scrollTo({
+                            top: scrollTop + rect.top - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Дополнительно улучшаем отображение содержимого деталей
+                        enhanceDetailContent(item);
+                    }, 100);
+                } else {
+                    detail.style.maxHeight = '0';
+                    detail.style.opacity = '0';
+                    detail.style.padding = '0';
+                    detail.style.visibility = 'hidden';
+                }
+                
+                // Предотвращаем всплытие события
+                event.stopPropagation();
+            });
+        });
+    }
+}
+
+// Улучшение отображения содержимого деталей
+function enhanceDetailContent(item) {
+    if (!item) return;
+    
+    const detailContent = item.querySelector('.timeline-detail-content');
+    if (!detailContent) return;
+    
+    // Текущий язык
+    const isRussian = document.documentElement.lang === 'ru';
+    
+    // Улучшаем стили для содержимого
+    detailContent.style.opacity = '1';
+    detailContent.style.visibility = 'visible';
+    detailContent.style.display = 'block';
+    detailContent.style.width = '100%';
+    detailContent.style.boxSizing = 'border-box';
+    
+    // Улучшаем стили для заголовков
+    const headings = detailContent.querySelectorAll('h4');
+    headings.forEach(heading => {
+        heading.style.color = '#00d9ff';
+        heading.style.marginBottom = '10px';
+        heading.style.fontSize = isRussian ? '15px' : '16px';
+        heading.style.fontWeight = '600';
+        heading.style.paddingTop = '10px';
+        heading.style.lineHeight = isRussian ? '1.3' : '1.4';
+    });
+    
+    // Улучшаем стили для списков
+    const lists = detailContent.querySelectorAll('ul');
+    lists.forEach(list => {
+        list.style.paddingLeft = '20px';
+        list.style.margin = '10px 0 20px 0';
+        list.style.width = '100%';
+        list.style.boxSizing = 'border-box';
+        
+        const items = list.querySelectorAll('li');
+        items.forEach(li => {
+            li.style.color = '#a0a0a0';
+            li.style.marginBottom = isRussian ? '6px' : '8px';
+            li.style.position = 'relative';
+            li.style.paddingLeft = '15px';
+            li.style.lineHeight = isRussian ? '1.3' : '1.4';
+            li.style.fontSize = isRussian ? '13px' : '14px';
+            li.style.width = '100%';
+            li.style.boxSizing = 'border-box';
+            li.style.textAlign = 'left';
+            li.style.wordBreak = isRussian ? 'break-word' : 'normal';
+            
+            // Добавляем маркер перед элементом списка
+            if (!li.querySelector('.list-marker')) {
+                const marker = document.createElement('span');
+                marker.className = 'list-marker';
+                marker.style.position = 'absolute';
+                marker.style.left = '0';
+                marker.style.top = isRussian ? '2px' : '0';
+                marker.style.color = '#00d9ff';
+                marker.textContent = '•';
+                li.insertBefore(marker, li.firstChild);
+            }
+        });
+    });
+    
+    // Улучшаем отображение индикатора
+    const indicator = item.querySelector('.timeline-indicator');
+    if (indicator) {
+        indicator.style.position = 'absolute';
+        indicator.style.bottom = '15px';
+        indicator.style.left = '0';
+        indicator.style.right = '0';
+        indicator.style.margin = '0 auto';
+        indicator.style.width = 'fit-content';
+        indicator.style.padding = '5px 15px';
+        indicator.style.background = 'rgba(0, 0, 0, 0.8)';
+        indicator.style.border = '1px solid rgba(255, 87, 34, 0.7)';
+        indicator.style.borderRadius = '20px';
+        indicator.style.fontSize = '14px';
+        indicator.style.color = 'rgba(255, 87, 34, 0.9)';
+        indicator.style.zIndex = '10';
+        indicator.style.cursor = 'pointer';
+        indicator.style.transition = 'all 0.3s ease';
+        indicator.style.textAlign = 'center';
+        indicator.style.boxShadow = '0 0 10px rgba(255, 87, 34, 0.3)';
+        
+        // Обновляем текст
+        const isActive = item.classList.contains('active-mobile');
+        indicator.textContent = isActive 
+            ? (isRussian ? 'Свернуть' : 'Collapse') 
+            : (isRussian ? 'Подробнее' : 'Details');
+    }
+    
+    // Обеспечиваем достаточную высоту блока для русского языка
+    const detail = item.querySelector('.timeline-detail');
+    if (detail && isRussian) {
+        detail.style.maxHeight = '2500px';
+        detail.style.paddingBottom = '60px';
+    }
+}
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', function() {
+    fixMobileScroll();
+    fixMobileTimeline();
+});
+
+// Повторный вызов при полной загрузке страницы
+window.addEventListener('load', function() {
+    fixMobileScroll();
+    fixMobileTimeline();
+    
+    // Дополнительно повторяем через небольшую задержку для лучшей совместимости
+    setTimeout(fixMobileTimeline, 500);
+});
+
+// Вызываем при изменении размера окна
+window.addEventListener('resize', function() {
+    fixMobileScroll();
+    fixMobileTimeline();
+});
+
+// Экспортируем функции для использования в других модулях
+export { fixMobileScroll, fixMobileTimeline, enhanceDetailContent }; 
