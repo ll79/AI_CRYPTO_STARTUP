@@ -659,6 +659,35 @@ const translations = {
         courses_desc7: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and connecting apps to AI services and blockchain.",
         courses_desc8: "Immerse yourself in decentralized finance and crypto trading strategies. Study liquidity pools, yield farming, and creating trading bots with AI algorithms.",
         courses_desc9: "Master the security aspects of blockchain development. Study common vulnerabilities, audit methods, and creating secure smart contracts and DApps.",
+        
+        // Financial prospects
+        financial_title: "Financial Prospects",
+        financial_desc: "Our project has significant growth potential thanks to an innovative business model",
+        financial_subtitle: "Revenue Streams",
+        financial_subtitle_desc: "Our ecosystem provides multiple revenue streams through various components",
+        
+        financial_prospects_title: "Financial Prospects",
+        financial_prospects_desc: "Our project has significant growth potential due to its innovative business model",
+        revenue_streams_title: "Revenue Streams",
+        revenue_streams_desc: "Our ecosystem provides multiple revenue streams through various components",
+        
+        ai_agents_revenue_title: "AI Agents System",
+        ai_agents_revenue_desc: "Our AI agents will generate revenue through commissions on tasks performed, subscription fees, and transaction fees on the DAO-AI-Freelance platform.",
+        
+        defi_services_revenue_title: "DeFi Services",
+        defi_services_revenue_desc: "Revenue from P2P exchange fees, crypto processing, real estate tokenization, and API access to AI models through UltrAPI.app.",
+        
+        dao_advertising_revenue_title: "DAO Advertising Exchange",
+        dao_advertising_revenue_desc: "Income from NFT-ification of rights to channels and advertising platforms, automated management and sale of advertising slots.",
+        
+        nft_gpu_revenue_title: "NFT for Graphics Cards",
+        nft_gpu_revenue_desc: "Revenue from digitization of rights to computing power, passive income generation from unused GPU resources.",
+        
+        ai_launchpool_revenue_title: "AI-Launchpool",
+        ai_launchpool_revenue_desc: "Income from supporting and funding new startups with marketing, technical support, and fundraising services.",
+        
+        educational_revenue_title: "Educational Courses",
+        educational_revenue_desc: "Revenue from premium educational content, specialized courses, and certification programs.",
     },
     ru: {
         page_title: "ASINGULARITY AI | Децентрализованная AI экосистема",
@@ -1127,6 +1156,35 @@ const translations = {
         courses_desc8: "Погрузитесь в децентрализованные финансы и стратегии крипто-трейдинга. Изучите пулы ликвидности, фарминг доходности и создание торговых ботов с ИИ-алгоритмами.",
         courses_title9: "🔐 БЕЗОПАСНОСТЬ БЛОКЧЕЙНА",
         courses_desc9: "Освойте аспекты безопасности разработки блокчейна. Изучите распространенные уязвимости, методы аудита и создание безопасных смарт-контрактов и DApps.",
+        
+        // Financial prospects
+        financial_title: "Финансовые перспективы",
+        financial_desc: "Наш проект имеет значительный потенциал роста благодаря инновационной бизнес-модели",
+        financial_subtitle: "Источники дохода",
+        financial_subtitle_desc: "Наша экосистема обеспечивает множественные потоки доходов через различные компоненты",
+        
+        financial_prospects_title: "Финансовые перспективы",
+        financial_prospects_desc: "Наш проект имеет значительный потенциал роста благодаря инновационной бизнес-модели",
+        revenue_streams_title: "Источники дохода",
+        revenue_streams_desc: "Наша экосистема обеспечивает множественные потоки доходов через различные компоненты",
+        
+        ai_agents_revenue_title: "Система ИИ-агентов",
+        ai_agents_revenue_desc: "Наши ИИ-агенты будут генерировать доход через комиссии за выполненные задачи, абонентскую плату и комиссии за транзакции на платформе DAO-AI-Freelance.",
+        
+        defi_services_revenue_title: "DeFi-сервисы",
+        defi_services_revenue_desc: "Доход от комиссий P2P-обмена, крипто-процессинга, токенизации недвижимости и доступа к API для ИИ-моделей через UltrAPI.app.",
+        
+        dao_advertising_revenue_title: "DAO Рекламная Биржа",
+        dao_advertising_revenue_desc: "Доход от NFT-фикации прав на каналы и рекламные площадки, автоматизированного управления и продажи рекламных слотов.",
+        
+        nft_gpu_revenue_title: "NFT для видеокарт",
+        nft_gpu_revenue_desc: "Доход от цифровизации прав на вычислительную мощность, генерации пассивного дохода от неиспользуемых ресурсов GPU.",
+        
+        ai_launchpool_revenue_title: "ИИ-Launchpool",
+        ai_launchpool_revenue_desc: "Доход от поддержки и финансирования новых стартапов с услугами маркетинга, технической поддержки и привлечения средств.",
+        
+        educational_revenue_title: "Образовательные курсы",
+        educational_revenue_desc: "Доход от премиум образовательного контента, специализированных курсов и программ сертификации.",
     }
 };
 
