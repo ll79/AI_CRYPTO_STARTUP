@@ -310,62 +310,62 @@ const translations = {
         // Contribution types
         contrib_code_title: "Code Development",
         contrib_code_desc: "Build smart contracts, frontend interfaces, backend systems, and AI models. Help create the core technology that powers our ecosystem.",
-        contrib_code_tasks: [
-            "Smart contract development",
-            "Frontend/Backend implementation",
-            "AI model integration",
-            "TON blockchain integration"
-        ],
+        contrib_code_tasks: {
+            0: "Smart contract development",
+            1: "Frontend/Backend implementation",
+            2: "AI model integration",
+            3: "TON blockchain integration"
+        },
         contrib_code_btn: "Join as Developer",
         
         contrib_edu_title: "Educational Content",
         contrib_edu_desc: "Create tutorials, courses, and documentation that help others understand our technology and ecosystem.",
-        contrib_edu_tasks: [
-            "Course module creation",
-            "Tutorial writing",
-            "Documentation",
-            "Educational videos"
-        ],
+        contrib_edu_tasks: {
+            0: "Course module creation",
+            1: "Tutorial writing",
+            2: "Documentation",
+            3: "Educational videos"
+        },
         contrib_edu_btn: "Join as Educator",
         
         contrib_design_title: "Design",
         contrib_design_desc: "Create stunning visuals, UI/UX designs, NFT artwork, and branding materials that bring our vision to life.",
-        contrib_design_tasks: [
-            "UI/UX design",
-            "NFT artwork creation",
-            "Branding and identity",
-            "Visual assets"
-        ],
+        contrib_design_tasks: {
+            0: "UI/UX design",
+            1: "NFT artwork creation",
+            2: "Branding and identity",
+            3: "Visual assets"
+        },
         contrib_design_btn: "Join as Designer",
         
         contrib_content_title: "Content Creation",
         contrib_content_desc: "Write articles, blog posts, social media content, and marketing materials to spread the word about our project.",
-        contrib_content_tasks: [
-            "Technical writing",
-            "Blog posts",
-            "Translations",
-            "Marketing copy"
-        ],
+        contrib_content_tasks: {
+            0: "Technical writing",
+            1: "Blog posts",
+            2: "Translations",
+            3: "Marketing copy"
+        },
         contrib_content_btn: "Join as Writer",
         
         contrib_qa_title: "Testing & QA",
         contrib_qa_desc: "Ensure the quality and security of our products by testing functionality, reporting bugs, and suggesting improvements.",
-        contrib_qa_tasks: [
-            "Functional testing",
-            "Security audits",
-            "User experience testing",
-            "Bug reporting"
-        ],
+        contrib_qa_tasks: {
+            0: "Functional testing",
+            1: "Security audits",
+            2: "User experience testing",
+            3: "Bug reporting"
+        },
         contrib_qa_btn: "Join as Tester",
         
         contrib_community_title: "Community Building",
         contrib_community_desc: "Help grow and nurture our community through moderation, support, engagement initiatives, and events.",
-        contrib_community_tasks: [
-            "Community moderation",
-            "Support and assistance",
-            "Event organization",
-            "Engagement initiatives"
-        ],
+        contrib_community_tasks: {
+            0: "Community moderation",
+            1: "Support and assistance",
+            2: "Event organization",
+            3: "Engagement initiatives"
+        },
         contrib_community_btn: "Join Community Team",
         
         // Footer
@@ -415,8 +415,9 @@ const translations = {
         
         // Educational courses section
         courses_title: "Educational Courses",
-        courses_description: "We are developing a series of complementary courses and open source projects that help build our ecosystem and create a large community of like-minded individuals",
+        courses_description: "We are developing a series of complementary courses and open-source projects that help build our ecosystem and form a large community of like-minded people",
         stepik_button: "Stepik",
+        course_details_button: "Details",
         
         // Repository Structure
         repo_structure_title: "Repository Structure",
@@ -430,42 +431,34 @@ const translations = {
         repo_folder7: "Community and DAO materials",
         repo_folder8: "Technical documentation and tools",
         
-        // Footer and additional sections
-        footer_project_name: "ASINGULARITY AI",
-        footer_join_revolution: "Join the Revolution!",
-        action_join_team: "Join the Team",
-        action_explore_courses: "Explore Courses",
-        action_browse_projects: "Browse Projects",
-        action_view_roadmap: "View Roadmap",
-        action_contact_us: "Contact Us",
 
         // Educational courses
-        course1_title: "⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 ЗАПУСКАЕМ РАКЕТУ 🚀",
-        course1_desc: "Погрузитесь в эру революции ИИ-агентов! Войдите в мир ИИ и КРИПТО на блокчейне TON. Изучайте передовые технологии и участвуйте в разработке полезных инструментов.",
+        course1_title: "⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 LAUNCHING THE ROCKET 🚀",
+        course1_desc: "Dive into the era of AI agent revolution! Enter the world of AI and CRYPTO on the TON blockchain. Study cutting-edge technologies and participate in developing useful tools.",
         
-        course2_title: "⚡ТВОЙ ВКАТ В IT 💻 PYTHON С НУЛЯ ДО МИДЛА",
-        course2_desc: "Начните программировать с нуля и поднимитесь до уровня мидл+ с помощью ИИ! Освойте Python, современные фреймворки и инструменты ИИ для создания полноценных продуктов.",
+        course2_title: "⚡YOUR ENTRY INTO IT 💻 PYTHON FROM ZERO TO MIDDLE",
+        course2_desc: "Start programming from scratch and rise to mid+ level with AI help! Master Python, modern frameworks, and AI tools to create full-fledged products.",
         
-        course3_title: "🌐 КРИПТО МИР И ДЕЦЕНТРАЛИЗАЦИЯ",
-        course3_desc: "Войдите в мир Web3! Узнайте, как работают DAO и смарт-контракты, безопасность блокчейн-систем и продвижение DeFi-продуктов в быстрорастущей экосистеме.",
+        course3_title: "🌐 CRYPTO WORLD AND DECENTRALIZATION",
+        course3_desc: "Enter the world of Web3! Learn how DAOs and smart contracts work, blockchain system security, and promotion of DeFi products in a rapidly growing ecosystem.",
         
-        course4_title: "🧩 БРАУЗЕРНЫЕ РАСШИРЕНИЯ: ИИ-АГЕНТЫ",
-        course4_desc: "Превратите свой браузер в интеллектуального помощника! Создайте расширение с открытым исходным кодом с ИИ-агентами, подключите их к моделям и добавьте крипто-функциональность.",
+        course4_title: "🧩 BROWSER EXTENSIONS: AI AGENTS",
+        course4_desc: "Turn your browser into an intelligent assistant! Create an open-source extension with AI agents, connect them to models, and add crypto functionality.",
         
-        course5_title: "⚙️ СМАРТ-КОНТРАКТЫ НА TON",
-        course5_desc: "Изучите FunC и TVM, создавайте DeFi или NFT проекты на блокчейне TON. Освойте написание, тестирование и развертывание смарт-контрактов в быстрорастущей экосистеме.",
+        course5_title: "⚙️ SMART CONTRACTS ON TON",
+        course5_desc: "Study FunC and TVM, create DeFi or NFT projects on the TON blockchain. Master writing, testing, and deploying smart contracts in a rapidly growing ecosystem.",
         
-        course6_title: "🔮 РАЗРАБОТКА ИИ-АГЕНТОВ",
-        course6_desc: "Освойте искусство создания автономных ИИ-агентов, выполняющих сложные задачи. Изучите векторные базы данных, интеграцию LLM и оркестрацию агентов.",
+        course6_title: "🔮 AI AGENT DEVELOPMENT",
+        course6_desc: "Master the art of creating autonomous AI agents that perform complex tasks. Study vector databases, LLM integration, and agent orchestration.",
         
-        course7_title: "📱 МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ С ИИ",
-        course7_desc: "Создавайте мощные мобильные приложения с интегрированными возможностями ИИ. Изучите Flutter, React Native и способы подключения приложений к сервисам ИИ и блокчейну.",
+        course7_title: "📱 MOBILE APPLICATIONS WITH AI",
+        course7_desc: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and ways to connect applications to AI services and blockchain.",
         
-        course8_title: "💰 DEFI И КРИПТО-ТРЕЙДИНГ",
-        course8_desc: "Погрузитесь в децентрализованные финансы и стратегии крипто-трейдинга. Узнайте о пулах ликвидности, фарминге доходности и создании торговых ботов с алгоритмами ИИ.",
+        course8_title: "💰 DEFI AND CRYPTO TRADING",
+        course8_desc: "Dive into decentralized finance and crypto trading strategies. Learn about liquidity pools, yield farming, and creating trading bots with AI algorithms.",
         
-        course9_title: "🔐 БЕЗОПАСНОСТЬ БЛОКЧЕЙНА",
-        course9_desc: "Освойте аспекты безопасности разработки блокчейна. Узнайте о распространенных уязвимостях, методах аудита и создании безопасных смарт-контрактов и DApps.",
+        course9_title: "🔐 BLOCKCHAIN SECURITY",
+        course9_desc: "Master aspects of blockchain development security. Learn about common vulnerabilities, audit methods, and creating secure smart contracts and DApps.",
 
         // Financial prospects
         financial_prospects_title: "Financial Prospects",
@@ -638,6 +631,34 @@ const translations = {
         
         // Contact
         contact_team_btn: "Contact the Team",
+        
+        // Roadmap Phase 4 Goals
+        roadmap_phase4_goals_title: "Global Expansion Plan",
+        roadmap_phase4_goals_item1: "Establish presence in key markets across Asia, Europe, and Americas",
+        roadmap_phase4_goals_item2: "Develop localized versions of all services",
+        roadmap_phase4_goals_item3: "Create regional partnerships and community hubs",
+        roadmap_phase4_goals_item4: "Implement multi-language support across the ecosystem",
+        roadmap_phase4_goals_item5: "Adapt to regional regulatory requirements",
+        
+        // Courses
+        courses_title1: "⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 LAUNCHING THE ROCKET 🚀",
+        courses_title2: "⚡YOUR ENTRY INTO IT 💻 PYTHON FROM ZERO TO MIDDLE",
+        courses_title3: "🌐 CRYPTO WORLD AND DECENTRALIZATION",
+        courses_title4: "🧩 BROWSER EXTENSIONS: AI AGENTS",
+        courses_title5: "⚙️ SMART CONTRACTS ON TON",
+        courses_title6: "🔮 AI AGENT DEVELOPMENT",
+        courses_title7: "📱 MOBILE APPLICATIONS WITH AI",
+        courses_title8: "💰 DEFI AND CRYPTO TRADING",
+        courses_title9: "🔐 BLOCKCHAIN SECURITY",
+        courses_desc1: "Dive into the era of AI-Agent revolution! Join the AI and CRYPTO world on TON blockchain. Learn cutting-edge technologies and participate in developing useful tools.",
+        courses_desc2: "Start programming from scratch and level up to mid+ level with AI! Master Python, modern frameworks, and AI tools for creating full-fledged products.",
+        courses_desc3: "Enter the world of Web3! Study DAO and smart contracts, blockchain system security, and promotion of DeFi products in a rapidly growing ecosystem.",
+        courses_desc4: "Transform your browser into an intelligent assistant! Create an Open Source extension with AI agents, connect them to models, and add crypto functionality.",
+        courses_desc5: "Learn FunC and TVM, create DeFi or NFT projects on TON blockchain. Master writing, testing, and deploying smart contracts in a rapidly growing ecosystem.",
+        courses_desc6: "Master the art of creating autonomous AI agents that perform complex tasks. Study vector databases, LLM integration, and agent orchestration.",
+        courses_desc7: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and connecting apps to AI services and blockchain.",
+        courses_desc8: "Immerse yourself in decentralized finance and crypto trading strategies. Study liquidity pools, yield farming, and creating trading bots with AI algorithms.",
+        courses_desc9: "Master the security aspects of blockchain development. Study common vulnerabilities, audit methods, and creating secure smart contracts and DApps.",
     },
     ru: {
         page_title: "ASINGULARITY AI | Децентрализованная AI экосистема",
@@ -948,62 +969,62 @@ const translations = {
         // Contribution types
         contrib_code_title: "Разработка кода",
         contrib_code_desc: "Создавайте смарт-контракты, frontend интерфейсы, backend системы и AI модели. Помогите создать основную технологию, которая движет нашей экосистемой.",
-        contrib_code_tasks: [
-            "Разработка смарт-контрактов",
-            "Реализация frontend/backend",
-            "Интеграция AI моделей",
-            "Интеграция с блокчейном TON"
-        ],
+        contrib_code_tasks: {
+            0: "Smart contract development",
+            1: "Frontend/Backend implementation",
+            2: "AI model integration",
+            3: "TON blockchain integration"
+        },
         contrib_code_btn: "Присоединиться как разработчик",
         
         contrib_edu_title: "Образовательный контент",
         contrib_edu_desc: "Создавайте руководства, курсы и документацию, которые помогут другим понять наши технологии и экосистему.",
-        contrib_edu_tasks: [
-            "Создание модулей курса",
-            "Написание руководств",
-            "Документация",
-            "Образовательные видео"
-        ],
+        contrib_edu_tasks: {
+            0: "Course module creation",
+            1: "Tutorial writing",
+            2: "Documentation",
+            3: "Educational videos"
+        },
         contrib_edu_btn: "Присоединиться как педагог",
         
         contrib_design_title: "Дизайн",
         contrib_design_desc: "Создавайте потрясающие визуалы, UI/UX дизайны, NFT произведения искусства и материалы для брендинга, которые воплощают наше видение.",
-        contrib_design_tasks: [
-            "UI/UX дизайн",
-            "Создание NFT произведений искусства",
-            "Брендинг и айдентика",
-            "Визуальные ресурсы"
-        ],
+        contrib_design_tasks: {
+            0: "UI/UX design",
+            1: "NFT artwork creation",
+            2: "Branding and identity",
+            3: "Visual assets"
+        },
         contrib_design_btn: "Присоединиться как дизайнер",
         
         contrib_content_title: "Создание контента",
         contrib_content_desc: "Пишите статьи, блог-посты, контент для социальных сетей и маркетинговые материалы, чтобы рассказать о нашем проекте.",
-        contrib_content_tasks: [
-            "Техническое письмо",
-            "Блог-посты",
-            "Переводы",
-            "Маркетинговые тексты"
-        ],
+        contrib_content_tasks: {
+            0: "Technical writing",
+            1: "Blog posts",
+            2: "Translations",
+            3: "Marketing copy"
+        },
         contrib_content_btn: "Присоединиться как писатель",
         
         contrib_qa_title: "Тестирование и QA",
         contrib_qa_desc: "Обеспечьте качество и безопасность наших продуктов, тестируя функциональность, сообщая об ошибках и предлагая улучшения.",
-        contrib_qa_tasks: [
-            "Функциональное тестирование",
-            "Проверка безопасности",
-            "Тестирование пользовательского опыта",
-            "Сообщение об ошибках"
-        ],
+        contrib_qa_tasks: {
+            0: "Functional testing",
+            1: "Security audits",
+            2: "User experience testing",
+            3: "Bug reporting"
+        },
         contrib_qa_btn: "Присоединиться как тестировщик",
         
         contrib_community_title: "Построение сообщества",
         contrib_community_desc: "Помогите развивать и поддерживать наше сообщество через модерацию, поддержку, инициативы по вовлечению и мероприятия.",
-        contrib_community_tasks: [
-            "Модерация сообщества",
-            "Поддержка и помощь",
-            "Организация мероприятий",
-            "Инициативы по вовлечению"
-        ],
+        contrib_community_tasks: {
+            0: "Community moderation",
+            1: "Support and assistance",
+            2: "Event organization",
+            3: "Engagement initiatives"
+        },
         contrib_community_btn: "Присоединиться к команде сообщества",
         
         // Footer
@@ -1053,6 +1074,7 @@ const translations = {
         courses_title: "Образовательные курсы",
         courses_description: "Мы разрабатываем серию взаимодополняющих курсов и проектов с открытым исходным кодом, которые помогают создавать нашу экосистему и формировать большое сообщество единомышленников",
         stepik_button: "Stepik",
+        course_details_button: "Подробнее",
         
         // Repository Structure section
         repo_structure_title: "Структура репозитория",
@@ -1076,7 +1098,35 @@ const translations = {
         action_contact_us: "Свяжитесь с нами",
         
         // Contact
-        contact_team_btn: "Связаться с командой"
+        contact_team_btn: "Связаться с командой",
+        
+        // Roadmap Phase 4 Goals
+        roadmap_phase4_goals_title: "Global Expansion Plan",
+        roadmap_phase4_goals_item1: "Establish presence in key markets across Asia, Europe, and Americas",
+        roadmap_phase4_goals_item2: "Develop localized versions of all services",
+        roadmap_phase4_goals_item3: "Create regional partnerships and community hubs",
+        roadmap_phase4_goals_item4: "Implement multi-language support across the ecosystem",
+        roadmap_phase4_goals_item5: "Adapt to regional regulatory requirements",
+        
+        // Courses
+        courses_title1: "⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 ЗАПУСКАЕМ РАКЕТУ 🚀",
+        courses_title2: "⚡ТВОЙ ВКАТ В IT 💻 PYTHON С НУЛЯ ДО МИДЛА 🐍 AI-BOOSTED DEV 🤖",
+        courses_title3: "🌐 КРИПТО МИР И ДЕЦЕНТРАЛИЗАЦИЯ: DAO 🤝 SECURITY 🔒 МАРКЕТИНГ 📈",
+        courses_title4: "🧩 БРАУЗЕРНЫЕ РАСШИРЕНИЯ: СОЗДАЁМ ИИ-АГЕНТА ДЛЯ CHROME & FIREFOX",
+        courses_title5: "⚙️ СМАРТ-КОНТРАКТЫ НА TON: FUNC, TVM & ИНСТРУМЕНТЫ ЭКОСИСТЕМЫ!💎",
+        courses_title6: "🤖ДЕЛАЕМ ИИ-АГЕНТОВ: ОТ ЛОКАЛЬНЫХ ДО ДЕЦЕНТРАЛИЗОВАННЫХ {AGIENT}",
+        courses_title7: "📱 МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ С ИИ",
+        courses_desc1: "Погрузись в эпоху революции ИИ-Агентов! Залетаем в AI и CRYPTO мир на блокчейне TON. Изучай передовые технологии и участвуй в разработке полезных инструментов.",
+        courses_desc2: "Начни программировать с нуля и прокачайся до мидл+ уровня с помощью ИИ! Освоим Python, современные фреймворки и ИИ-инструменты для создания полноценных продуктов.",
+        courses_desc3: "Входи в мир Web3! Изучи работу DAO и смарт-контрактов, безопасность блокчейн-систем и продвижение DeFi-продуктов в быстрорастущей экосистеме.",
+        courses_desc4: "Преобразим браузер в интеллектуального помощника! Создадим Open Source расширение с ИИ-агентами, подключим их к моделям и добавим крипто-функционал.",
+        courses_desc5: "Изучи FunC и TVM, создай DeFi или NFT-проекты на блокчейне TON. Освой написание, тестирование и развертывание смарт-контрактов в быстрорастущей экосистеме.",
+        courses_desc6: "Освойте искусство создания автономных ИИ-агентов, выполняющих сложные задачи. Изучите векторные базы данных, интеграцию с LLM и оркестрацию агентов.",
+        courses_desc7: "Создавайте мощные мобильные приложения с интегрированными возможностями ИИ. Изучите Flutter, React Native и подключение приложений к ИИ-сервисам и блокчейну.",
+        courses_title8: "💰 DEFI И КРИПТО-ТРЕЙДИНГ",
+        courses_desc8: "Погрузитесь в децентрализованные финансы и стратегии крипто-трейдинга. Изучите пулы ликвидности, фарминг доходности и создание торговых ботов с ИИ-алгоритмами.",
+        courses_title9: "🔐 БЕЗОПАСНОСТЬ БЛОКЧЕЙНА",
+        courses_desc9: "Освойте аспекты безопасности разработки блокчейна. Изучите распространенные уязвимости, методы аудита и создание безопасных смарт-контрактов и DApps.",
     }
 };
 
