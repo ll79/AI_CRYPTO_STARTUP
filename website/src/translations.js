@@ -10,7 +10,7 @@ const translations = {
         nav_ecosystem: "Ecosystem",
         nav_nft: "NFT",
         nav_join: "Join",
-        invest_btn: "Pre-Seed Investment",
+        invest_btn: "PRE-SEED INVESTMENT",
         menu_btn: "Menu",
         
         // Visual Buttons
@@ -26,8 +26,8 @@ const translations = {
         hero_cta_secondary: "Join Telegram",
         
         // About section
-        about_title: "About ASINGULARITY",
-        about_description: "ASINGULARITY AI is a revolutionary decentralized ecosystem that combines the power of Artificial Superintelligence (ASI) and technological Singularity. Our mission is to create a synergistic ecosystem that leverages TON blockchain, TVM virtual machine, and cutting-edge AI technologies.",
+        about_title: "ASINGULARITY",
+        about_description: "ASINGULARITY AI is a revolutionary decentralized ecosystem developing an autonomous AGI platform with the ultimate goal of achieving Artificial Superintelligence (ASI). Harnessing the lightning-fast TON blockchain, advanced TVM virtual machine, and cutting-edge AI technologies, we are creating an autonomous digital economic space. Our vision extends beyond current technological horizons — we're architecting the digital infrastructure of tomorrow, where AGI agents, decentralized systems, and human creativity converge into a new paradigm of digital existence, paving the way towards technological Singularity and ASI.",
         
         // Features
         feature_1_title: "Decentralized AI Agents",
@@ -714,8 +714,8 @@ const translations = {
         hero_cta_secondary: "Присоединиться к Telegram",
         
         // About section
-        about_title: "О ASINGULARITY",
-        about_description: "ASINGULARITY AI - это революционная децентрализованная экосистема, объединяющая мощь искусственного суперинтеллекта (ASI) и технологической сингулярности. Наша миссия - создать синергетическую экосистему, использующую блокчейн TON, виртуальную машину TVM и передовые технологии ИИ.",
+        about_title: "ASINGULARITY",
+        about_description: "ASINGULARITY AI - революционная децентрализованная экосистема, разрабатывающая самостоятельную AGI платформу с прицелом на достижение уровня Искусственного Суперинтеллекта (ASI).    Используя сверхскоростной блокчейн TON, продвинутую виртуальную машину TVM и передовые технологии ИИ, мы создаём автономное цифровое экономическое пространство.    Наше видение простирается за горизонты современных технологий — мы проектируем цифровую инфраструктуру будущего, где AGI-агенты, децентрализованные системы и человеческое творчество сливаются в новую парадигму цифрового существования, прокладывая путь к технологической Сингулярности и ASI.",
         
         // Features
         feature_1_title: "Децентрализованные AI агенты",

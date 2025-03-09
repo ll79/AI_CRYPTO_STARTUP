@@ -833,6 +833,14 @@ function initRandomGlitches() {
 
 // Initialize all animations
 function initAnimations() {
+    console.log('Инициализация всех анимаций');
+    
+    // Инициализация анимаций логотипа в разделе About
+    initAboutLogoAnimations();
+    
+    // Улучшаем описание киберпанк-эффектами
+    enhanceAboutDescription();
+    
     // Check if elements are in view when page loads
     checkTimelineInView();
     checkFeaturesInView();
@@ -845,6 +853,8 @@ function initAnimations() {
         checkFeaturesInView();
         checkEcosystemInView();
     });
+    
+    console.log('Все анимации инициализированы');
 }
 
 // Timeline animation with enhanced details
@@ -951,7 +961,7 @@ function initCardAnimations() {
             });
         }
     });
-    }
+}
 
 // Features animation
 function checkFeaturesInView() {
@@ -1359,6 +1369,11 @@ function updateContent() {
                 return;
             }
             
+            // Пропускаем логотип в разделе About
+            if (element.classList.contains('logo-about')) {
+                return;
+            }
+            
             const key = element.getAttribute('data-i18n');
             if (!key) return;
             
@@ -1370,8 +1385,11 @@ function updateContent() {
                     element.setAttribute('data-text', translatedText);
                 }
                 
+                // Проверяем, содержит ли перевод HTML-теги
+                const containsHTML = /<[a-z][\s\S]*>/i.test(translatedText);
+                
                 // Обновляем содержимое элемента
-                if (element.hasAttribute('data-html-content')) {
+                if (element.hasAttribute('data-html-content') || containsHTML) {
                     element.innerHTML = translatedText;
                 } else {
                     element.textContent = translatedText;
@@ -1385,7 +1403,12 @@ function updateContent() {
             }
         });
         
-        console.log('Обновление контента завершено');
+        // Обновляем киберпанк-эффекты в описании
+        setTimeout(() => {
+            enhanceAboutDescription();
+        }, 300); // Небольшая задержка, чтобы дать время обновиться тексту
+        
+        console.log('Контент успешно обновлен');
     } catch (error) {
         console.error('Ошибка при обновлении контента:', error);
     }
@@ -1500,4 +1523,140 @@ document.addEventListener('DOMContentLoaded', () => {
     updateContent();
     
     console.log('Language initialization complete');
-}); 
+});
+
+// Функция для киберпанк-анимаций логотипа в разделе About
+function initAboutLogoAnimations() {
+    const logoA = document.querySelector('.logo-a');
+    const logoI = document.querySelector('.logo-i');
+    const logoAsi = document.querySelector('.logo-asi');
+    const logoSingularity = document.querySelector('.logo-singularity');
+
+    if (!logoA || !logoI || !logoAsi || !logoSingularity) {
+        console.log('Элементы логотипа не найдены');
+        return;
+    }
+
+    console.log('Инициализация анимаций логотипа в разделе About');
+
+    // Анимация для букв "A" и "I"
+    function animateAI() {
+        if (Math.random() > 0.7) { // 30% шанс
+            logoA.classList.add('cyber-flash');
+            setTimeout(() => {
+                logoI.classList.add('cyber-flash');
+                setTimeout(() => {
+                    logoA.classList.remove('cyber-flash');
+                    logoI.classList.remove('cyber-flash');
+                }, 500);
+            }, 200);
+        }
+        setTimeout(animateAI, 4000 + Math.random() * 3000); // Интервал 4-7 сек
+    }
+
+    // Анимация для "ASI"
+    function animateASI() {
+        if (Math.random() > 0.6) { // 40% шанс
+            logoAsi.classList.add('cyber-flash');
+            setTimeout(() => {
+                logoAsi.classList.remove('cyber-flash');
+            }, 500);
+        }
+        setTimeout(animateASI, 5000 + Math.random() * 3000); // Интервал 5-8 сек
+    }
+
+    // Анимация для "SINGULARITY"
+    function animateSingularity() {
+        if (Math.random() > 0.5) { // 50% шанс
+            logoSingularity.classList.add('cyber-flash');
+            setTimeout(() => {
+                logoSingularity.classList.remove('cyber-flash');
+            }, 800);
+        }
+        setTimeout(animateSingularity, 6000 + Math.random() * 4000); // Интервал 6-10 сек
+    }
+
+    // Запускаем анимации с небольшой задержкой для предотвращения одновременной активации
+    setTimeout(animateAI, 1000);
+    setTimeout(animateASI, 3000);
+    setTimeout(animateSingularity, 5000);
+}
+
+// Функция для форматирования текста описания
+function enhanceAboutDescription() {
+    const description = document.querySelector('.about-description');
+    if (!description) return;
+    
+    const isRussian = document.documentElement.lang === 'ru';
+    const keywords = isRussian ? 
+        [['ASINGULARITY', 'революционная', 'экосистема'], 
+         ['Суперинтеллект', 'ASI', 'Сингулярность'],
+         ['блокчейн', 'TON', 'будущее']] :
+        [['ASINGULARITY', 'revolutionary', 'ecosystem'],
+         ['Superintelligence', 'ASI', 'Singularity'],
+         ['blockchain', 'TON', 'future']];
+    
+    let text = description.textContent;
+    
+    // Разбиваем текст на логические части
+    const parts = text.split('.');
+    const formattedParts = parts.map(part => part.trim() + '.');
+    
+    // Группируем части по 2-3 предложения
+    const paragraphs = [];
+    let currentParagraph = '';
+    
+    formattedParts.forEach((part, index) => {
+        if (part === '.') return;
+        
+        currentParagraph += part + ' ';
+        
+        if ((index + 1) % 2 === 0 || index === formattedParts.length - 1) {
+            paragraphs.push(currentParagraph.trim());
+            currentParagraph = '';
+        }
+    });
+    
+    // Применяем форматирование и выделение ключевых слов
+    text = paragraphs.join('\n\n');
+    
+    // Добавляем выделение ключевых слов
+    keywords.forEach((group, index) => {
+        group.forEach(word => {
+            const regex = new RegExp(`(${word})`, 'gi');
+            text = text.replace(regex, `<span class="highlight-word-${index + 1}">$1</span>`);
+        });
+    });
+    
+    // Обновляем содержимое с сохранением стилей
+    description.innerHTML = text;
+    
+    // Добавляем стили для параграфов
+    const paragraphElements = description.innerHTML.split('\n\n');
+    description.innerHTML = paragraphElements.map(p => `<p style="margin-bottom: 1em;">${p}</p>`).join('');
+    
+    // Добавляем плавное появление текста
+    description.style.opacity = '0';
+    description.style.transform = 'translateY(20px)';
+    
+    requestAnimationFrame(() => {
+        description.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        description.style.opacity = '1';
+        description.style.transform = 'translateY(0)';
+    });
+}
+
+// Добавляем вызов функции при загрузке страницы и смене языка
+document.addEventListener('DOMContentLoaded', enhanceAboutDescription);
+window.addEventListener('languageChanged', enhanceAboutDescription);
+
+// Вспомогательная функция для получения случайного цвета
+function getRandomColor() {
+    const colors = [
+        'rgba(0, 195, 255, 0.8)',
+        'rgba(201, 126, 255, 0.8)',
+        'rgba(255, 79, 196, 0.8)',
+        'rgba(0, 255, 136, 0.8)'
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+} 
