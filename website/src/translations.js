@@ -94,7 +94,7 @@ const translations = {
         roadmap_phase1_goals_item5: "Create comprehensive documentation",
         
         roadmap_phase2_title: "Phase 2: MVP Development",
-        roadmap_phase2_date: "Q1-Q3 2025",
+        roadmap_phase2_date: "Q2-Q4 2025",
         roadmap_phase2_desc: "Creating Functional Products",
         roadmap_phase2_paragraph: "In this phase, we transform concepts into working products:",
         roadmap_phase2_list_item1: "Releasing a functional MVP of the AI agent system with real-world capabilities",
@@ -647,18 +647,18 @@ const translations = {
         courses_title4: "🧩 BROWSER EXTENSIONS: AI AGENTS",
         courses_title5: "⚙️ SMART CONTRACTS ON TON",
         courses_title6: "🔮 AI AGENT DEVELOPMENT",
-        courses_title7: "📱 MOBILE APPLICATIONS WITH AI",
-        courses_title8: "💰 DEFI AND CRYPTO TRADING",
-        courses_title9: "🔐 BLOCKCHAIN SECURITY",
+        courses_title7: "🚀 GIT & OPENSOURCE: CREATING AN AI PROJECT THAT WILL CHANGE THE WORLD!",
+        courses_title8: "🔥 ULTRAPI: NEW GENERATION OF AI BACKENDS BASED ON FASTAPI! ⚡️",
+        courses_title9: "🌐WEB3 + PYTHON & JS: CREATING AI-TON-DAPP AND CONQUERING BLOCKCHAIN!💎",
         courses_desc1: "Dive into the era of AI-Agent revolution! Join the AI and CRYPTO world on TON blockchain. Learn cutting-edge technologies and participate in developing useful tools.",
         courses_desc2: "Start programming from scratch and level up to mid+ level with AI! Master Python, modern frameworks, and AI tools for creating full-fledged products.",
         courses_desc3: "Enter the world of Web3! Study DAO and smart contracts, blockchain system security, and promotion of DeFi products in a rapidly growing ecosystem.",
         courses_desc4: "Transform your browser into an intelligent assistant! Create an Open Source extension with AI agents, connect them to models, and add crypto functionality.",
         courses_desc5: "Learn FunC and TVM, create DeFi or NFT projects on TON blockchain. Master writing, testing, and deploying smart contracts in a rapidly growing ecosystem.",
         courses_desc6: "Master the art of creating autonomous AI agents that perform complex tasks. Study vector databases, LLM integration, and agent orchestration.",
-        courses_desc7: "Create powerful mobile applications with integrated AI capabilities. Learn Flutter, React Native, and connecting apps to AI services and blockchain.",
-        courses_desc8: "Immerse yourself in decentralized finance and crypto trading strategies. Study liquidity pools, yield farming, and creating trading bots with AI algorithms.",
-        courses_desc9: "Master the security aspects of blockchain development. Study common vulnerabilities, audit methods, and creating secure smart contracts and DApps.",
+        courses_desc7: "Master Git and GitHub Projects to collaborate on any ideas: from simple pet projects to large-scale AI startups. Learn branching, Pull Requests, automation, and team development.",
+        courses_desc8: "Create an AI-powered open-source framework UltrAPI that combines FastAPI, Pydantic AI, Supabase, and custom AI Agents with a user-friendly web panel.",
+        courses_desc9: "Combine the power of Python and JavaScript to build a full-fledged AI-TON-dApp with support for smart contracts on TON/TVM.",
         
         // Financial prospects
         financial_title: "Financial Prospects",
@@ -671,20 +671,20 @@ const translations = {
         revenue_streams_title: "Revenue Streams",
         revenue_streams_desc: "Our ecosystem provides multiple revenue streams through various components",
         
-        ai_agents_revenue_title: "AI Agents System",
-        ai_agents_revenue_desc: "Our AI agents will generate revenue through commissions on tasks performed, subscription fees, and transaction fees on the DAO-AI-Freelance platform.",
+        ai_agents_revenue_title: "AI Agent System",
+        ai_agents_revenue_desc: "Our AI agents will generate revenue through commissions for completed tasks, subscription fees, and transaction fees on the DAO-AI-Freelance platform.",
         
         defi_services_revenue_title: "DeFi Services",
-        defi_services_revenue_desc: "Revenue from P2P exchange fees, crypto processing, real estate tokenization, and API access to AI models through UltrAPI.app.",
+        defi_services_revenue_desc: "Revenue from P2P exchange commissions, crypto processing, real estate tokenization, and API access for AI models through UltrAPI.app.",
         
         dao_advertising_revenue_title: "DAO Advertising Exchange",
-        dao_advertising_revenue_desc: "Income from NFT-ification of rights to channels and advertising platforms, automated management and sale of advertising slots.",
+        dao_advertising_revenue_desc: "Revenue from NFT-fication of rights to channels and advertising platforms, automated management and sale of advertising slots.",
         
         nft_gpu_revenue_title: "NFT for Graphics Cards",
-        nft_gpu_revenue_desc: "Revenue from digitization of rights to computing power, passive income generation from unused GPU resources.",
+        nft_gpu_revenue_desc: "Revenue from digitizing rights to computing power, generating passive income from unused GPU resources.",
         
         ai_launchpool_revenue_title: "AI-Launchpool",
-        ai_launchpool_revenue_desc: "Income from supporting and funding new startups with marketing, technical support, and fundraising services.",
+        ai_launchpool_revenue_desc: "Revenue from supporting and funding new startups with marketing services, technical support, and fundraising.",
         
         educational_revenue_title: "Educational Courses",
         educational_revenue_desc: "Revenue from premium educational content, specialized courses, and certification programs.",
@@ -782,7 +782,7 @@ const translations = {
         roadmap_phase1_goals_item5: "Создать полную документацию",
         
         roadmap_phase2_title: "Фаза 2: Разработка MVP",
-        roadmap_phase2_date: "1-й - 3-й квартал 2025",
+        roadmap_phase2_date: "2-й - 4-й квартал 2025",
         roadmap_phase2_desc: "Создание функциональных продуктов",
         roadmap_phase2_paragraph: "На этом этапе мы превращаем концепции в рабочие продукты:",
         roadmap_phase2_list_item1: "Выпуск функционального MVP системы AI агентов с реальными возможностями",
@@ -1130,12 +1130,12 @@ const translations = {
         contact_team_btn: "Связаться с командой",
         
         // Roadmap Phase 4 Goals
-        roadmap_phase4_goals_title: "Global Expansion Plan",
-        roadmap_phase4_goals_item1: "Establish presence in key markets across Asia, Europe, and Americas",
-        roadmap_phase4_goals_item2: "Develop localized versions of all services",
-        roadmap_phase4_goals_item3: "Create regional partnerships and community hubs",
-        roadmap_phase4_goals_item4: "Implement multi-language support across the ecosystem",
-        roadmap_phase4_goals_item5: "Adapt to regional regulatory requirements",
+        roadmap_phase4_goals_title: "План глобального расширения",
+        roadmap_phase4_goals_item1: "Установить присутствие на ключевых рынках Азии, Европы и Америки",
+        roadmap_phase4_goals_item2: "Разработать локализованные версии всех сервисов",
+        roadmap_phase4_goals_item3: "Создать региональные партнёрства и центры сообщества",
+        roadmap_phase4_goals_item4: "Внедрить многоязычную поддержку во всей экосистеме",
+        roadmap_phase4_goals_item5: "Адаптироваться к региональным нормативным требованиям",
         
         // Courses
         courses_title1: "⚡️ AI 🤖 CRYPTO 💎 $TARTUP💲 ЗАПУСКАЕМ РАКЕТУ 🚀",
@@ -1144,18 +1144,18 @@ const translations = {
         courses_title4: "🧩 БРАУЗЕРНЫЕ РАСШИРЕНИЯ: СОЗДАЁМ ИИ-АГЕНТА ДЛЯ CHROME & FIREFOX",
         courses_title5: "⚙️ СМАРТ-КОНТРАКТЫ НА TON: FUNC, TVM & ИНСТРУМЕНТЫ ЭКОСИСТЕМЫ!💎",
         courses_title6: "🤖ДЕЛАЕМ ИИ-АГЕНТОВ: ОТ ЛОКАЛЬНЫХ ДО ДЕЦЕНТРАЛИЗОВАННЫХ {AGIENT}",
-        courses_title7: "📱 МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ С ИИ",
+        courses_title7: "🚀 GIT & OPENSOURCE: ДЕЛАЕМ AI-ПРОЕКТ, КОТОРЫЙ ИЗМЕНИТ МИР!",
+        courses_title8: "🔥 ULTRAPI: НОВОЕ ПОКОЛЕНИЕ AI-БЭКЭНДОВ НА ОСНОВЕ FASTAPI! ⚡️",
+        courses_title9: "🌐WEB3 + PYTHON & JS: СОЗДАЁМ AI-TON-DAPP И ПОКОРЯЕМ БЛОКЧЕЙН!💎",
         courses_desc1: "Погрузись в эпоху революции ИИ-Агентов! Залетаем в AI и CRYPTO мир на блокчейне TON. Изучай передовые технологии и участвуй в разработке полезных инструментов.",
         courses_desc2: "Начни программировать с нуля и прокачайся до мидл+ уровня с помощью ИИ! Освоим Python, современные фреймворки и ИИ-инструменты для создания полноценных продуктов.",
         courses_desc3: "Входи в мир Web3! Изучи работу DAO и смарт-контрактов, безопасность блокчейн-систем и продвижение DeFi-продуктов в быстрорастущей экосистеме.",
         courses_desc4: "Преобразим браузер в интеллектуального помощника! Создадим Open Source расширение с ИИ-агентами, подключим их к моделям и добавим крипто-функционал.",
         courses_desc5: "Изучи FunC и TVM, создай DeFi или NFT-проекты на блокчейне TON. Освой написание, тестирование и развертывание смарт-контрактов в быстрорастущей экосистеме.",
         courses_desc6: "Освойте искусство создания автономных ИИ-агентов, выполняющих сложные задачи. Изучите векторные базы данных, интеграцию с LLM и оркестрацию агентов.",
-        courses_desc7: "Создавайте мощные мобильные приложения с интегрированными возможностями ИИ. Изучите Flutter, React Native и подключение приложений к ИИ-сервисам и блокчейну.",
-        courses_title8: "💰 DEFI И КРИПТО-ТРЕЙДИНГ",
-        courses_desc8: "Погрузитесь в децентрализованные финансы и стратегии крипто-трейдинга. Изучите пулы ликвидности, фарминг доходности и создание торговых ботов с ИИ-алгоритмами.",
-        courses_title9: "🔐 БЕЗОПАСНОСТЬ БЛОКЧЕЙНА",
-        courses_desc9: "Освойте аспекты безопасности разработки блокчейна. Изучите распространенные уязвимости, методы аудита и создание безопасных смарт-контрактов и DApps.",
+        courses_desc7: "Овладеем Git и GitHub Projects, чтобы вести совместную работу над любыми идеями: от простых pet-проектов до масштабных AI-стартапов.",
+        courses_desc8: "Создадим AI-заряженный опенсорс-фреймворк UltrAPI, объединяющий FastAPI, Pydantic AI, Supabase и собственных ИИ-Агентов с удобной веб-панелью.",
+        courses_desc9: "Соединим мощь Python и JavaScript, чтобы построить полноценный AI-TON-dApp с поддержкой смарт-контрактов на TON/TVM.",
         
         // Financial prospects
         financial_title: "Финансовые перспективы",
@@ -1227,93 +1227,77 @@ window.changeLanguage = changeLanguage;
 
 // Function to update content based on selected language
 function updateContent() {
-    // Set language for HTML tag
-    document.documentElement.lang = currentLanguage;
+    const lang = document.documentElement.lang || 'en';
+    console.log('Updating content for language:', lang);
     
-    // Update page title and meta tags
-    if (currentLanguage === 'ru') {
-        document.title = "ASINGULARITY AI | Децентрализованная ИИ-экосистема";
-        document.querySelector('meta[name="description"]')?.setAttribute('content', 
-            'Революционная децентрализованная экосистема, объединяющая передовые технологии ИИ, Крипто, NFT и Web3 на блокчейне TON');
-    } else {
-        document.title = "ASINGULARITY AI | Decentralized AI Ecosystem";
-        document.querySelector('meta[name="description"]')?.setAttribute('content', 
-            'Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain');
-    }
-    
-    // Find all elements with data-i18n attribute and update their content
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(element => {
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[currentLanguage] && translations[currentLanguage][key]) {
-            // Process different types of elements
-            const tagName = element.tagName.toUpperCase();
-            
-            if (tagName === 'INPUT') {
-                // For input fields
-                if (element.type === 'text' || element.type === 'email' || element.type === 'search') {
-                    element.setAttribute('placeholder', translations[currentLanguage][key]);
-                } else {
-                    element.value = translations[currentLanguage][key];
-                }
-            } else if (tagName === 'META') {
-                // For meta-elements
-                element.setAttribute('content', translations[currentLanguage][key]);
-            } else if (tagName === 'A') {
-                // For links
-                if (element.hasAttribute('title')) {
-                    element.setAttribute('title', translations[currentLanguage][key]);
-                }
-                // If the link has no child elements, update the text
-                if (element.childElementCount === 0) {
-                    element.textContent = translations[currentLanguage][key];
-                }
-            } else if (tagName === 'IMG' || tagName === 'IFRAME') {
-                // For images and iframe
-                element.setAttribute('alt', translations[currentLanguage][key]);
+        if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'META') {
+                element.setAttribute('content', translations[lang][key]);
             } else {
-                // Process special cases for elements with data-text attribute (for glitch-effect)
-                if (element.hasAttribute('data-text')) {
-                    element.setAttribute('data-text', translations[currentLanguage][key]);
-                }
-                
-                // Set text content for other elements
-                element.textContent = translations[currentLanguage][key];
+                element.textContent = translations[lang][key];
             }
         }
     });
     
-    // Process glitch-effect when changing language
-    document.querySelectorAll('.glitch-text, .glitch-hover').forEach(element => {
-        element.classList.add('active-glitch');
-        setTimeout(() => {
-            element.classList.remove('active-glitch');
-        }, 1000);
-    });
-    
-    // Update active state of language switcher buttons
-    document.querySelectorAll('.language-switcher button').forEach(btn => {
-        if (btn.getAttribute('data-lang') === currentLanguage) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
+    // Update course links - direct version with debugging
+    document.querySelectorAll('.course-card a[data-link-en]').forEach((link, index) => {
+        const enLink = link.getAttribute('data-link-en');
+        const ruLink = link.getAttribute('data-link-ru');
+        
+        console.log(`Checking course link ${index}:`, {
+            current: link.href,
+            language: lang,
+            enAttribute: enLink,
+            ruAttribute: ruLink
+        });
+        
+        if (lang === 'ru' && ruLink) {
+            console.log(`Setting Russian link for course ${index}`);
+            link.href = ruLink;
+        } else if (enLink) {
+            console.log(`Setting English link for course ${index}`);
+            link.href = enLink;
         }
     });
+    
+    // Verify links were updated correctly
+    setTimeout(() => {
+        console.log('Verifying course links...');
+        document.querySelectorAll('.course-card a[data-link-en]').forEach((link, index) => {
+            const enLink = link.getAttribute('data-link-en');
+            const ruLink = link.getAttribute('data-link-ru');
+            
+            console.log(`Course link ${index} verification:`, {
+                current: link.href,
+                language: lang,
+                shouldBe: lang === 'ru' ? ruLink : enLink,
+                correct: lang === 'ru' ? link.href === ruLink : link.href === enLink
+            });
+        });
+    }, 500);
 }
 
-// Initialize language on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Set language from localStorage or use 'en' as default
-    currentLanguage = localStorage.getItem('language') || 'en';
+// Make function available globally
+window.updateContent = updateContent;
+
+// Initial content update
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure language is set
+    if (!document.documentElement.lang) {
+        const savedLang = localStorage.getItem('language') || localStorage.getItem('preferredLanguage') || 'en';
+        document.documentElement.lang = savedLang;
+        console.log('Set initial language to:', savedLang);
+    }
     
-    // Initialize initial state
+    // Update content
     updateContent();
     
-    // Add language switch handlers
-    document.querySelectorAll('.language-switcher button').forEach(button => {
-        button.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            changeLanguage(lang);
-        });
+    // Listen for language changes
+    window.addEventListener('languageChanged', function(e) {
+        console.log('Language changed event detected:', e.detail.language);
+        updateContent();
     });
 }); 

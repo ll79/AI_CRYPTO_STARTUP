@@ -646,6 +646,7 @@ nav {
     position: relative;
     padding: 20px 0;
     margin: 40px 0;
+    overflow: visible;
 }
 
 .timeline::before {
@@ -660,12 +661,16 @@ nav {
         rgba(0, 217, 255, 0.8), 
         rgba(110, 0, 255, 0.2));
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 80px; /* Увеличиваем отступ между элементами */
     width: 100%;
+    overflow: visible;
+    clear: both; /* Предотвращаем проблемы с обтеканием */
+    min-height: 150px; /* Минимальная высота для стабильности */
 }
 
 .timeline-dot {
@@ -695,6 +700,7 @@ nav {
     border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    z-index: 2; /* Слой над линией, но под деталями */
 }
 
 /* Position timeline items alternately */
@@ -722,7 +728,7 @@ nav {
     overflow: hidden;
     max-height: 0;
     transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-    z-index: 5;
+    z-index: 10; /* Слой над остальными элементами */
 }
 
 .timeline-item:nth-child(odd) .timeline-detail {
@@ -742,6 +748,7 @@ nav {
     max-height: 1000px;
     padding: 20px;
     transform: translateY(0);
+    /* Без смещения карточек */
 }
 
 .timeline-detail-content {
@@ -1272,15 +1279,56 @@ footer {
 .footer-logo {
     flex: 1;
     min-width: 300px;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
 }
 
 .footer-logo .logo {
-    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.footer-logo .logo-text {
+    display: block;
+    text-align: center;
+    background: linear-gradient(45deg, #00d9ff, #ff2d55);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: footer-logo-glitch 10s infinite;
+    position: relative;
 }
 
 .footer-logo p {
-    color: var(--gray-text);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin: 0.5rem auto;
     max-width: 300px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        padding: 0 1rem;
+    }
+    
+    .footer-logo .logo {
+        font-size: 1.75rem;
+        margin-bottom: 0.35rem;
+    }
+    
+    .footer-logo p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        max-width: 260px;
+    }
 }
 
 .footer-links {
@@ -1805,6 +1853,7 @@ footer {
     position: relative;
     padding: 20px 0;
     margin: 40px 0;
+    overflow: visible;
 }
 
 .timeline::before {
@@ -1819,12 +1868,16 @@ footer {
         rgba(0, 217, 255, 0.8), 
         rgba(110, 0, 255, 0.2));
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 80px; /* Увеличиваем отступ между элементами */
     width: 100%;
+    overflow: visible;
+    clear: both; /* Предотвращаем проблемы с обтеканием */
+    min-height: 150px; /* Минимальная высота для стабильности */
 }
 
 .timeline-dot {
@@ -1839,6 +1892,22 @@ footer {
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
     transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.8);
+}
+
+.timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    background: rgba(10, 15, 30, 0.7);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    z-index: 2; /* Слой над линией, но под деталями */
 }
 
 /* Position timeline items alternately */
@@ -1866,7 +1935,7 @@ footer {
     overflow: hidden;
     max-height: 0;
     transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-    z-index: 5;
+    z-index: 10; /* Слой над остальными элементами */
 }
 
 .timeline-item:nth-child(odd) .timeline-detail {
@@ -1886,6 +1955,7 @@ footer {
     max-height: 1000px;
     padding: 20px;
     transform: translateY(0);
+    /* Без смещения карточек */
 }
 
 .timeline-detail-content {
@@ -5092,47 +5162,6 @@ html[lang="ru"] .project-goals h3 {
 .about-description::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(90deg, rgba(0, 195, 255, 0.1) 0%, rgba(201, 126, 255, 0.1) 50%, rgba(255, 79, 196, 0.1) 100%),
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(0, 195, 255, 0.03) 10px,
-            rgba(0, 195, 255, 0.03) 11px
-        );
-    opacity: 0.3;
-    z-index: -1;
-    border-radius: 5px;
-    pointer-events: none;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-}
-
-/* Добавляем декоративные углы */
-.about-description::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        rgba(0, 195, 255, 0.8) 0%, 
-        rgba(201, 126, 255, 0.8) 50%, 
-        rgba(255, 79, 196, 0.8) 100%);
-    animation: scan-description 4s linear infinite;
-    z-index: 1;
-    opacity: 0.7;
-}
-
-/* Добавляем декоративные углы */
-.about-description:before {
-    content: '';
-    position: absolute;
     width: 20px;
     height: 20px;
     top: 0;
@@ -5142,7 +5171,7 @@ html[lang="ru"] .project-goals h3 {
     z-index: 2;
 }
 
-.about-description:after {
+.about-description::after {
     content: '';
     position: absolute;
     width: 20px;
@@ -6527,508 +6556,502 @@ html[lang="ru"] .logo-text {
         }
     }
     
-    // ... existing code ...
-}
-
-/* Индикатор прокрутки для мобильных устройств */
-.mobile-scroll-indicator {
-    position: fixed;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    animation: fade-in 1s ease-in-out;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.scroll-arrow {
-    width: 20px;
-    height: 10px;
-    border-bottom: 2px solid var(--secondary-color);
-    border-right: 2px solid var(--secondary-color);
-    transform: rotate(45deg);
-    margin-bottom: 5px;
-    opacity: 0.6;
-    animation: arrow-bounce 1.5s infinite;
-}
-
-.scroll-arrow:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.scroll-arrow:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.scroll-text {
-    font-size: 14px;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 10px;
-    font-weight: 600;
-    animation: text-pulse 2s infinite;
-    text-shadow: 0 0 5px var(--secondary-color);
-}
-
-@keyframes arrow-bounce {
-    0%, 100% {
-        transform: rotate(45deg) translate(0, 0);
-        opacity: 0.6;
-    }
-    50% {
-        transform: rotate(45deg) translate(10px, 10px);
-        opacity: 1;
-    }
-}
-
-@keyframes text-pulse {
-    0%, 100% {
-        opacity: 0.7;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
+    /* Индикатор прокрутки для мобильных устройств */
     .mobile-scroll-indicator {
-        display: flex;
-    }
-    
-    /* Скрываем индикатор при прокрутке */
-    .mobile-scroll-indicator.hidden {
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
         display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    // ... existing code ...
-    
-    @keyframes rotate-gradient {
-        0% {
-            background-position: 0% 0%;
-        }
-        100% {
-            background-position: 100% 100%;
-        }
-    }
-    
-    /* Улучшенные стили для активного глитча */
-    .active-glitch {
-        animation: enhanced-mobile-glitch 0.5s forwards;
-        position: relative;
-    }
-    
-    @keyframes enhanced-mobile-glitch {
-        0% {
-            transform: translate(0);
-            filter: brightness(1);
-        }
-        20% {
-            transform: translate(-3px, 3px);
-            filter: brightness(1.2) hue-rotate(30deg);
-            text-shadow: 1px 0 var(--accent-color), -1px 0 var(--secondary-color);
-        }
-        40% {
-            transform: translate(3px, -3px);
-            filter: brightness(1.1) hue-rotate(-30deg);
-            text-shadow: -1px 0 var(--primary-color), 1px 0 var(--accent-color);
-        }
-        60% {
-            transform: translate(-2px, 2px);
-            filter: brightness(1.15);
-            text-shadow: 2px 0 var(--secondary-color), -2px 0 var(--primary-color);
-        }
-        80% {
-            transform: translate(2px, -2px);
-            filter: brightness(1.05);
-            text-shadow: -1px 0 var(--accent-color), 1px 0 var(--primary-color);
-        }
-        100% {
-            transform: translate(0);
-            filter: brightness(1);
-            text-shadow: none;
-        }
-    }
-}
-
-// ... existing code ...
-
-/* Улучшения для таймлайна и блоков фаз на мобильных */
-@media (max-width: 768px) {
-    /* Убираем вертикальную полоску в таймлайне */
-    .timeline::before {
-        display: none;
-    }
-    
-    /* Центрируем элементы таймлайна */
-    .timeline {
-        width: 100%;
-        padding: 0;
-        display: flex;
         flex-direction: column;
         align-items: center;
+        animation: fade-in 1s ease-in-out;
     }
-    
-    /* Стили для элементов таймлайна */
-    .timeline-item {
-        width: 90% !important;
-        margin: 5px auto !important; /* Уменьшаем отступы между блоками с 15px до 5px */
-        left: 0 !important;
-        right: 0 !important;
-        position: relative !important;
-        box-sizing: border-box !important;
-    }
-    
-    /* Улучшаем точки на таймлайне */
-    .timeline-dot {
-        display: none;
-    }
-    
-    /* Улучшаем контент таймлайна */
-    .timeline-content {
-        width: 100%;
-        margin: 0 auto;
-        left: 0 !important;
-        right: 0 !important;
-        position: relative;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(110, 0, 255, 0.3);
-        cursor: pointer;
-    }
-    
-    /* Одинаковые стили для всех блоков, убираем смещение вправо/влево */
-    .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        left: 0;
-        text-align: left;
-    }
-    
-    /* Стиль для деталей таймлайна */
-    .timeline-detail {
-        display: block;
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-        padding: 0;
-        border-radius: 0 0 8px 8px;
-        border: 1px solid rgba(110, 0, 255, 0.3);
-        border-top: none;
-        background: rgba(16, 26, 54, 0.7);
-    }
-    
-    /* Активный элемент при раскрытии */
-    .timeline-item.active-mobile .timeline-detail {
-        opacity: 1;
-        max-height: 1000px;
-        transition: all 0.5s ease-in;
-        padding: 15px;
-    }
-    
-    /* Стили контента в активном элементе */
-    .timeline-item.active-mobile .timeline-content {
-        background: rgba(16, 26, 54, 0.8);
-        border: 1px solid rgba(110, 0, 255, 0.6);
-        border-radius: 8px 8px 0 0;
-        box-shadow: 0 8px 25px rgba(110, 0, 255, 0.5);
-    }
-    
-    /* Индикатор раскрытия */
-    .timeline-content::after {
-        content: "⬇ Подробнее";
-        position: absolute;
-        bottom: 10px;
-        right: 15px;
-        font-size: 12px;
-        color: var(--secondary-color);
-        opacity: 0.8;
-    }
-    
-    /* Изменяем индикатор для активного элемента */
-    .timeline-item.active-mobile .timeline-content::after {
-        content: "⬆ Свернуть";
-    }
-    
-    /* Стили для английской версии */
-    html:not([lang="ru"]) .timeline-content::after {
-        content: "⬇ Details";
-    }
-    
-    html:not([lang="ru"]) .timeline-item.active-mobile .timeline-content::after {
-        content: "⬆ Collapse";
-    }
-    
-    /* Анимация для раскрытия деталей */
-    .timeline-item.active-mobile .timeline-detail {
-        animation: fade-slide-down 0.5s ease forwards;
-    }
-}
 
-@media (max-width: 768px) {
-    /* Дополнительные улучшения для стиля блоков таймлайна */
-    .timeline-content {
-        padding: 10px !important;
-        margin-bottom: 0 !important;
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-    
-    /* Стиль для заголовка */
-    .timeline-content h3 {
-        font-size: 18px !important;
-        margin-top: 0 !important;
-        margin-bottom: 10px !important;
+
+    .scroll-arrow {
+        width: 20px;
+        height: 10px;
+        border-bottom: 2px solid var(--secondary-color);
+        border-right: 2px solid var(--secondary-color);
+        transform: rotate(45deg);
+        margin-bottom: 5px;
+        opacity: 0.6;
+        animation: arrow-bounce 1.5s infinite;
     }
-    
-    /* Подчеркивание для заголовка */
-    .timeline-content h3::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+
+    .scroll-arrow:nth-child(2) {
+        animation-delay: 0.2s;
     }
-    
-    /* Стиль для даты */
-    .timeline-content .timeline-date {
-        display: inline-block;
+
+    .scroll-arrow:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .scroll-text {
         font-size: 14px;
         color: var(--secondary-color);
-        margin-bottom: 12px;
-        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        font-weight: 600;
+        animation: text-pulse 2s infinite;
+        text-shadow: 0 0 5px var(--secondary-color);
     }
-    
-    /* Стиль для описания */
-    .timeline-content p {
-        font-size: 14px !important;
-        line-height: 1.5 !important;
-        color: var(--gray-text) !important;
-        margin-top: 0 !important;
-        margin-bottom: 10px !important;
-    }
-    
-    /* Стили для содержимого деталей */
-    .timeline-detail-content {
-        padding: 5px 0;
-    }
-    
-    /* Заголовок в деталях */
-    .timeline-detail h4 {
-        font-size: 16px !important;
-        color: var(--light-text) !important;
-        margin-bottom: 10px !important;
-        position: relative;
-        padding-bottom: 5px !important;
-    }
-    
-    /* Подчеркивание для заголовка деталей */
-    .timeline-detail h4::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 1px;
-        background: var(--secondary-color);
-    }
-    
-    /* Списки в деталях */
-    .timeline-detail ul {
-        padding-left: 20px !important;
-        margin: 10px 0 !important;
-    }
-    
-    .timeline-detail ul li {
-        margin-bottom: 8px !important;
-        position: relative !important;
-        list-style-type: none !important;
-        padding-left: 15px !important;
-        color: var(--gray-text) !important;
-        font-size: 14px !important;
-    }
-    
-    .timeline-detail ul li::before {
-        content: '•' !important;
-        position: absolute !important;
-        left: 0 !important;
-        color: var(--secondary-color) !important;
-    }
-    
-    /* Эффект при нажатии */
-    .timeline-content:active {
-        transform: scale(0.98);
-    }
-    
-    /* Анимация для появления карточки */
-    @keyframes timeline-item-appear {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Применяем анимацию к карточкам с задержкой */
-    .timeline-item {
-        animation: timeline-item-appear 0.5s ease forwards;
-        opacity: 0;
-    }
-    
-    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
-    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
-}
 
-/* Переопределяем стили таймлайна с более высоким приоритетом */
-@media (max-width: 768px) {
-    /* Принудительно удаляем вертикальную полоску */
-    .timeline::before {
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
+    @keyframes arrow-bounce {
+        0%, 100% {
+            transform: rotate(45deg) translate(0, 0);
+            opacity: 0.6;
+        }
+        50% {
+            transform: rotate(45deg) translate(10px, 10px);
+            opacity: 1;
+        }
     }
-    
-    /* Жестко центрируем таймлайн и его элементы */
-    .timeline {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        position: relative !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
+
+    @keyframes text-pulse {
+        0%, 100% {
+            opacity: 0.7;
+        }
+        50% {
+            opacity: 1;
+        }
     }
-    
-    /* Форматируем элементы таймлайна */
-    .timeline-item {
-        width: 90% !important;
-        margin: 5px auto !important; /* Уменьшаем отступы между блоками с 15px до 5px */
-        position: relative !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+
+    @media (max-width: 768px) {
+        .mobile-scroll-indicator {
+            display: flex;
+        }
+        
+        /* Скрываем индикатор при прокрутке */
+        .mobile-scroll-indicator.hidden {
+            display: none;
+        }
     }
-    
-    /* Скрываем точки таймлайна */
-    .timeline-dot {
-        display: none !important;
+
+    @media (max-width: 768px) {
+        @keyframes rotate-gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        
+        /* Улучшенные стили для активного глитча */
+        .active-glitch {
+            animation: enhanced-mobile-glitch 0.5s forwards;
+            position: relative;
+        }
+        
+        @keyframes enhanced-mobile-glitch {
+            0% {
+                transform: translate(0);
+                filter: brightness(1);
+            }
+            20% {
+                transform: translate(-3px, 3px);
+                filter: brightness(1.2) hue-rotate(30deg);
+                text-shadow: 1px 0 var(--accent-color), -1px 0 var(--secondary-color);
+            }
+            40% {
+                transform: translate(3px, -3px);
+                filter: brightness(1.1) hue-rotate(-30deg);
+                text-shadow: -1px 0 var(--primary-color), 1px 0 var(--accent-color);
+            }
+            60% {
+                transform: translate(-2px, 2px);
+                filter: brightness(1.15);
+                text-shadow: 2px 0 var(--secondary-color), -2px 0 var(--primary-color);
+            }
+            80% {
+                transform: translate(2px, -2px);
+                filter: brightness(1.05);
+                text-shadow: -1px 0 var(--accent-color), 1px 0 var(--primary-color);
+            }
+            100% {
+                transform: translate(0);
+                filter: brightness(1);
+                text-shadow: none;
+            }
+        }
     }
-    
-    /* Центрируем контент таймлайна */
-    .timeline-content {
-        width: 100% !important;
-        margin: 0 auto !important;
-        left: 0 !important;
-        right: 0 !important;
-        position: relative !important;
-        text-align: left !important;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
-        border: 1px solid rgba(110, 0, 255, 0.3) !important;
-        border-radius: 8px !important;
-        background: rgba(16, 26, 54, 0.6) !important;
-        backdrop-filter: blur(5px) !important;
-        padding: 10px !important;
-        cursor: pointer !important;
-        transition: all 0.3s ease !important;
+
+    /* Улучшения для таймлайна и блоков фаз на мобильных */
+    @media (max-width: 768px) {
+        /* Убираем вертикальную полоску в таймлайне */
+        .timeline::before {
+            display: none;
+        }
+        
+        /* Центрируем элементы таймлайна */
+        .timeline {
+            width: 100%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Стили для элементов таймлайна */
+        .timeline-item {
+            width: 90% !important;
+            margin: 5px auto !important; /* Уменьшаем отступы между блоками с 15px до 5px */
+            left: 0 !important;
+            right: 0 !important;
+            position: relative !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Улучшаем точки на таймлайне */
+        .timeline-dot {
+            display: none;
+        }
+        
+        /* Улучшаем контент таймлайна */
+        .timeline-content {
+            width: 100%;
+            margin: 0 auto;
+            left: 0 !important;
+            right: 0 !important;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(110, 0, 255, 0.3);
+            cursor: pointer;
+        }
+        
+        /* Одинаковые стили для всех блоков, убираем смещение вправо/влево */
+        .timeline-item:nth-child(odd) .timeline-content,
+        .timeline-item:nth-child(even) .timeline-content {
+            left: 0;
+            text-align: left;
+        }
+        
+        /* Стиль для деталей таймлайна */
+        .timeline-detail {
+            display: block;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+            padding: 0;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid rgba(110, 0, 255, 0.3);
+            border-top: none;
+            background: rgba(16, 26, 54, 0.7);
+        }
+        
+        /* Активный элемент при раскрытии */
+        .timeline-item.active-mobile .timeline-detail {
+            opacity: 1;
+            max-height: 1000px;
+            transition: all 0.5s ease-in;
+            padding: 15px;
+        }
+        
+        /* Стили контента в активном элементе */
+        .timeline-item.active-mobile .timeline-content {
+            background: rgba(16, 26, 54, 0.8);
+            border: 1px solid rgba(110, 0, 255, 0.6);
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 8px 25px rgba(110, 0, 255, 0.5);
+        }
+        
+        /* Индикатор раскрытия */
+        .timeline-content::after {
+            content: "⬇ Подробнее";
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 12px;
+            color: var(--secondary-color);
+            opacity: 0.8;
+        }
+        
+        /* Изменяем индикатор для активного элемента */
+        .timeline-item.active-mobile .timeline-content::after {
+            content: "⬆ Свернуть";
+        }
+        
+        /* Стили для английской версии */
+        html:not([lang="ru"]) .timeline-content::after {
+            content: "⬇ Details";
+        }
+        
+        html:not([lang="ru"]) .timeline-item.active-mobile .timeline-content::after {
+            content: "⬆ Collapse";
+        }
+        
+        /* Анимация для раскрытия деталей */
+        .timeline-item.active-mobile .timeline-detail {
+            animation: fade-slide-down 0.5s ease forwards;
+        }
     }
-    
-    /* Одинаковые стили для всех блоков */
-    .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
-        text-align: left !important;
+
+    @media (max-width: 768px) {
+        /* Дополнительные улучшения для стиля блоков таймлайна */
+        .timeline-content {
+            padding: 10px !important;
+            margin-bottom: 0 !important;
+        }
+        
+        /* Стиль для заголовка */
+        .timeline-content h3 {
+            font-size: 18px !important;
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+        }
+        
+        /* Подчеркивание для заголовка */
+        .timeline-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* Стиль для даты */
+        .timeline-content .timeline-date {
+            display: inline-block;
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        /* Стиль для описания */
+        .timeline-content p {
+            font-size: 14px !important;
+            line-height: 1.5 !important;
+            color: var(--gray-text) !important;
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+        }
+        
+        /* Стили для содержимого деталей */
+        .timeline-detail-content {
+            padding: 5px 0;
+        }
+        
+        /* Заголовок в деталях */
+        .timeline-detail h4 {
+            font-size: 16px !important;
+            color: var(--light-text) !important;
+            margin-bottom: 10px !important;
+            position: relative;
+            padding-bottom: 5px !important;
+        }
+        
+        /* Подчеркивание для заголовка деталей */
+        .timeline-detail h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background: var(--secondary-color);
+        }
+        
+        /* Списки в деталях */
+        .timeline-detail ul {
+            padding-left: 20px !important;
+            margin: 10px 0 !important;
+        }
+        
+        .timeline-detail ul li {
+            margin-bottom: 8px !important;
+            position: relative !important;
+            list-style-type: none !important;
+            padding-left: 15px !important;
+            color: var(--gray-text) !important;
+            font-size: 14px !important;
+        }
+        
+        .timeline-detail ul li::before {
+            content: '•' !important;
+            position: absolute !important;
+            left: 0 !important;
+            color: var(--secondary-color) !important;
+        }
+        
+        /* Эффект при нажатии */
+        .timeline-content:active {
+            transform: scale(0.98);
+        }
+        
+        /* Анимация для появления карточки */
+        @keyframes timeline-item-appear {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Применяем анимацию к карточкам с задержкой */
+        .timeline-item {
+            animation: timeline-item-appear 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
     }
-    
-    /* Детали таймлайна */
-    .timeline-detail {
-        max-height: 0 !important;
-        overflow: hidden !important;
-        opacity: 0 !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        position: relative !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
-        transition: all 0.4s ease !important;
-        padding: 0 !important;
-        border: 1px solid rgba(110, 0, 255, 0.3) !important;
-        border-top: none !important;
-        border-radius: 0 0 8px 8px !important;
-        background: rgba(16, 26, 54, 0.7) !important;
-    }
-    
-    /* Активное состояние */
-    .timeline-item.active-mobile .timeline-detail {
-        max-height: 1000px !important;
-        opacity: 1 !important;
-        padding: 15px !important;
-        visibility: visible !important;
-    }
-    
-    /* Активное состояние карточки */
-    .timeline-item.active-mobile .timeline-content {
-        background: rgba(16, 26, 54, 0.8) !important;
-        border: 1px solid rgba(110, 0, 255, 0.6) !important;
-        border-radius: 8px 8px 0 0 !important;
-        box-shadow: 0 8px 25px rgba(110, 0, 255, 0.5) !important;
-    }
-    
-    /* Индикатор раскрытия */
-    .timeline-content::after {
-        content: "⬇ Подробнее" !important;
-        position: absolute !important;
-        bottom: 10px !important;
-        right: 15px !important;
-        font-size: 12px !important;
-        color: var(--secondary-color) !important;
-        opacity: 0.8 !important;
-    }
-    
-    /* Состояние для активных карточек */
-    .timeline-item.active-mobile .timeline-content::after {
-        content: "⬆ Свернуть" !important;
-    }
-    
-    /* Английская версия */
-    html:not([lang="ru"]) .timeline-content::after {
-        content: "⬇ Details" !important;
-    }
-    
-    html:not([lang="ru"]) .timeline-item.active-mobile .timeline-content::after {
-        content: "⬆ Collapse" !important;
+
+    /* Переопределяем стили таймлайна с более высоким приоритетом */
+    @media (max-width: 768px) {
+        /* Принудительно удаляем вертикальную полоску */
+        .timeline::before {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        
+        /* Жестко центрируем таймлайн и его элементы */
+        .timeline {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+        
+        /* Форматируем элементы таймлайна */
+        .timeline-item {
+            width: 90% !important;
+            margin: 5px auto !important; /* Уменьшаем отступы между блоками с 15px до 5px */
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        
+        /* Скрываем точки таймлайна */
+        .timeline-dot {
+            display: none !important;
+        }
+        
+        /* Центрируем контент таймлайна */
+        .timeline-content {
+            width: 100% !important;
+            margin: 0 auto !important;
+            left: 0 !important;
+            right: 0 !important;
+            position: relative !important;
+            text-align: left !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid rgba(110, 0, 255, 0.3) !important;
+            border-radius: 8px !important;
+            background: rgba(16, 26, 54, 0.6) !important;
+            backdrop-filter: blur(5px) !important;
+            padding: 10px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        /* Одинаковые стили для всех блоков */
+        .timeline-item:nth-child(odd) .timeline-content,
+        .timeline-item:nth-child(even) .timeline-content {
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+            text-align: left !important;
+        }
+        
+        /* Детали таймлайна */
+        .timeline-detail {
+            max-height: 0 !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+            transition: all 0.4s ease !important;
+            padding: 0 !important;
+            border: 1px solid rgba(110, 0, 255, 0.3) !important;
+            border-top: none !important;
+            border-radius: 0 0 8px 8px !important;
+            background: rgba(16, 26, 54, 0.7) !important;
+        }
+        
+        /* Активное состояние */
+        .timeline-item.active-mobile .timeline-detail {
+            max-height: 1000px !important;
+            opacity: 1 !important;
+            padding: 15px !important;
+            visibility: visible !important;
+        }
+        
+        /* Активное состояние карточки */
+        .timeline-item.active-mobile .timeline-content {
+            background: rgba(16, 26, 54, 0.8) !important;
+            border: 1px solid rgba(110, 0, 255, 0.6) !important;
+            border-radius: 8px 8px 0 0 !important;
+            box-shadow: 0 8px 25px rgba(110, 0, 255, 0.5) !important;
+        }
+        
+        /* Индикатор раскрытия */
+        .timeline-content::after {
+            content: "⬇ Подробнее" !important;
+            position: absolute !important;
+            bottom: 10px !important;
+            right: 15px !important;
+            font-size: 12px !important;
+            color: var(--secondary-color) !important;
+            opacity: 0.8 !important;
+        }
+        
+        /* Состояние для активных карточек */
+        .timeline-item.active-mobile .timeline-content::after {
+            content: "⬆ Свернуть" !important;
+        }
+        
+        /* Английская версия */
+        html:not([lang="ru"]) .timeline-content::after {
+            content: "⬇ Details" !important;
+        }
+        
+        html:not([lang="ru"]) .timeline-item.active-mobile .timeline-content::after {
+            content: "⬆ Collapse" !important;
+        }
     }
 }
 

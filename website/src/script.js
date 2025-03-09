@@ -73,15 +73,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (lang && lang !== currentLanguage) {
                     console.log('Changing language from', currentLanguage, 'to', lang);
                     
-                    // Сначала обновляем текущий язык
+                    // Update language variables and storage
                     currentLanguage = lang;
                     localStorage.setItem('language', lang);
+                    localStorage.setItem('preferredLanguage', lang);
                     
-                    // Обновляем язык HTML документа
+                    // Update HTML document language
                     document.documentElement.lang = currentLanguage;
                     console.log('Updated HTML document lang attribute to:', currentLanguage);
                     
-                    // Обновляем мета-теги и заголовок документа
+                    // Force update course links directly - most reliable approach
+                    document.querySelectorAll('.course-card a[data-link-en]').forEach((link, index) => {
+                        const enLink = link.getAttribute('data-link-en');
+                        const ruLink = link.getAttribute('data-link-ru');
+                        
+                        if (currentLanguage === 'ru' && ruLink) {
+                            console.log(`Setting Russian link for course ${index} directly:`, ruLink);
+                            link.href = ruLink;
+                        } else if (enLink) {
+                            console.log(`Setting English link for course ${index} directly:`, enLink);
+                            link.href = enLink;
+                        }
+                    });
+                    
+                    // Dispatch custom event for other scripts
+                    window.dispatchEvent(new CustomEvent('languageChanged', { 
+                        detail: { language: currentLanguage }
+                    }));
+                    
+                    // Update meta tags and document title
                     if (lang === 'ru') {
                         document.title = "ASINGULARITY AI | Децентрализованная ИИ-экосистема";
                         document.querySelector('meta[name="description"]')?.setAttribute('content', 
@@ -92,15 +112,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             'Building a revolutionary ecosystem that combines AI, Crypto, NFT, and Web3 technologies on TON blockchain');
                     }
                     
-                    // Затем вызываем функцию обновления контента
+                    // Update content
                     console.log('Calling updateContent() function');
                     updateContent();
                     
-                    // Добавляем улучшенный эффект переключения
+                    // Add enhanced switching effect
                     console.log('Applying glitch effects');
                     updateGlitchEffects();
                     
-                    // Обновляем активное состояние кнопок переключения языка
+                    // Update active state of language switcher buttons
                     document.querySelectorAll('.language-switcher button').forEach(btn => {
                         if (btn.getAttribute('data-lang') === currentLanguage) {
                             btn.classList.add('active');
@@ -109,6 +129,31 @@ document.addEventListener('DOMContentLoaded', function() {
                             btn.classList.remove('active');
                         }
                     });
+                    
+                    // Verify links were updated correctly
+                    setTimeout(() => {
+                        console.log('Verifying course links after language change...');
+                        document.querySelectorAll('.course-card a[data-link-en]').forEach((link, index) => {
+                            const enLink = link.getAttribute('data-link-en');
+                            const ruLink = link.getAttribute('data-link-ru');
+                            
+                            console.log(`Course link ${index} verification:`, {
+                                current: link.href,
+                                language: currentLanguage,
+                                shouldBe: currentLanguage === 'ru' ? ruLink : enLink,
+                                correct: currentLanguage === 'ru' ? link.href === ruLink : link.href === enLink
+                            });
+                            
+                            // Fix if incorrect
+                            if (currentLanguage === 'ru' && ruLink && link.href !== ruLink) {
+                                console.log(`Fixing Russian link ${index}`);
+                                link.href = ruLink;
+                            } else if (currentLanguage === 'en' && enLink && link.href !== enLink) {
+                                console.log(`Fixing English link ${index}`);
+                                link.href = enLink;
+                            }
+                        });
+                    }, 500);
                 }
             }
         });
@@ -116,34 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Language switcher not found!');
     }
     
-    // Инициализация языка при загрузке страницы
-    const savedLanguage = localStorage.getItem('language');
-    console.log('Saved language from localStorage:', savedLanguage);
-    if (savedLanguage) {
-        currentLanguage = savedLanguage;
-        document.documentElement.lang = currentLanguage;
-        console.log('Initialized language to:', currentLanguage);
-        
-        // Обновляем активное состояние кнопок переключения языка
-        document.querySelectorAll('.language-switcher button').forEach(btn => {
-            if (btn.getAttribute('data-lang') === currentLanguage) {
-                btn.classList.add('active');
-                console.log('Set language button active on init:', btn.getAttribute('data-lang'));
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-        
-        // Обновляем контент
-        console.log('Updating content on page load');
-        updateContent();
-        
-        // Добавляем глитч-эффекты
-        updateGlitchEffects();
-    } else {
-        console.log('No saved language found, using default:', currentLanguage);
-    }
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -564,6 +581,48 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Обработка кликов на навигацию
     setupNavigation();
+
+    // Function to update course links based on language
+    function updateCourseLinks(lang) {
+        console.log('Updating course links for language:', lang);
+        const courseCards = document.querySelectorAll('.course-card');
+        
+        courseCards.forEach((card, index) => {
+            const link = card.querySelector('a[data-link-en]');
+            if (!link) {
+                console.warn('Course link not found in card:', index);
+                return;
+            }
+            
+            const enLink = link.getAttribute('data-link-en');
+            const ruLink = link.getAttribute('data-link-ru');
+            
+            console.log(`Card ${index} links:`, { en: enLink, ru: ruLink });
+            
+            if (lang === 'ru' && ruLink) {
+                console.log(`Setting RU link for card ${index}:`, ruLink);
+                link.href = ruLink;
+            } else if (enLink) {
+                console.log(`Setting EN link for card ${index}:`, enLink);
+                link.href = enLink;
+            }
+        });
+    }
+
+    // Make function available globally
+    window.updateCourseLinks = updateCourseLinks;
+
+    // Initial update based on current language
+    const currentLang = document.documentElement.lang || 'en';
+    updateCourseLinks(currentLang);
+    
+    // Add handler for language switcher buttons
+    document.querySelectorAll('.language-switcher button').forEach(button => {
+        button.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            updateCourseLinks(lang);
+        });
+    });
 });
 
 // Повторная инициализация при полной загрузке
@@ -1501,19 +1560,19 @@ let isNavOpen = false;
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed, initializing language');
     
-    // Проверяем сохраненный язык в localStorage или устанавливаем язык по умолчанию
-    let savedLanguage = localStorage.getItem('selectedLanguage');
+    // Get saved language from localStorage
+    const savedLanguage = localStorage.getItem('language') || localStorage.getItem('preferredLanguage');
     if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ru')) {
         currentLanguage = savedLanguage;
     } else {
-        // Если язык не сохранен, используем язык браузера или по умолчанию 'en'
+        // If no saved language, use browser language or default to 'en'
         const browserLang = navigator.language || navigator.userLanguage;
         currentLanguage = browserLang && browserLang.startsWith('ru') ? 'ru' : 'en';
     }
     
     console.log('Initial language set to:', currentLanguage);
     
-    // Устанавливаем атрибут языка для HTML документа
+    // Set HTML document language
     document.documentElement.lang = currentLanguage;
     
     // Инициализация переключателя языка

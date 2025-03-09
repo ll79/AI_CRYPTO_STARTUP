@@ -2,154 +2,111 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Инициализация переключателя языка...');
     
-    // Получаем сохраненный язык из localStorage или используем язык браузера
-    let currentLanguage = localStorage.getItem('language');
-    if (!currentLanguage) {
-        const browserLang = navigator.language || navigator.userLanguage;
-        currentLanguage = browserLang && browserLang.startsWith('ru') ? 'ru' : 'en';
-        localStorage.setItem('language', currentLanguage);
-    }
-    
-    console.log('Текущий язык:', currentLanguage);
-    document.documentElement.lang = currentLanguage;
-    
-    // Находим переключатель языка и кнопки
     const languageSwitcher = document.querySelector('.language-switcher');
-    if (!languageSwitcher) {
-        console.error('Переключатель языка не найден!');
-        return;
-    }
+    if (!languageSwitcher) return;
+
+    const buttons = languageSwitcher.querySelectorAll('button');
     
-    const enButton = languageSwitcher.querySelector('button[data-lang="en"]');
-    const ruButton = languageSwitcher.querySelector('button[data-lang="ru"]');
+    // Load saved language preference
+    const savedLang = localStorage.getItem('language') || localStorage.getItem('preferredLanguage') || 'en';
+    document.documentElement.lang = savedLang;
     
-    if (!enButton || !ruButton) {
-        console.error('Кнопки языков не найдены!');
-        return;
-    }
-    
-    // Устанавливаем активную кнопку
-    updateActiveButton();
-    
-    // Добавляем обработчики событий для кнопок
-    enButton.addEventListener('click', function() {
-        if (currentLanguage !== 'en') {
-            switchLanguage('en');
-        }
+    // Update active button state
+    buttons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === savedLang);
     });
     
-    ruButton.addEventListener('click', function() {
-        if (currentLanguage !== 'ru') {
-            switchLanguage('ru');
-        }
-    });
-    
-    // Функция для переключения языка
-    function switchLanguage(lang) {
-        console.log(`Переключение языка на: ${lang}`);
-        
-        // Сохраняем выбранный язык
-        currentLanguage = lang;
-        localStorage.setItem('language', lang);
-        document.documentElement.lang = lang;
-        
-        // Обновляем активную кнопку
-        updateActiveButton();
-        
-        // Добавляем эффект глитча
-        const activeButton = lang === 'en' ? enButton : ruButton;
-        activeButton.classList.add('active-glitch');
+    // Initial update of course links
+    console.log('Initial update of course links for language:', savedLang);
+    if (typeof window.updateCourseLinks === 'function') {
+        window.updateCourseLinks(savedLang);
+    } else {
+        console.warn('updateCourseLinks function not found, waiting for script.js to load...');
+        // Wait for script.js to load and try again
         setTimeout(() => {
-            activeButton.classList.remove('active-glitch');
-        }, 500);
-        
-        // Обновляем контент
-        updatePageContent();
-    }
-    
-    // Функция для обновления активной кнопки
-    function updateActiveButton() {
-        if (currentLanguage === 'en') {
-            enButton.classList.add('active');
-            ruButton.classList.remove('active');
-        } else {
-            ruButton.classList.add('active');
-            enButton.classList.remove('active');
-        }
-    }
-    
-    // Функция для обновления контента страницы
-    function updatePageContent() {
-        try {
-            // Обновляем заголовок и мета-описание
-            updateMetaElements();
-            
-            // Обновляем все элементы с атрибутом data-i18n
-            updateTranslatedElements();
-            
-            console.log('Обновление контента завершено');
-        } catch (error) {
-            console.error('Ошибка при обновлении контента:', error);
-        }
-    }
-    
-    // Функция для обновления мета-элементов
-    function updateMetaElements() {
-        const titleElement = document.querySelector('title');
-        if (titleElement && titleElement.hasAttribute('data-i18n')) {
-            const key = titleElement.getAttribute('data-i18n');
-            if (translations[currentLanguage] && translations[currentLanguage][key]) {
-                titleElement.textContent = translations[currentLanguage][key];
+            if (typeof window.updateCourseLinks === 'function') {
+                window.updateCourseLinks(savedLang);
             }
-        }
-        
-        const descriptionElement = document.querySelector('meta[name="description"]');
-        if (descriptionElement && descriptionElement.hasAttribute('data-i18n')) {
-            const key = descriptionElement.getAttribute('data-i18n');
-            if (translations[currentLanguage] && translations[currentLanguage][key]) {
-                descriptionElement.setAttribute('content', translations[currentLanguage][key]);
-            }
-        }
+        }, 1000);
     }
-    
-    // Функция для обновления всех элементов с атрибутом data-i18n
-    function updateTranslatedElements() {
-        const elements = document.querySelectorAll('[data-i18n]');
-        console.log(`Найдено ${elements.length} элементов с атрибутом data-i18n`);
-        
-        elements.forEach(element => {
-            // Пропускаем мета-элементы
-            if (element.tagName === 'TITLE' || (element.tagName === 'META' && element.getAttribute('name') === 'description')) {
-                return;
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            console.log('Language button clicked:', lang);
+            
+            // Update active state
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Set language
+            document.documentElement.lang = lang;
+            localStorage.setItem('language', lang);
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update course links
+            console.log('Updating course links after language change to:', lang);
+            if (typeof window.updateCourseLinks === 'function') {
+                window.updateCourseLinks(lang);
+            } else {
+                console.warn('updateCourseLinks function not found');
             }
             
-            const key = element.getAttribute('data-i18n');
-            if (!key) return;
+            // Add switching effect
+            document.body.classList.add('language-switching');
+            setTimeout(() => {
+                document.body.classList.remove('language-switching');
+            }, 1000);
             
-            if (translations[currentLanguage] && translations[currentLanguage][key]) {
-                const translatedText = translations[currentLanguage][key];
-                
-                // Обновляем атрибут data-text для элементов с глитч-эффектом
-                if (element.hasAttribute('data-text')) {
-                    element.setAttribute('data-text', translatedText);
+            // Update content if translation function exists
+            if (typeof window.updateContent === 'function') {
+                window.updateContent();
+            }
+            
+            // Dispatch custom event for other scripts
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+        });
+    });
+    
+    // Double check course links periodically until they are updated correctly
+    let checkCount = 0;
+    const maxChecks = 5;
+    
+    function checkLinks() {
+        console.log('Checking course links...');
+        const currentLang = document.documentElement.lang;
+        const courseLinks = document.querySelectorAll('.course-card a[data-link-en]');
+        
+        courseLinks.forEach((link, index) => {
+            const enLink = link.getAttribute('data-link-en');
+            const ruLink = link.getAttribute('data-link-ru');
+            const currentHref = link.href;
+            
+            console.log(`Link ${index} current state:`, {
+                lang: currentLang,
+                href: currentHref,
+                shouldBe: currentLang === 'ru' ? ruLink : enLink
+            });
+            
+            if (currentLang === 'ru' && ruLink && currentHref !== ruLink) {
+                console.log(`Fixing RU link ${index}`);
+                if (typeof window.updateCourseLinks === 'function') {
+                    window.updateCourseLinks(currentLang);
                 }
-                
-                // Обновляем содержимое элемента
-                if (element.hasAttribute('data-html-content')) {
-                    element.innerHTML = translatedText;
-                } else {
-                    element.textContent = translatedText;
+            } else if (currentLang === 'en' && enLink && currentHref !== enLink) {
+                console.log(`Fixing EN link ${index}`);
+                if (typeof window.updateCourseLinks === 'function') {
+                    window.updateCourseLinks(currentLang);
                 }
-                
-                // Добавляем класс для анимации
-                element.classList.add('temp-glitch');
-                setTimeout(() => {
-                    element.classList.remove('temp-glitch');
-                }, 300);
             }
         });
+        
+        checkCount++;
+        if (checkCount < maxChecks) {
+            setTimeout(checkLinks, 1000);
+        }
     }
     
-    // Инициализируем контент при загрузке страницы
-    updatePageContent();
+    // Start checking links
+    setTimeout(checkLinks, 1000);
 }); 
