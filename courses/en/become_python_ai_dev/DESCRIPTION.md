@@ -36,7 +36,7 @@ Start programming from scratch and level up to middle+ with the help of AI! We'l
 
   <p>This course is your ticket to the world of modern programming, where Python and AI open up limitless possibilities for creativity and professional growth. We've developed a step-by-step program that will help you journey from absolute beginner to confident middle-level developer capable of creating complex projects using neural networks and artificial intelligence.</p>
 
-  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will receive NFTs with a share of future profits from the projects!</p>
+  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will gain valuable development experience and community recognition!</p>
 
   <p>Our approach is based on practice and real-world tasks that professional developers encounter every day. Ready to become part of the AI revolution? Let's start right now! 🚀🐍</p>
 </div>
@@ -77,8 +77,8 @@ Start programming from scratch and level up to middle+ with the help of AI! We'l
       <p>You'll become part of an active community of developers in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>, where you can exchange experiences and get help.</p>
     </div>
     <div class="benefit-card">
-      <h5>💰 Earning Opportunity</h5>
-      <p>Active participants will receive NFTs with a share of future profits from our Open Source project, as well as the opportunity to earn from developing your own projects.</p>
+      <h5>💰 Practical Skills</h5>
+      <p>Active participants will gain valuable experience working on a real Open Source project that can enhance their portfolio and career prospects.</p>
     </div>
   </div>
 </div>
@@ -92,7 +92,7 @@ Start programming from scratch and level up to middle+ with the help of AI! We'l
     <li><strong>Project Portfolio:</strong> A set of ready applications demonstrating your skills to potential employers.</li>
     <li><strong>Tools for Career Growth:</strong> Knowledge and skills in demand in the job market, allowing you to apply for middle-level positions.</li>
     <li><strong>Professional Network:</strong> Opportunity to meet like-minded people and potential employers or partners through our community <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Opportunity to Participate in a Real Startup:</strong> Chance to become part of an innovative Open Source project and receive a share of its future profits.</li>
+    <li><strong>Opportunity to Participate in a Real Project:</strong> Chance to become part of an innovative Open Source project and gain valuable development experience.</li>
   </ul>
 </div>
 
@@ -115,7 +115,7 @@ Start programming from scratch and level up to middle+ with the help of AI! We'l
     <li><strong>Work on Projects:</strong> Create full-fledged applications that you can include in your portfolio.</li>
     <li><strong>Participate in Discussions:</strong> Share experiences, ask questions, and help other participants solve problems in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
     <li><strong>Experiment with AI Tools:</strong> Explore the capabilities of neural networks for task automation and code generation.</li>
-    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and receive rewards for it.</li>
+    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and gain recognition for your contributions.</li>
   </ul>
 </div>
 
@@ -178,7 +178,7 @@ Start programming from scratch and level up to middle+ with the help of AI! We'l
 </div>
 
 <div class="course-ecosystem">
-  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
 </div>
 
 <div class="course-cta">

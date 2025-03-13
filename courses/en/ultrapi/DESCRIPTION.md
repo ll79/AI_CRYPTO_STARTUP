@@ -6,7 +6,7 @@
 
 ## 📝 Brief Description
 
-We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pydantic AI, Supabase, and our own AI Agents with a user-friendly web panel. Together we'll learn to build both backends and frontends, enhance our skills in microservices and AI applications. And for active participation in the project - receive NFTs that generate profit. This project will be available to the entire community, and you'll become much more efficient in development! 🌟🚀
+We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pydantic AI, Supabase, and our own AI Agents with a user-friendly web panel. Together we'll learn to build both backends and frontends, enhance our skills in microservices and AI applications. Active participants will gain valuable development experience and community recognition. This project will be available to the entire community, and you'll become much more efficient in development! 🌟🚀
 
 <br/>
 <br/>
@@ -39,7 +39,7 @@ We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pyd
 
   <p>This course is your path to mastery in developing modern backend systems with artificial intelligence integration. We've developed a step-by-step program that will help you create a full-fledged framework based on FastAPI, enhanced with AI capabilities and optimized for high loads. You'll learn to design architecture, develop components, and integrate various technologies into a single powerful system.</p>
 
-  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will receive NFTs with a share of future profits from the projects!</p>
+  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will gain valuable development experience and community recognition!</p>
 
   <p>Our approach is based on practice and real-world tasks, focusing on creating a working product that you can use in your own projects and offer to the community. Ready to create a next-generation framework? Let's start right now! 🚀🔧</p>
 </div>
@@ -64,8 +64,8 @@ We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pyd
       <p>Creating your own framework is a deep dive into backend development that will give you an understanding of the internal mechanisms of popular tools.</p>
     </div>
     <div class="benefit-card">
-      <h5>💼 Practical Value</h5>
-      <p>You'll create a product that can be used in real projects and included in your portfolio.</p>
+      <h5>💼 Practical Skills</h5>
+      <p>Active participants will gain valuable experience working on a real Open Source project that can enhance their portfolio.</p>
     </div>
     <div class="benefit-card">
       <h5>🤖 AI Integration</h5>
@@ -95,7 +95,7 @@ We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pyd
     <li><strong>Advanced Python Knowledge:</strong> Mastery in asynchronous programming, metaprogramming, and optimization.</li>
     <li><strong>Ready Product:</strong> A full-fledged UltrAPI framework that you can use in your own projects and publish.</li>
     <li><strong>Professional Network:</strong> Opportunity to meet like-minded people and potential employers or partners through our community <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Opportunity to Participate in a Real Startup:</strong> Chance to become part of an innovative Open Source project and receive a share of its future profits.</li>
+    <li><strong>Opportunity to Participate in a Real Project:</strong> Chance to become part of an innovative Open Source project and gain valuable development experience.</li>
   </ul>
 </div>
 
@@ -121,7 +121,7 @@ We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pyd
     <li><strong>Write Tests:</strong> Create automated tests to verify the functionality of various components.</li>
     <li><strong>Document Code:</strong> Develop detailed documentation for framework users and contributors.</li>
     <li><strong>Participate in Discussions:</strong> Share experiences, ask questions, and help other participants in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and receive rewards for it.</li>
+    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and gain recognition for your contributions.</li>
   </ul>
 </div>
 
@@ -184,7 +184,7 @@ We'll create an AI-powered open-source framework UltrAPI, combining FastAPI, Pyd
 </div>
 
 <div class="course-ecosystem">
-  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
 </div>
 
 <div class="course-cta">
@@ -244,7 +244,7 @@ Not Required:
     Deep knowledge in AI: All necessary concepts will be explained throughout the course.
     Experience with low-level aspects of web servers: We will use existing tools as a foundation.
 
-If you have experience with Python and a basic understanding of web development – you have everything necessary for successful completion of the course! ��💡🔧
+If you have experience with Python and a basic understanding of web development – you have everything necessary for successful completion of the course! 💡🔧
 
 <br/>
 <br/>

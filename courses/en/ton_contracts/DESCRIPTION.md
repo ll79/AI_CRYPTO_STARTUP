@@ -37,7 +37,7 @@ Discover the magic of FunC and TVM, create DeFi or NFT projects on TON. Learn ho
 
   <p>This course is your guide to the world of decentralized applications and smart contracts on one of the most promising and rapidly growing blockchains. We've developed a step-by-step program that will help you master the FunC programming language, understand the principles of the TON Virtual Machine (TVM), and learn to create, test, and deploy smart contracts for various applications.</p>
 
-  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will receive NFTs with a share of future profits from the projects!</p>
+  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will gain valuable development experience and community recognition!</p>
 
   <p>Our approach is based on practice and real-world tasks, focusing on creating working solutions that can be applied in real projects. Ready to become a TON blockchain developer? Let's start right now! 🚀💎</p>
 </div>
@@ -78,8 +78,8 @@ Discover the magic of FunC and TVM, create DeFi or NFT projects on TON. Learn ho
       <p>You'll become part of an active community of developers in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>, where you can exchange experiences and get help.</p>
     </div>
     <div class="benefit-card">
-      <h5>💰 Earning Opportunity</h5>
-      <p>Active participants will receive NFTs with a share in the future profits of our Open Source project.</p>
+      <h5>💰 Practical Skills</h5>
+      <p>Active participants will gain valuable experience working on a real Open Source project that can enhance their portfolio.</p>
     </div>
   </div>
 </div>
@@ -93,7 +93,7 @@ Discover the magic of FunC and TVM, create DeFi or NFT projects on TON. Learn ho
     <li><strong>Security Practices:</strong> Ability to identify vulnerabilities and create secure smart contracts.</li>
     <li><strong>Project Portfolio:</strong> Several real smart contracts that you can include in your portfolio.</li>
     <li><strong>Professional Network:</strong> Opportunity to meet like-minded people and potential employers or partners through our community <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Opportunity to Participate in a Real Startup:</strong> Chance to become part of an innovative Open Source project and receive a share of its future profits.</li>
+    <li><strong>Opportunity to Participate in a Real Project:</strong> Chance to become part of an innovative Open Source project and gain valuable development experience.</li>
   </ul>
 </div>
 
@@ -118,7 +118,7 @@ Discover the magic of FunC and TVM, create DeFi or NFT projects on TON. Learn ho
     <li><strong>Deploy to Testnet:</strong> Practice deploying smart contracts to the TON testnet.</li>
     <li><strong>Integrate with Applications:</strong> Create simple applications that interact with your smart contracts.</li>
     <li><strong>Participate in Discussions:</strong> Share experiences, ask questions, and help other participants in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and receive rewards for it.</li>
+    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and gain recognition for your contributions.</li>
   </ul>
 </div>
 
@@ -181,7 +181,7 @@ Discover the magic of FunC and TVM, create DeFi or NFT projects on TON. Learn ho
 </div>
 
 <div class="course-ecosystem">
-  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
 </div>
 
 <div class="course-cta">

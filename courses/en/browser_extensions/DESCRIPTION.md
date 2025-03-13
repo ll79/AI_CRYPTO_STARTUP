@@ -4,7 +4,7 @@
 
 ## Brief Description
 
-Transform your browser into an intelligent assistant! Step by step, we'll build an Open Source extension, implement AI agents, connect them to local or remote models, and add crypto functionality. For active participation in the project - receive NFTs that will bring you a share of the project's future profits. Learn to automate any actions, turning your browser into a powerful AI tool! 🔧🤖
+Transform your browser into an intelligent assistant! Step by step, we'll build an Open Source extension, implement AI agents, connect them to local or remote models, and add crypto functionality. Active participants will gain valuable development experience and community recognition. Learn to automate any actions, turning your browser into a powerful AI tool! 🔧🤖
 
 <br/>
 <br/>
@@ -37,7 +37,7 @@ Transform your browser into an intelligent assistant! Step by step, we'll build 
 
   <p>This course is your guide to the world of modern browser tool development that can significantly improve the user experience on the internet. We've developed a step-by-step program that will help you create a full-fledged browser extension capable of analyzing content, offering recommendations, and automating routine tasks using artificial intelligence technologies.</p>
 
-  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will receive NFTs with a share of the future profits from the projects!</p>
+  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will gain valuable development experience and community recognition!</p>
 
   <p>Our approach is based on practice and real tasks that professional extension developers encounter. Ready to create a tool that will change the way you interact with the internet? Let's start right now! 🚀🔌</p>
 
@@ -80,8 +80,8 @@ Transform your browser into an intelligent assistant! Step by step, we'll build 
       <p>You'll become part of an active community of developers in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>, where you can exchange experiences and get help.</p>
     </div>
     <div class="benefit-card">
-      <h5>💰 Earning Opportunity</h5>
-      <p>Active participants will receive NFTs with a share in the future profits of our Open Source project.</p>
+      <h5>💰 Practical Skills</h5>
+      <p>Active participants will gain valuable experience working on a real Open Source project that can enhance their portfolio.</p>
     </div>
   </div>
 </div>
@@ -95,7 +95,7 @@ Transform your browser into an intelligent assistant! Step by step, we'll build 
     <li><strong>Published Extension:</strong> A real product that can be included in your portfolio and published in official stores.</li>
     <li><strong>UX/UI Design Understanding:</strong> Knowledge of interface design principles for creating user-friendly tools.</li>
     <li><strong>Professional Network:</strong> Opportunity to meet like-minded people and potential employers or partners through our community <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Opportunity to Participate in a Real Startup:</strong> Chance to become part of an innovative Open Source project and receive a share of its future profits.</li>
+    <li><strong>Opportunity to Participate in a Real Project:</strong> Chance to become part of an innovative Open Source project and gain valuable development experience.</li>
   </ul>
 </div>
 
@@ -120,7 +120,7 @@ Transform your browser into an intelligent assistant! Step by step, we'll build 
     <li><strong>Integrate AI Services:</strong> Connect your extension to neural network APIs and implement intelligent features.</li>
     <li><strong>Create a User Interface:</strong> Design and implement an intuitive interface for your extension.</li>
     <li><strong>Participate in Discussions:</strong> Share experiences, ask questions, and help other participants in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and receive rewards for it.</li>
+    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and gain recognition for your contributions.</li>
   </ul>
 </div>
 
@@ -183,7 +183,7 @@ Transform your browser into an intelligent assistant! Step by step, we'll build 
 </div>
 
 <div class="course-ecosystem">
-  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
 </div>
 
 <div class="course-cta">

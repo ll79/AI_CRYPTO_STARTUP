@@ -21,7 +21,7 @@ Master Git and GitHub Projects to collaborate on any ideas: from simple pet proj
     Learn to create quality documentation for your projects. 📝✨
     Master the process of creating and managing Pull Requests. 🔄📤
     Learn to conduct Code Review and effectively interact with other developers. 👁️‍🗨️👨‍💻
-    Discover how to monetize your Open Source projects. 💰📈
+    Discover how to contribute to Open Source projects effectively. 🌟📈
     Learn to manage versions and releases of your software. 🏷️📦
     Master testing methods and code quality assurance in Open Source projects. 🧪✅
     Learn to build a community around your project and attract contributors. 🌍🤝
@@ -39,7 +39,7 @@ Master Git and GitHub Projects to collaborate on any ideas: from simple pet proj
 
   <p>This course is your path to mastering team development and creating successful Open Source projects. We've developed a comprehensive program that will allow you not only to master all the capabilities of Git and GitHub but also learn to create, develop, and maintain your own open-source projects. You'll journey from basic commands to organizing full-fledged team work on AI projects that can change the world.</p>
 
-  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will receive NFTs with a share of future profits from the projects!</p>
+  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will gain valuable development experience and community recognition!</p>
 
   <p>Ready to become a Git master and create your Open Source project that will attract a community? Let's start right now! 🚀🔄</p>
 </div>
@@ -75,8 +75,8 @@ Master Git and GitHub Projects to collaborate on any ideas: from simple pet proj
       <p>Your Open Source project can become part of our ecosystem <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>.</p>
     </div>
     <div class="benefit-card">
-      <h5>💎 Reward System</h5>
-      <p>Active participants will receive NFTs giving a share in the future profits of the project.</p>
+      <h5>💎 Community Recognition</h5>
+      <p>Active participants will gain valuable experience and recognition in the developer community.</p>
     </div>
     <div class="benefit-card">
       <h5>👥 Community of Like-minded People</h5>
@@ -93,7 +93,7 @@ Master Git and GitHub Projects to collaborate on any ideas: from simple pet proj
     <li><strong>Portfolio:</strong> Your own Open Source project demonstrating your skills to potential employers.</li>
     <li><strong>Teamwork Skills:</strong> Ability to effectively interact in distributed teams of developers.</li>
     <li><strong>Understanding of the Open Source Ecosystem:</strong> Knowledge about licenses, monetization models, and community development.</li>
-    <li><strong>Earning Opportunity:</strong> NFTs with a share in the project's profits for active development participants.</li>
+    <li><strong>Practical Skills:</strong> Valuable experience in real-world project development that enhances your portfolio and career prospects.</li>
   </ul>
 </div>
 
@@ -175,7 +175,7 @@ Master Git and GitHub Projects to collaborate on any ideas: from simple pet proj
 </div>
 
 <div class="course-note">
-  <p><strong>Note:</strong> The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+  <p><strong>Note:</strong> The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
 </div>
 
 <div class="course-cta">

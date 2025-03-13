@@ -39,7 +39,7 @@ Dive into the world of cryptocurrencies and decentralized technologies! Study th
 
   <p>This course is your guide to the exciting world of Web3, where we'll explore not only the technical aspects of blockchain but also the economic, social, and marketing dimensions of crypto projects. We've developed a balanced program that will help you understand both the theory and practice of decentralized technologies, from the basics of blockchain to creating and promoting your own crypto projects.</p>
 
-  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will receive NFTs with a share of future profits from the projects!</p>
+  <p>The course is part of a series of Open Source educational programs dedicated to creating real projects within our startup <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a>. By joining us, you'll not only gain knowledge but also become part of a growing community of developers creating the future at the intersection of AI and blockchain technologies. Active participants will gain valuable development experience and community recognition!</p>
 
   <p>Our approach is based on practical knowledge and real-world examples that will help you navigate the complex world of cryptocurrencies and find your niche in this rapidly growing industry. Ready to become part of the decentralized revolution? Let's start right now! 🚀🔗</p>
 </div>
@@ -80,8 +80,8 @@ Dive into the world of cryptocurrencies and decentralized technologies! Study th
       <p>You'll become part of an active community in our <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>, where you can exchange experiences and get help.</p>
     </div>
     <div class="benefit-card">
-      <h5>💰 Earning Opportunity</h5>
-      <p>Active participants will receive NFTs with a share in the future profits of our Open Source project.</p>
+      <h5>💰 Practical Skills</h5>
+      <p>Active participants will gain valuable experience working on a real Open Source project that can enhance their portfolio.</p>
     </div>
   </div>
 </div>
@@ -95,7 +95,7 @@ Dive into the world of cryptocurrencies and decentralized technologies! Study th
     <li><strong>DAO Understanding:</strong> Insight into the principles of decentralized governance and organization.</li>
     <li><strong>Investment Skills:</strong> Ability to analyze crypto projects and assess their potential.</li>
     <li><strong>Professional Network:</strong> Opportunity to meet like-minded people and potential partners through our community <a href="https://t.me/AI_CRYPTO_STARTUP">https://t.me/AI_CRYPTO_STARTUP</a>.</li>
-    <li><strong>Opportunity to Participate in a Real Startup:</strong> Chance to become part of an innovative Open Source project and receive a share of its future profits.</li>
+    <li><strong>Opportunity to Participate in a Real Project:</strong> Chance to become part of an innovative Open Source project and gain valuable development experience.</li>
   </ul>
 </div>
 
@@ -120,7 +120,7 @@ Dive into the world of cryptocurrencies and decentralized technologies! Study th
     <li><strong>Analyze Case Studies:</strong> Study real crypto projects and understand factors of their success or failure.</li>
     <li><strong>Develop Marketing Strategies:</strong> Create promotion plans for hypothetical or real crypto projects.</li>
     <li><strong>Explore DAO Mechanisms:</strong> Understand governance systems and participate in decision-making simulations.</li>
-    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and receive rewards for it.</li>
+    <li><strong>Contribute to Open Source:</strong> Optionally participate in the development of our project <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> and gain recognition for your contributions.</li>
   </ul>
 </div>
 
@@ -183,7 +183,7 @@ Dive into the world of cryptocurrencies and decentralized technologies! Study th
 </div>
 
 <div class="course-ecosystem">
-  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+  <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
 </div>
 
 <div class="course-cta">

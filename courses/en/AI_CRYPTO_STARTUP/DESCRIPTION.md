@@ -4,7 +4,7 @@
 
 ## Brief Description
 
-⚡️ Dive into the era of AI-Agent revolution! Join the AI and CRYPTO world on the TON blockchain. Learn cutting-edge technologies, participate in course development, create useful tools, gain unique experience, and make valuable connections. We're creating an opensource project of a decentralized platform with AI agents and virtual workers that will perform tasks, automate processes, and generate profit. Join our team of like-minded individuals and earn profitable NFTs. We're building the future here! 🚀💎
+⚡️ Dive into the era of AI-Agent revolution! Join the AI and CRYPTO world on the TON blockchain. Learn cutting-edge technologies, participate in course development, create useful tools, gain unique experience, and make valuable connections. We're creating an opensource project of a decentralized platform with AI agents and virtual workers that will perform tasks and automate processes. Join our team of like-minded individuals and gain valuable development experience. We're building the future here! 🚀💎
 
 <br/>
 <br/>
@@ -18,7 +18,7 @@
     Learn to integrate AI models with blockchain technologies to create decentralized applications. 🔗🤖
     Develop your own tokenomics and business models for crypto projects. 💰📊
     Master the principles of forming and managing a distributed team of developers. 👥🌐
-    Learn to attract investments and monetize Open Source projects. 💼💸
+    Learn to attract investments and develop sustainable Open Source projects. 💼📈
     Create a marketing strategy for promoting a technology startup. 📣📈
     Master project management methods in a rapidly changing market. ⏱️🔄
     Learn to build a community around your project and work with contributors. 🌍🤝
@@ -78,8 +78,8 @@
         <p>Joining a team of like-minded people with whom you can build the future of technology.</p>
       </div>
       <div class="benefit-card">
-        <h5>💰 Earning Potential</h5>
-        <p>Opportunity to receive NFTs with a share in the future profits of the project.</p>
+        <h5>💰 Practical Skills</h5>
+        <p>Opportunity to gain valuable experience working on a real Open Source project that can enhance your portfolio.</p>
       </div>
       <div class="benefit-card">
         <h5>🌐 Open Source</h5>
@@ -96,7 +96,7 @@
       <li><strong>Business Competencies:</strong> Skills in product development, marketing, and team management.</li>
       <li><strong>Network:</strong> Connections with professionals and enthusiasts in the field of innovative technologies.</li>
       <li><strong>Portfolio:</strong> Participation in a real project that can be showcased to potential employers or investors.</li>
-      <li><strong>Financial Opportunity:</strong> Chance to receive NFTs with a share in the future profits of the project.</li>
+      <li><strong>Financial Opportunity:</strong> Chance to gain valuable development experience and recognition in the developer community.</li>
     </ul>
   </div>
   
@@ -183,7 +183,7 @@
   </div>
   
   <div class="course-ecosystem">
-    <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real startup, with the possibility of receiving a share of future profits through the NFT reward system.</p>
+    <p>The course is part of the educational program <a href="https://github.com/LNDMN/AI_CRYPTO_STARTUP">https://github.com/LNDMN/AI_CRYPTO_STARTUP</a> — an Open Source project aimed at creating a decentralized platform with AI agents. By participating in the course, you not only gain knowledge but also become part of a real project, with the opportunity to develop valuable skills and gain recognition in the developer community.</p>
   </div>
   
   <div class="course-cta">
